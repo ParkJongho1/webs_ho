@@ -136,12 +136,10 @@
 
     <div id="decl01" class="sample">
         <div class="code">
-            <pre class="line-numbers"><code class="language-js"> 
-    기본형 :
+            <pre class="line-numbers"><code class="language-js">    기본형 :
     &lt;script&gt;
-        자바스크립트 코드;
-    &lt;/script&gt;  
-            </code></pre>
+    자바스크립트 코드;
+    &lt;/script&gt;</code></pre>
         </div>
     </div>
 
@@ -155,8 +153,7 @@
         그런 다음 예제를 보면서 문서를 작성해 보세요.<br><br>
         <div id="decl02" class="sample">
             <div class="code">
-                <pre class="line-numbers"><code class="language-js"> 
-    &lt;!DOCTYPE html&gt;
+                <pre class="line-numbers"><code class="language-js">  &lt;!DOCTYPE html&gt;
     &lt;html lang="ko"&gt;
     &lt;head&gt;
         &lt;meta charset="UTF-8"&gt;
@@ -167,8 +164,7 @@
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
-    &lt;html&gt;
-                </code></pre>
+    &lt;html&gt;</code></pre>
             </div>
         </div>
         <br>
@@ -181,14 +177,12 @@
         이때 한 줄 주석일 경우에는 '//한줄 설명글'로 작성하고, 여러 줄 주석 일 경우에는 '/*여러줄 설명글*/'로 작성하면 됩니다.<br><br>
         <div id="decl03" class="sample">
             <div class="code">
-                <pre class="line-numbers"><code class="language-js"> 
-    기본형 :
+                <pre class="line-numbers"><code class="language-js">    기본형 :
       //한줄 설명글인 경우            &lt;!-- HTML 소스의 설명글은 이렇게 처리합니다 --&gt;
       /*                           
         설명글이 여러 줄인 경우
         이렇게 처리 합니다.
-          */
-            </code></pre>
+          */</code></pre>
             </div>
         </div>
         <br>
@@ -217,7 +211,7 @@
         &nbsp;&nbsp;&nbsp;그런 다음 다음과 같이 코드를 작성하고 문서를 저장합니다.<br><br>
         <div id="decl05" class="sample">
             <div class="code">
-                <pre class="line-numbers"><code class="language-js">    01 : document.write("환영합니다");</code></pre>
+                <pre class="line-numbers"><code class="language-js">01 : document.write("환영합니다");</code></pre>
             </div>
         </div>
         <br>
@@ -225,8 +219,7 @@
         &nbsp;&nbsp;&nbsp;다음과 같이 코드를 작성합니다. 만약 연동이 잘 되지 않으면 src 값에 파일의 전체 경로를 넣어보세요.<br>
         <div id="decl06" class="sample">
             <div class="code">
-                <pre class="line-numbers"><code class="language-js"> 
-    &lt;!DOCTYPE html&gt;
+                <pre class="line-numbers"><code class="language-js">    &lt;!DOCTYPE html&gt;
     &lt;html lang="ko"&gt;
     &lt;head&gt;
         &lt;meta charset="UTF-8"&gt;
@@ -235,8 +228,7 @@
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
-    &lt;html&gt;
-            </code></pre>
+    &lt;html&gt;</code></pre>
             </div>
         </div>
         <br>
@@ -250,10 +242,8 @@
         1. 자바스크립트는 대·소문자를 구분하여 작성합니다.<br><br>
         <div id="decl07" class="sample">
             <div class="code">
-                <pre class="line-numbers"><code class="language-js"> 
-    날짜 객체 생성 : New date(); (X)
-    날짜 객체 생성 : new Date(); (O) 
-            </code></pre>
+                <pre class="line-numbers"><code class="language-js">    날짜 객체 생성 : New date(); (X)
+    날짜 객체 생성 : new Date(); (O)</code></pre>
             </div>
         </div>
         <br>
@@ -261,10 +251,8 @@
         &nbsp;&nbsp;&nbsp;세미콜론을 쓰지 않으면 다음 예제처럼 한 줄에 2개의 코드를 작성할 경우 오류가 발생합니다.<br><br>
         <div id="decl08" class="sample">
             <div class="code">
-                <pre class="line-numbers"><code class="language-js"> 
-    document.write("hi") document.write("bye")  (X)
-    document.write("hi"); document.write("bye");  (O)
-        </code></pre>
+                <pre class="line-numbers"><code class="language-js">    document.write("hi") document.write("bye")  (X)
+    document.write("hi"); document.write("bye");  (O)</code></pre>
             </div>
         </div>
         <br>
@@ -272,22 +260,18 @@
         4. 몬자형 데이터를 작성할 때는 큰따옴표("")와 작은따옴표('')의 겹침 오류를 주의해야 합니다.<br><br>
         <div id="decl09" class="sample">
             <div class="code">
-                <pre class="line-numbers"><code class="language-js"> 
-    큰따옴 겹칩 오류
+                <pre class="line-numbers"><code class="language-js">    큰따옴 겹칩 오류
     document.write("책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.");
     잘된예
     document.write('책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.');
-    document.write("책에 \"자바스크립트는 대소문자를 구분해야 합니다\"라고 나와 있다.");
-        </code></pre>
+    document.write("책에 \"자바스크립트는 대소문자를 구분해야 합니다\"라고 나와 있다.");</code></pre>
             </div>
         </div>
         <br>
         5.코드를 작성할 때 중괄호{} 또는 소활호()의 짝이 맞아야 합니다.<br><br>
         <div id="decl10" class="code">
-            <pre class="line-numbers"><code class="language-js"> 
-    document.write("welcome!"; (X)
-    document.write("welcome!"); (O)
-    </code></pre>
+            <pre class="line-numbers"><code class="language-js">    document.write("welcome!"; (X)
+    document.write("welcome!"); (O)</code></pre>
         </div>
         </div>
     </p>
