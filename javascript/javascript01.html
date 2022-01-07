@@ -58,11 +58,7 @@
         <div class="note">
             <a href="reference01.html">기초 문법</a>
             <a href="reference02.html">변수</a>
-            <a href="reference03.html">자료형</a>
-            <a href="reference04.html">식별자/키워드</a>
-            <a href="reference05.html">객체</a>
-            
-
+            <a href="reference03.html">자료형</a>        
         </div>
         <!-- //note -->
 
@@ -329,6 +325,81 @@
     document.write(obj[0].a, "<br>");
     document.write(obj[0].b, "<br>");
     document.write(obj[1].c, "<br>");
+}</code></pre>
+                </div>
+            </div>
+
+            <div id="sample15" class="sample">
+                <h3>15. 객체 : 데이터를 저장(키와 값) 표현방법5</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a:100,
+        b: [200, 300],
+        c: {x: 400, y: 500},
+        d: "Javascript"
+    }
+
+    document.write("<br>*** 15. 객체 ***<br>");
+    document.write(obj.a, "<br>");
+    document.write(obj.b[0], "<br>");
+    document.write(obj.b[1], "<br>");
+    document.write(obj.c.x, "<br>");
+    document.write(obj.c.y, "<br>");
+    document.write(obj.d, "<br>");
+}</code></pre>
+                </div>
+            </div>
+
+            <div id="sample16" class="sample">
+                <h3>16. 객체 : 데이터를 저장(키와 값) 표현방법5</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "Javascript";
+
+    const obj = { a, b, c }
+
+    document.write("<br>*** 16. 객체 ***<br>");
+    document.write(obj.a, "<br>");
+    document.write(obj.b, "<br>");
+    document.write(obj.c, "<br>");
+}</code></pre>
+                </div>
+            </div>
+
+                <div id="sample17" class="sample">
+                    <h3>17. 객체 : 데이터를 저장(키와 값) 표현방법5</h3>
+                    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: {x:400, y:500},
+        d: "Javascript",
+        e: function(){
+            document.write("Javascript가 실행되었습니다.<br>");
+        },
+        f: function(){
+            document.write(obj.d + "가 실행되었습니다.<br>")
+        },
+        g: function(){
+            document.write(this.d + "가 실행되었습니다.<br>")
+        }
+    }
+
+    document.write("<br>*** 17. 객체 ***<br>");
+    document.write(obj.a, "<br>");
+    document.write(obj.b, "<br>");
+    document.write(obj.b[0], "<br>");
+    document.write(obj.b[1], "<br>");
+    document.write(obj.c.x, "<br>");
+    document.write(obj.c.y, "<br>");
+    document.write(obj.d, "<br>");
+    obj.e();
+    obj.f();
+    obj.g();    
 }</code></pre>
                 </div>
             </div>
