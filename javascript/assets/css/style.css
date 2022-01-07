@@ -152,7 +152,7 @@ a {
    border-radius: 20px;
    padding: 7px 15px 5px 15px;
    display: inline-block;
-   margin-bottom: 5;
+   margin-bottom: 5px;
 }
 .note a:hover{
     text-decoration: underline;
@@ -160,7 +160,10 @@ a {
 
 @media (max-width:800) {
     .note {
-        padding: 20 0;
+        padding: 20px 0;
+    }
+    .note a { 
+        font-size: 14px;
     }
 }
 
