@@ -29,6 +29,113 @@
     </header>
 
     <main id="main">
+        <div class="list">
+            <ul>
+                <li>01. 변수 : 데이터 불러오기</li>
+                <li>02. 상수 : 데이터 불러오기</li>
+                <li>03. 배열 : 데이터 불러오기</li>
+                <li>04. 배열 : 데이터 불러오기 : 2차 배열</li>
+                <li>05. 배열 : 데이터 불러오기 : 갯수 구하기</li>
+                <li>06. 배열 : 데이터 불러오기 : for()</li>
+                <li>07. 배열 : 데이터 불러오기 : forEach()</li>
+                <li>08. 배열 : 데이터 불러오기 : for of</li>
+                <li>09. 배열 : 데이터 불러오기 : for in</li>
+                <li>10. 배열 : 데이터 불러오기 : map()</li>
+                <li>11. 배열 : 데이터 불러오기 : 펼침 연산자</li>
+                <li>12. 객체 : 데이터 불러오기 : 기본</li>
+                <li>13. 객체 : 데이터 불러오기 : Object</li>
+                <li>14. 객체 : 데이터 불러오기 : 변수</li>
+                <li>15. 객체 : 데이터 불러오기 : for in</li>
+                <li>16. 객체 : 데이터 불러오기 : map()</li>
+                <li>17. 객체 : 데이터 불러오기 : hasOwnProperty()</li>
+                <li>18. 객체 : 데이터 불러오기 : 펼침 연산자 - 복사</li>
+                <li>19. 객체 : 데이터 불러오기 : 펼침 연산자 - 추가</li>
+                <li>20. 객체 : 데이터 불러오기 : 펼침 연산자 - 결합</li>
+                <li>21. 객체 : 데이터 불러오기 : 비구조화 할당</li>
+                <li>22. 객체 : 데이터 불러오기 : 비구조화 할당</li>
+            </ul>
+        </div>
+
+        <div class="script">
+            <!-- //sample01 -->
+            <div id="sample1" class="sample">
+                <h3>01. 변수 : 데이터 불러오기</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100,
+    y = 200,
+    z = "Javescript";
+
+    document.write("*** 01. 변수 ***")
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- //sample02 -->
+            <div id="sample2" class="sample">
+                <h3>02. 상수 : 데이터 불러오기</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const x = 100,
+    y = 200,
+    z = "Javescript";
+
+    document.write("*** 02. 상수 ***")
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- //sample03 -->
+            <div id="sample3" class="sample">
+                <h3>03. 배열 : 데이터 불러오기</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "Javascript"];
+
+    document.write("*** 03. 배열 ***")
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- //sample04 -->
+            <div id="sample4" class="sample">
+                <h3>04. 배열 : 데이터 불러오기 : 2차 배열</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, ["javascript", "jquery"]];
+
+    document.write("*** 04. 배열 ***");
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+    document.write(arr[2][0]);
+    document.write(arr[2][1]);
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- //sample05 -->
+            <div id="sample5" class="sample">
+                <h3>05. 배열 : 데이터 불러오기 : 갯수 구하기</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "Javascript"];
+
+    document.write("*** 05. 배열 ***");
+    document.write(arr.length);
+}</code></pre>
+                </div>
+            </div>
+        </div>
 
     </main>
 
