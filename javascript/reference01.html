@@ -30,6 +30,24 @@
     <main id="main">
         <div class="doc">
             <h2>자바스크립트 선언문</h2>
+            <p>선언문 : 자바스크립트 <strong>코드</strong>를 작성할 영역을 선언하는 것</p>
+            <p>선언문은 <strong>&lt;head&gt;</strong>태그 영역 또는 <strong>&lt;body&gt;</strong> 태그 영역에 선언하면 된다.</p>
+            <div class="code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title>Document＜/title&gt;
+    &lt;script&gt;
+        document.write("환영합니다")
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;html&gt;
+</pre></code>
+            </div>
+
 
             <h2>자바스크립트 주석처리</h2>
             <p>자바스크립트 선언문 안에서 코드가 아닌 설명글을 넣고 싶을 때는 <strong>주석 처리</strong>를 하면 됩니다.</p>
@@ -41,22 +59,25 @@
                                                          두줄 주석처리 */ 
 </pre></code>
             </div>
+
             <h2>코드 입력시 주의 사항</h2>
-            <p>자바스크립트는 대·소문자를 구분하여 작성합니다.</p>
+            <p>자바스크립트는 <strong>대·소문자</strong>를 구분하여 작성합니다.</p>
             <div class="code">
 <pre><code>ex) 날짜 객체 생성 : New date(); (X)
 ex) 날짜 객체 생성 : new Date(); (O)
 </pre></code>
             </div>
-            <p>코드를 한 줄을 작성한 후에는 세미콜론(;)을 쓰는 것이 좋습니다.</p>
-            <p>세미콜론을 쓰지 않고 한 줄에 2개의 코드를 작성할 경우 오류가 발생합니다.</p>
+            <br>
+            <p>1. 코드를 한 줄을 작성한 후에는 <strong>세미콜론(;)</strong>을 쓰는 것이 좋습니다.</p>
+            <p>2. 세미콜론을 쓰지 않고 한 줄에 2개의 코드를 작성할 경우 오류가 발생합니다.</p>
             <div class="code">
 <pre><code>ex) document.write("hi") document.write("bye")  (X)
 ex) document.write("hi"); document.write("bye");  (O)
 </pre></code>
             </div>
-            <p>3. 코드를 작성 할때는 한줄에 한 문장만 작성하는 것이 가독성을 위해 좋습니다.</p>
-            <p>4. 문자형 데이터를 작성할 때는 큰따옴표("")와 작은따옴표('')의 겹침 오류를 주의해야 합니다.</p>
+            <br>
+            <p>3. 코드를 작성 할때는 한줄에 한 <strong>문장</strong>만 작성하는 것이 가독성을 위해 좋습니다.</p>
+            <p>4. 문자형 데이터를 작성할 때는 <strong>큰따옴표("")와 작은따옴표('')의 겹침 오류</strong>를 주의해야 합니다.</p>
             <div class="code">
 <pre><code>큰따옴 겹칩 오류
 document.write("책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.");
@@ -65,7 +86,12 @@ document.write('책에 "자바스크립트는 대소문자를 구분해야 합�
 document.write("책에 \"자바스크립트는 대소문자를 구분해야 합니다\"라고 나와 있다.");
 </pre></code>
             </div>
-            
+            <br>
+            <p>5. 코드를 작성할 때 <strong>중괄호{} 또는 소활호()의 짝</strong>이 맞아야 합니다.</p>
+            <div class="code">
+<pre><code>document.write("welcome!"; (X) 
+document.write("welcome!"); (O)</pre></code>      
+            </div>      
         </div>
     </main>
 
