@@ -34,21 +34,18 @@
     font-display: swap;
 }
 
-
-
-
-
-
-/* rest */
-
+/* reset */
 * {
     margin: 0;
     padding: 0;
     font-family: 'NexonLv1Gothic';
 }
+
+/* list */
 li {
     list-style: none;
 }
+
 a {
     text-decoration: none;
     color: #000;
@@ -60,6 +57,7 @@ a {
     right: 20px;
     bottom: 20px;
 }
+
 .top a {
     width: 60px;
     height: 60px;
@@ -67,44 +65,49 @@ a {
     border-radius: 50%;
     text-align: center;
     background: #000;
-    color : #fff;
+    color: #fff;
     display: block;
 }
 
-
 /* header */
-
 #header {
     padding: 40px;
-    border-bottom: 1px dashed #cdcdcd;
+    border-bottom: 1px dashed #CDCDCD;
 }
+
 #header h1 {
     margin-bottom: 30px;
     font-size: 40px;
 }
+
 #header nav ul li {
     display: inline;
 }
+
 #header nav ul li a {
     font-size: 20px;
     border: 1px solid #000;
-    padding: 10px 30px 10px 30px;
+    padding: 12px 30px 10px 30px;
     border-radius: 30px;
     display: inline-block;
     margin-bottom: 10px;
 }
+
 #header nav ul li.active a {
     background: #000;
     color: #fff;
 }
+
 @media (max-width: 800px) {
     #header {
-        padding: 20px 0;
+        padding: 20px;
     }
+
     #header h1 {
         margin-bottom: 15px;
-        font-size: 24px;
+        font-size: 28px;
     }
+
     #header nav ul li a {
         font-size: 16px;
         padding: 8px 15px 6px 15px;
@@ -117,23 +120,25 @@ a {
     padding: 40px;
 }
 
-/* list */
 .list {
     padding-bottom: 40px;
-    border-bottom: 1px dotted #cdcdcd;
+    border-bottom: 1px dotted #CDCDCD;
 }
+
 .list ul li {
     font-size: 18px;
     line-height: 1.8;
 }
 
-@media (max-width:800) {
+@media (max-width: 800px) {
     #main {
-        padding: 20px 0;
+        padding: 20px;
     }
+
     .list {
         padding-bottom: 20px;
     }
+
     .list ul li {
         font-size: 14px;
         line-height: 1.6;
@@ -143,26 +148,29 @@ a {
 /* note */
 .note {
     padding: 40px 0;
-    border-bottom: 1px dotted #dedede;
+    border-bottom: 1px dotted #CDCDCD;
 }
-.note a{
-   font-size: 16px;
-   background: #000;
-   color: #fff;
-   border-radius: 20px;
-   padding: 7px 15px 5px 15px;
-   display: inline-block;
-   margin-bottom: 5px;
+
+.note a {
+    font-size: 16px;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 7px 15px 5px 15px;
+    display: inline-block;
+    margin-bottom: 5px;
 }
-.note a:hover{
+
+.note a:hover {
     text-decoration: underline;
 }
 
-@media (max-width:800) {
+@media (max-width: 800px) {
     .note {
         padding: 20px 0;
     }
-    .note a { 
+
+    .note a {
         font-size: 14px;
     }
 }
@@ -171,9 +179,11 @@ a {
 .script {
     padding: 40px 0;
 }
+
 .script .sample {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
+
 .script .sample h3 {
     background: #F2F2F2;
     font-size: 16px;
@@ -182,23 +192,27 @@ a {
     border: 1px solid #E6E6E6;
     font-weight: 500;
 }
+
 .script .sample .code pre {
     margin: 0 !important;
     border-radius: 0 0 5px 5px;
 }
 
-@media (max-width:800) {
+@media (max-width: 800px) {
     .script {
         padding: 20px 0;
     }
+
     .script .sample {
         margin-bottom: 40px;
     }
+
     .script .sample h3 {
         font-size: 14px;
         padding: 10px 15px 8px 15px;
     }
-    .script .sample .code pre {
-       font-size: 14px;
-    }
+}
+
+.script .sample .code pre {
+    font-size: 14;
 }
