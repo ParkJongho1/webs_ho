@@ -6,132 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reference</title>
-    <style>
-        @font-face {
-            font-family: 'NexonLv1Gothic';
-            font-weight: 300;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
-            font-display: swap;
-        }
 
-        @font-face {
-            font-family: 'NexonLv1Gothic';
-            font-weight: 400;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'NexonLv1Gothic';
-            font-weight: 700;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
-            font-display: swap;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'NexonLv1Gothic';
-            line-height: 1.6;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        hr {
-            margin: 5% 0;
-            border-style: dashed;
-            border-color: #e6e6e6;
-            border-width: 0px;
-            border-bottom-width: 1px;
-        }
-
-        body {
-            padding: 5%;
-        }
-
-        h1 {
-            padding-bottom: 20px;
-            font-size: 50px;
-        }
-
-        .list1 li {
-            display: inline;
-        }
-
-        .list1 li a {
-            border: 1px solid #333;
-            padding: 8px 30px 5px 30px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .refer {
-            background: #000;
-            color: #fff;
-            padding: 2 10px 0 10px;
-            border-radius: 30px;
-        }
-
-        h1 {
-            font-size: 80px;
-        }
-
-        h2 {
-            margin-top: 30px;
-            background-color: #000;
-            color: #fff;
-            display: inline-block;
-            margin-bottom: 10px;
-            font-weight: 400;
-            padding: 3px 10px 0 10px;
-            font-size: 26px;
-        }
-
-        h3 {
-            font-size: 24px;
-        }
-
-        .sample {
-            border-radius: 5px;
-        }
-
-        .sample pre {
-            margin: 0 !important;
-            border-radius: 5px 5px 5px 5px !important;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/reference.css">
     <link rel="stylesheet" href="../assets/css/prism.css">
 </head>
 
 <body>
     <h1><a href="javascript01.html">자바스크립트 기초문법</a></h1>
+
+
     <h2>자바스크립트 선언문</h2>
-    <p>
-        선언문은 자바스크립트 코드를 작성할 영역을 선언하는 것이라고 이해하면 됩니다.<br>
-        &lt;script&gt;라는 태그로 선언문이 시작된 곳부터 &lt;/script&gt;라는 태그로 종료된 곳까지를 스크립트 영역이라고 부릅니다.<br><br>
+    <p>선언문은 자바스크립트 코드를 작성할 영역을 선언하는 것이라고 이해하면 됩니다.</p>
+    <p>&lt;script&gt;라는 태그로 선언문이 시작된 곳부터 &lt;/script&gt;라는 태그로 종료된 곳까지를 스크립트 영역이라고 부릅니다.</p><br>
     </p>
 
     <div id="decl01" class="sample">
@@ -144,11 +30,12 @@
     </div>
 
 
-    <p>
+    
         <br>
-        선언문은 &lt;head&gt; 태그 영역 또는 &lt;body&gt; 태그 영역에 선언하면 됩니다.<br>
-        우리나라 개발자의 대부분은 &lt;head&gt; 태그 영역에 선언 하고 있습니다. 우리도 &lt;head&gt; 태그 영역에 선언하겠습니다.<br>
-        다음은 선언문을 작성하는 예제입니다.<br><br>
+        <p>선언문은 &lt;head&gt; 태그 영역 또는 &lt;body&gt; 태그 영역에 선언하면 됩니다.</p>
+        <p>우리나라 개발자의 대부분은 &lt;head&gt; 태그 영역에 선언 하고 있습니다. 우리도 &lt;head&gt; 태그 영역에 선언하겠습니다.</p>
+        <p>다음은 선언문을 작성하는 예제입니다.</p><br>
+
         <div id="decl02" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    &lt;!DOCTYPE html&gt;
@@ -166,13 +53,15 @@
             </div>
         </div>
         <br>
-        document는 문서 객체이며 문서 출력 메서드인 write()를 이용하여 데이터를 문서에 출력할 때 사용합니다.<br><br>
+        <p>document는 문서 객체이며 문서 출력 메서드인 write()를 이용하여 데이터를 문서에 출력할 때 사용합니다.</p><br>
     </p>
 
+
     <h2>자바스크립트 주석 처리</h2>
-    <p>
-        자바스크립트 선언문 안에서 코드가 아닌 설명글을 넣고 싶을 때는 주석 처리를 하면 됩니다.<br>
-        이때 한 줄 주석일 경우에는 '//한줄 설명글'로 작성하고, 여러 줄 주석 일 경우에는 '/*여러줄 설명글*/'로 작성하면 됩니다.<br><br>
+    
+        <p>자바스크립트 선언문 안에서 코드가 아닌 설명글을 넣고 싶을 때는 주석 처리를 하면 됩니다.</p>
+        <p>이때 한 줄 주석일 경우에는 '//한줄 설명글'로 작성하고, 여러 줄 주석 일 경우에는 '/*여러줄 설명글*/'로 작성하면 됩니다.</p><br>
+
         <div id="decl03" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    기본형 :
@@ -184,15 +73,17 @@
             </div>
         </div>
         <br>
-        코드를 작성할 때 이렇게 설명글을 달아 놓으면 시간이 흘러도 잊어버리지 않겠죠?<br><br>
+        <p>코드를 작성할 때 이렇게 설명글을 달아 놓으면 시간이 흘러도 잊어버리지 않겠죠?</p><br>
     </p>
 
+
     <h2>내부 스크립트 외부로 분리하기</h2>
-    <p>
-        앞의 예제[statement_c.html]에서 HTML 내부에 작성된 자바스크립트느 마지막에는 외부로 분리하는 작업을 해야 합니다.<br>
-        그렇게 하면 자바스크립트 소스 찾기도 쉬울 뿐만 아니라 누군가가 소스를 손상시킬 염려도 없습니다.<br>
-        즉, 외부로 분리하는 주된 목적은 프로젝트 관리를 원할하게 하기 위함입니다.<br>
-        다음은 외부 자바스크립트 연동 코드로 파일을 연결하는 기본형입니다.<br><br>
+    
+        <p>앞의 예제[statement_c.html]에서 HTML 내부에 작성된 자바스크립트느 마지막에는 외부로 분리하는 작업을 해야 합니다.</p>
+        <p>그렇게 하면 자바스크립트 소스 찾기도 쉬울 뿐만 아니라 누군가가 소스를 손상시킬 염려도 없습니다.</p>
+        <p>즉, 외부로 분리하는 주된 목적은 프로젝트 관리를 원할하게 하기 위함입니다.</p>
+        <p>다음은 외부 자바스크립트 연동 코드로 파일을 연결하는 기본형입니다.</p><br>
+
         <div id="decl04" class="sample">
             <div class="code">
                 <pre
@@ -201,12 +92,14 @@
         </div>
 
         <br>
-        내부 스크립트를 외부로 분리하려면 따로 파일을 만들어서 저정해야 합니다.<br>
-        즉, HTML 파일과 JS(자바스크립트) 파일을 분리하여 HTML 내에서 JS(자바스크립트) 파일을 연동하면 됩니다.<br><br>
+        <p>내부 스크립트를 외부로 분리하려면 따로 파일을 만들어서 저정해야 합니다.</p>
+        <p>즉, HTML 파일과 JS(자바스크립트) 파일을 분리하여 HTML 내에서 JS(자바스크립트) 파일을 연동하면 됩니다.</p><br>
     </p>
+
     <h3>내부 스크립트 분리하기</h3>
-    <p>자바스크립트 소스를 분리 하므로서, 소스 찾기도 쉬울 뿐만 아니라 누군가가 소스를 손상 시킬 염려도 없습니다.<br>
-        즉 외부로 분리하는 주된 목적은 프로젝트 관리를 원할하게 하기위함입니다.<br><br>
+        <p>자바스크립트 소스를 분리 하므로서, 소스 찾기도 쉬울 뿐만 아니라 누군가가 소스를 손상 시킬 염려도 없습니다.</p>
+        <p>즉 외부로 분리하는 주된 목적은 프로젝트 관리를 원할하게 하기위함입니다.</p><br>
+
         <div id="decl05" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    &lt;script src="JS 파일결로"&gt;&lt;/script&gt;</code></pre>
@@ -214,14 +107,15 @@
         </div>
         
         <br>
-        1. 다음과 같은 코를 따로 저장을 해줍니다<br><br>
+        <p>1. 다음과 같은 코를 따로 저장을 해줍니다</p><br>
         <div id="decl06" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    01 : document.write("환영합니다");</code></pre>
             </div>
         </div>
         <br>
-        2. 새로운 파일을 열어 다음과 같이 소스를 작성하여 example.js 파일을 연동해보겠습니다.<br><br>
+        <p>2. 새로운 파일을 열어 다음과 같이 소스를 작성하여 example.js 파일을 연동해보겠습니다.</p><br>
+
         <div id="decl07" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    &lt;!DOCTYPE html&gt;
@@ -237,32 +131,37 @@
             </div>
         </div>
         <br>
-        내부 스크립트가 분리되었습니다. 이렇게 분리하면 소스를 분석할 때 찾기 쉬울 뿐 아니라 다른 개발자가 잘못하여 소스를 손상시킬 일도 없겠죠.<br><br>
-    </p>
+        <p>내부 스크립트가 분리되었습니다. 이렇게 분리하면 소스를 분석할 때 찾기 쉬울 뿐 아니라 다른 개발자가 잘못하여 소스를 손상시킬 일도 없겠죠.<br></p>
+
 
     <h2>코드 입력 시 주의 사항</h2>
-    <p>
-        다음은 자바스크립트를 작성할 때 주의해야 할 몇 가지 사항입니다. 지금은 읽어도 이해가 안 될 수 있습니다.<br>
-        일단 가볍게 읽고 넘어가세요.<br><br>
-        1. 자바스크립트는 대·소문자를 구분하여 작성합니다.<br><br>
+    
+        <p>다음은 자바스크립트를 작성할 때 주의해야 할 몇 가지 사항입니다. 지금은 읽어도 이해가 안 될 수 있습니다.</p><br>
+        <p>일단 가볍게 읽고 넘어가세요.</p><br>
+        <p>1. 자바스크립트는 대·소문자를 구분하여 작성합니다.</p><br>
+
         <div id="decl08" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    날짜 객체 생성 : New date(); (X)
     날짜 객체 생성 : new Date(); (O)</code></pre>
             </div>
         </div>
+
         <br>
-        2. 코드를 한 줄을 작성한 후에는 세미콜론(;)을 쓰는 것이 좋습니다.<br>
-        &nbsp;&nbsp;&nbsp;세미콜론을 쓰지 않으면 다음 예제처럼 한 줄에 2개의 코드를 작성할 경우 오류가 발생합니다.<br><br>
+        <p>2. 코드를 한 줄을 작성한 후에는 세미콜론(;)을 쓰는 것이 좋습니다.</p>
+        <p>&nbsp;&nbsp;&nbsp;세미콜론을 쓰지 않으면 다음 예제처럼 한 줄에 2개의 코드를 작성할 경우 오류가 발생합니다.</p><br>
+
         <div id="decl09" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    document.write("hi") document.write("bye")  (X)
     document.write("hi"); document.write("bye");  (O)</code></pre>
             </div>
         </div>
+
         <br>
-        3. 하지만 코드를 작성 할때는 한줄에 한 문장만 작성하는 것이 가독성을 위해 좋습니다.<br><br>
-        4. 몬자형 데이터를 작성할 때는 큰따옴표("")와 작은따옴표('')의 겹침 오류를 주의해야 합니다.<br><br>
+        <p>3. 하지만 코드를 작성 할때는 한줄에 한 문장만 작성하는 것이 가독성을 위해 좋습니다.</p><br>
+        <p>4. 문자형 데이터를 작성할 때는 큰따옴표("")와 작은따옴표('')의 겹침 오류를 주의해야 합니다.</p><br>
+
         <div id="decl10" class="sample">
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">    큰따옴 겹칩 오류
@@ -272,9 +171,11 @@
     document.write("책에 \"자바스크립트는 대소문자를 구분해야 합니다\"라고 나와 있다.");</code></pre>
             </div>
         </div>
+
         <br>
-        5.코드를 작성할 때 중괄호{} 또는 소활호()의 짝이 맞아야 합니다.<br><br>
+        <p>5.코드를 작성할 때 중괄호{} 또는 소활호()의 짝이 맞아야 합니다.</p><br>
         <div id="decl11" class="code">
+
             <pre class="line-numbers"><code class="language-js">    document.write("welcome!"; (X)
     document.write("welcome!"); (O)</code></pre>
         </div>
