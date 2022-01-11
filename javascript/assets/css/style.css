@@ -247,7 +247,6 @@ a {
 }
 .doc .table table {
     width: 100%;
-    min-width: 800px;
     border: 1px solid #cdcdcd;
     border-collapse: collapse;
     /*table-layout: fixed;*/
@@ -255,13 +254,18 @@ a {
 .doc .table table th {
     border-bottom: 1px solid #cdcdcd;
     border-right: 1px solid #cdcdcd;
-    background-color: #f5f5f5;
+    background-color: #cdd1ce;
     padding: 5px;
 }
 .doc .table table td {
     border-bottom: 1px solid #cdcdcd;
     border-right: 1px solid #cdcdcd;
     padding: 5px;   
+}
+.doc .table table tr:hover {
+    background: #73e956;
+    color: #000;
+    cursor: pointer;
 }
 .doc .table table .middle {
     vertical-align: middle;
@@ -277,9 +281,9 @@ a {
     .doc .line {
         padding: 10px 15px;
     }
-    .doc .table table {
+    /*.doc .table table {
         overflow-x: scroll;
-    }
+    } */
 }
 
 /* result */
