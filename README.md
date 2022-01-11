@@ -7,10 +7,10 @@ https://parkjongho1.github.io/webs_ho/
 https://parkjongho1.github.io/webs_ho/javascript/index.html
 
 ## HTML 레퍼런스
-https://parkjongho1.github.io/webs_ho/script/html/index.html
+https://parkjongho1.github.io/webs_ho/refer/html.html
 
 ## CSS 레퍼런스
-https://parkjongho1.github.io/webs_ho/script/css/index.html
+https://parkjongho1.github.io/webs_ho/refer/css.html
 
 ## 레이아웃
 https://parkjongho1.github.io/webs_ho/layout/index.html
