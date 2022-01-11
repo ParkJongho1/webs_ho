@@ -281,9 +281,9 @@ a {
     .doc .line {
         padding: 10px 15px;
     }
-    /*.doc .table table {
-        overflow-x: scroll;
-    } */
+    .doc .table table {
+       min-width: 400px;
+    }
 }
 
 /* result */
