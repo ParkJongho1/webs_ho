@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="css.html">라인 중학교 1학년 코딩반</a></h1>
@@ -35,6 +37,73 @@
         <div class="refer">
             <div class="doc">
                 <h3>CSS 색상</h3>
+                <p>CSS를 통해 색을 표현하는 방법</p>
+
+                <h3><strong>색상 이름 표기법</strong></h3>
+                <p>색상 이름으로 표현 가능하다.
+                    W3C에서 정의한 16개의 HTML4 표준 색상 이름은 다음과 같다.</p>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>black</th>
+                            <th>aqua</th>
+                            <th>blue</th>
+                            <th>green</th>
+                        </tr>
+                        <tr>
+                            <th>gray</th>
+                            <th>white</th>
+                            <th>lime</th>
+                            <th>maroon</th>
+                        </tr>
+                        <tr>
+                            <th>silver</th>
+                            <th>olive</th>
+                            <th>red</th>
+                            <th>purple</th>
+                        </tr>
+                        <tr>
+                            <th>navy</th>
+                            <th>teal</th>
+                            <th>fuchsia</th>
+                            <th>yellow</th>
+                        </tr>
+                    </table>
+                    <h4>색상 이름 사용 예시</h4>
+                    <div class="code">
+<pre><code>&lt;style&gt;
+    .black { color : black; }
+    .white { color : white; }
+    .navy { color : navy; }
+&lt;/style&gt;
+</code></pre>
+            </div>
+
+                <h3>RGB 색상값 표기법</h3>
+                <p>R (RED), G(GREEN), B(BLUE) 세 가지 색의 혼합을 표현한다.</p>
+                <p>부터 255 사이의 범위를 가지며 이를 (R,G,B)로 표현한다.</p>
+                <h4>RGB표현 사용 예시</h4>
+                <div class="code">
+<pre><code>&lt;style&gt;
+    .blue { color: rgb(0,0,255); }
+    .green { color: rgb(0,128,0); }
+    .silver { color: rgb(192,192,192); }
+&lt;/style&gt;
+</code></pre>
+            </div>
+
+                <h3>16진수 색상값으로 표현</h3>
+                <p>16진수 색상값은 RGB 색상값을 각각 16진수로 변환한 것이다.</p>
+                <p>RGB 색상의 기본색(Red, Green, Blue)은 각각 00부터 FF까지의 범위를 가진다.</p>
+                <h4>16진수표현 사용 예시</h4>
+                <div class="code">
+<pre><code>&lt;style&gt;
+    .red { color: #ff0000; }
+    .white { color: #fff; }
+    .silver { color: #C0C0C0; }
+&lt;/style&gt;
+</code></pre>
+                </div>
             </div>
         </div>
         <!-- //refer -->
@@ -42,4 +111,5 @@
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </body>
+
 </html>
