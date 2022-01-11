@@ -39,12 +39,16 @@
             <h3>산술연산자</h3>
             <p>산술 연산자에는 더하기(+), 빼기(-), 곱하기(*), 나누기(/), 나머지(%)가 있습니다.</p>
             <p>산술 연산자로 연산을 하기 위해서는 연산 데이터가 반드시 2개 있어야 합니다.</p>
-            <table border="3px">
+            <div class="table">
+                <table>
+                <thead>
                 <tr>
-                    <td>종류</td>
-                    <td>기본형</td>
-                    <td>설명</td>
+                    <th>종류</th>
+                    <th>기본형</th>
+                    <th>설명</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>+</td>
                     <td>A+B</td>
@@ -69,8 +73,10 @@
                     <td>%</td>
                     <td>A%B</td>
                     <td>나머지</td>
-                </tr>               
-            </table>
+                </tr>    
+                </tbody>           
+                </table>
+            </div>
             <p>아래의 예시를 통해 산술 연산자를 어떻게 사용하는지 알아보겠습니다.</p>
             <div class="code">
 <pre><code>&lt;script&gt;
@@ -105,11 +111,12 @@ ex) "100" + 200 = "100200"
             <h3>대입 연산자</h3>
             <p>대입연산자(=)는 연산된 데이터를 변수에 저장할 때 사용합니다.</p>
             <p>복합 대입 연산자(+=, -=, *=, /=, %=)는 산술 연산자와 대입연산자가 복합적으로 적용된 것을 말합니다.</p>
-            <table class="table">
+            <div class="table">
+            <table>
             <thead>
             <tr>
-                <td>종류</td>
-                <td>풀이</td>
+                <th>종류</th>
+                <th>풀이</th>
             </tr>
             <tr>
                 <td>A = B</td>
@@ -135,6 +142,7 @@ ex) "100" + 200 = "100200"
             </tr>
             </tbody>
             </table>
+            </div>
             <p>아래의 예시를 통해 대입 연산자를 어떻게 사용하는지 알아보겠습니다.</p>
             <div class="code">
 <pre><code>&lt;script&gt;
@@ -192,11 +200,15 @@ ex) "100" + 200 = "100200"
             <h3>비교 연산자</h3>
             <p>두 데이터를 '크다, 작다, 같다'와 같이 비교할 때 사용하는 연산자입니다.</p>
             <p>연산된 결괏값은 true(참) 또는 false(거짓)로 논리형 데이터를 반환합니다.</p>
-            <table border="3px">
+            <div class="table">
+            <table>
+                <thead>
                 <tr>
-                    <td>종류</td>
-                    <td>설명</td>
+                    <th>종류</th>
+                    <th>설명</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>&gt;</td>
                     <td>a &gt; b, a가 b보다 크다.  (참: true, 거짓: false) </td>
@@ -229,7 +241,9 @@ ex) "100" + 200 = "100200"
                     <td>!==</td>
                     <td>a !== b, a와b가 같지 않거나 데이터형이 같지 않다.</td>
                 </tr>
+                </tbody>
             </table>
+            </div>
             <p>아래 예시를 통해 비교 연산자의 결괏괎을 알아보겠습니다.</p>
             <div class="code">
 <pre><code>&lt;script&gt;
@@ -262,11 +276,15 @@ ex) "100" + 200 = "100200"
             <h3>논리 연산자</h3>
             <p>논리 연산자에는 ||(OR 연산자), &&(AND 연산자), !(NOT 연산자)가 있으며, 논리 연산자는 피연산자가 논리형 데이터인
                 true 또는 false로 결괏값을 반환합니다.</p>
-            <table border="3px">
+            <div class="table">
+            <table>
+                <thead>
                 <tr>
-                    <td>종류</td>
-                    <td>설명</td>
+                    <th>종류</th>
+                    <th>설명</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>||(OR 연산자)</td>
                     <td>or 연산자라 부르며, 피연산자 중 값이 하나라도 true가 존재하면 true로 결괏값을 반환합니다.</td>
@@ -279,8 +297,9 @@ ex) "100" + 200 = "100200"
                     <td>!(NOT 연산자)</td>
                     <td>not 연산자라 부르며, 단항 연산자입니다. 피연산자의 값이 true이면 반대로 false로 결괏값을 반환합니다.</td>
                 </tr>
+                </tbody>
             </table>
-      
+        </div>
         </div>
     </main>
 

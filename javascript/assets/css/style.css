@@ -231,6 +231,9 @@ a {
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
     background: #bbf1be;
+    overflow-x: scroll;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 .doc strong {
     background: #97f0ad;
@@ -238,6 +241,45 @@ a {
     border-radius: 20px;
     padding: 2px 15px 0px 15px;
     display: inline-block;
+}
+.doc .table {
+    overflow-x: auto;
+}
+.doc .table table {
+    width: 100%;
+    min-width: 800px;
+    border: 1px solid #cdcdcd;
+    border-collapse: collapse;
+    /*table-layout: fixed;*/
+}
+.doc .table table th {
+    border-bottom: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+    background-color: #f5f5f5;
+    padding: 5px;
+}
+.doc .table table td {
+    border-bottom: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+    padding: 5px;   
+}
+.doc .table table .middle {
+    vertical-align: middle;
+}
+
+@media (max-width: 800px){
+    .doc {
+        font-size: 14px;
+    }
+    .doc h2 {
+        font-size: 18px;
+    }
+    .doc .line {
+        padding: 10px 15px;
+    }
+    .doc .table table {
+        overflow-x: scroll;
+    }
 }
 
 /* result */
@@ -270,26 +312,3 @@ a {
 }
     
 
-/* table예시용 */
-
-.doc table {
-    border-collapse:collapse;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    margin: 0px 10px 20px 0px;
-}
-.doc table th {
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #000;
-    background-color: #80ebc0 ;
-    border: 1px solid #ccc;
-}
-.doc table td {
-    padding: 10px;
-    vertical-align: top;
-    border: 1px solid #ccc;
-    background: #fff;
-}
