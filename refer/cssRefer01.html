@@ -34,7 +34,9 @@
         <div class="refer">
             <div class="doc">
                 <h3>CSS란?</h3>
-                <p>css는 ㄴㅁㅇㄴㅁㅇㄴㅁㅇ</p>
+                <p>CSS는 Cascading Style Sheets 의 약자입니다.</p>
+                <p>CSS는 HTML 요소들이 각종 미디어에서 어떻게 보이는가를 정의하는 데 사용되는 스타일 시트 언어입니다.</p>
+                <p>HTML이 실제 표시되는 방법(색상, 크기, 폰트, 레이아웃)을 지정하여 콘텐츠를 꾸며주는 정적인 언어입니다.</p>
 
                 <h3>CSS 주석 표시</h3>
                 <div class="code">
@@ -42,22 +44,54 @@
                 </div>
                 
                 <h3>CSS 선언 방법</h3>
-                <h4>내부 스타일</h4>
-                <p>.........</p>
+                <h4>내부 스타일(Internal style sheet)</h4>
+                <p>태그가 아닌 <strong>html 문서 내에</strong> CSS를 적용하는 방법</p>
+
                 <div class="code">
-<pre><code>코드 내용</pre></code>  
+<pre><code>&lt;&lt;!DOCTYPE html&gt;
+&lt;html lang="ko&gt;
+&lt;head&gt;
+    &lt;style&gt;
+    body { background-color : red; }
+      p  { color: blue;  text-decoration: underline; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;내부 스타일을 이용하여 스타일을 적용하였습니다.&lt;p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></code>  
                 </div>
 
                 <h4>외부 스타일</h4>
-                <p>.........</p>
+                <p>스타일 시트를 <strong>외부 파일로 저장</strong>하여 외부 파일을 html페이지로 불러오는 방법</p>
                 <div class="code">
-<pre><code>코드 내용</pre></code>  
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="외부 파일이 위치한 경로를 입력 합니다."&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></code>  
                 </div>
 
                 <h4>인라인 스타일 </h4>
-                                <p>.........</p>
+                <p><strong>각각의 태그</strong>마다 스타일을 적용하는 방법</p>
+                <p>1. link 태그: 외부 파일과 연결시 사용 되는 태그</p>
+                <p>2. type 속성: 외부 파일 종류가 어떠한 것인지 정하는것</p>
+                <p>3. rel 속성: html 파일과 외부 파일 간의 관계를 나타내는것</p>
+                <p>4. href 속성: 외부 파일의 위치를 입력하는것.</p>
                 <div class="code">
-<pre><code>코드 내용</pre></code>  
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p style="color:green; text-decoration:underline"&gt;
+    인라인 스타일을 이용하여 스타일을 적용하였습니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></code>  
                 </div>
             </div>
 
