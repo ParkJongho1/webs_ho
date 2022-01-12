@@ -159,7 +159,7 @@
     }
     func();
 
-    document.write("함수 박");
+    document.write("함수 밖");
     document.write(x);
     document.write(y);
     document.write(z);
@@ -530,7 +530,7 @@
             }
             func();
 
-            document.querySelector(".result04_1").innerHTML ="함수 밖<br>" + x + "<br>" + y + "<br>" + z;
+            document.querySelector(".result04_1").innerHTML ="함수 밖<br>" + x + "<br>" + y + "<br>" + "undefined";
         }
 
         //05. 상수 : 데이터 저장소 + 데이터 변경(X)
