@@ -298,7 +298,7 @@ a {
 .result div {
     background: #272822;
     padding: 20px;
-    color: #fff;
+    color: rgb(204, 134, 134);
     border-radius: 0 0 5px 5px;
     font-size: 16px;
     line-height: 1.4;
