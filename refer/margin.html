@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="css.html">라인 중학교 1학년 코딩반</a></h1>
@@ -20,39 +22,80 @@
     </header>
     <main id="contents">
         <h2><a href="css.html"><em>Margin/Padding</em></a></h2>
-   
+
         <div class="refer">
             <div class="doc">
-                <div class="code">
-<pre><code><strong>margin</strong> 바깥쪽 여백
-margin-top: 10px;
-margin-left: 11px;
-margin-bottom: 12px;
-margin-right: 13px;
-margin: 10px;                //위,오른쪽,아래,왼쪽 10px
-margin: 10px 11px;           // 위,아래 10px 왼쪽,오른쪽 11px
-margin: 10px 11px 12px;      // 위 10px 왼쪽,오른쪽 11px 아래12px
-margin: 10px 11px 12px 13px; //위 10px 오른쪽 11px 아래 12px 왼쪽 13px
-                                                       //방향의 위 오른쪽 아래 왼쪽 순서로 설정합니다.
-margin: auto;                // 자동값, 기본값 (padding - 없음)
-margin: 0 auto;              // 가운데 정렬(블록구조)
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>margin 방향 마다 지정</th>
+                            <th>padding 방향 마다 지정</th>
+                        </tr>
+                        <tr>
+                            <td>margin-top</td>
+                            <td>padding-top</td>
+                        </tr>
+                        <tr>
+                            <td>margin-right</td>
+                            <td>padding-right</td>
+                        </tr>
+                        <tr>
+                            <td>margin-bottom</td>
+                            <td>padding-bottom</td>
+                        </tr>
+                        <tr>
+                            <td>margin-left</td>
+                            <td>padding-left</td>
+                        </tr>
+                        <tr>
+                            <th>margin</th>
+                            <th>방향(방향의 위 오른쪽 아래 왼쪽 순서로 설정합니다.)</th>
+                        </tr>
+                        <tr>
+                            <td>margin: 10px;</td>
+                            <td>위,오른쪽,아래,왼쪽 10px</td>
+                        </tr>
+                        <tr>
+                            <td>margin: 10px 11px;</td>
+                            <td>위,아래 10px 오른쪽,왼쪽 11px</td>
+                        </tr>
+                        <tr>
+                            <td>margin: 10px 11px 12px;</td>
+                            <td> 위 10px 왼쪽,오른쪽 11px 아래12px</td>
+                        </tr>
+                        <tr>
+                            <td>margin: 10px 11px 12px 13px;</td>
+                            <td>위 10px 오른쪽 11px 아래 12px 왼쪽 13px</td>
+                        </tr>
+                        <tr>
+                            <th>padding</th>
+                            <th>방향(방향의 위 오른쪽 아래 왼쪽 순서로 설정합니다.)</th>
+                        </tr>
+                        <tr>
+                            <td>padding: 10px;</td>
+                            <td>위,오른쪽,아래,왼쪽 10px</td>
+                        </tr>
+                        <tr>
+                            <td>padding: 10px 11px;</td>
+                            <td>위,아래 10px 오른쪽,왼쪽 11px</td>
+                        </tr>
+                        <tr>
+                            <td>padding: 10px 11px 12px;</td>
+                            <td> 위 10px 왼쪽,오른쪽 11px 아래12px</td>
+                        </tr>
+                        <tr>
+                            <td>padding: 10px 11px 12px 13px;</td>
+                            <td>위 10px 오른쪽 11px 아래 12px 왼쪽 13px</td>
+                        </tr>
 
-<strong>padding</strong> 안쪽 여백
-padding-top: 10px;
-padding-left: 11px;
-padding-bottom: 12px;
-padding-right: 13px;
-padding: 10px;                  // 위,오른쪽,아래,왼쪽 10px
-padding: 10px 11px;             // 위,아래 10px 왼쪽,오른쪽 11px
-padding: 10px 11px 12px;        // 위 10px 왼쪽,오른쪽 11px 아래12px
-padding: 10px 11px 12px 13px;   // 위 10px 오른쪽 11px 아래 12px 왼쪽 13px
-                                                        //방향의 위 오른쪽 아래 왼쪽 순서로 설정합니다.
-</pre></code>
-                </div>   
-        </div>
-        <!-- //refer -->
+                    </table>
+                </div>
+
+            </div>
+            <!-- //refer -->
     </main>
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </body>
+
 </html>
