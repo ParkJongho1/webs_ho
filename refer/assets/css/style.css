@@ -170,7 +170,7 @@ body {
 .doc .code {
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
-    overflow-x: scroll;
+    min-width: 800px;
     background: #dedede;
 }
 .doc strong {
@@ -225,5 +225,9 @@ body {
     }
     .doc h3 {
         font-size: 20px;
+    }
+
+    .doc .code {
+        overflow-x: scroll;
     }
 }
