@@ -16,6 +16,9 @@
 </head>
 
 <body>
+
+    <div class="top"><a href="#header">top</a></div>
+
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
         <nav>
@@ -25,6 +28,9 @@
                 <li class="active"><a href="javascript03.html">데이터 실행하기</a></li>
                 <li><a href="javascript04.html">데이터 제어하기</a></li>
             </ul>
+            <ul>
+                <li><a href="practice01.html">데이터 연습하기</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -32,9 +38,9 @@
         <div class="list">
             <ul>
                 <li>01. 선언적 함수</li>
-                <li>01. 익명 함수</li>
-                <li>01. 매개변수 함수</li>
-                <li>01. 리턴값 함수</li>
+                <li>02. 익명 함수</li>
+                <li>03. 매개변수 함수</li>
+                <li>04. 리턴값 함수</li>
                 <li>01. 화살표 함수 : 선언적 함수</li>
                 <li>01. 화살표 함수 : 익명 함수</li>
                 <li>01. 화살표 함수 : 매개변수 함수</li>
@@ -51,6 +57,133 @@
                 <li>01. 클래스</li>
             </ul>
         </div>
+        <!-- //list -->
+
+        <div class="note">
+            <a href="reference08.html">함수</a>
+        </div>
+        <!-- //note -->
+
+        <div class="script">
+            <!-- sample01 -->
+            <div id="sample1" class="sample">
+                <h3>01. 선언적 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    function func() {
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result01">함수가 실행되었습니다.</div>
+                </div>
+            </div>
+            <!-- //sample01 -->
+
+      
+            <!-- sample02 -->
+            <div id="sample2" class="sample">
+                <h3>02. 익명 함수</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const func = function () {
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result02">함수가 실행되었습니다.</div>
+                </div>
+            </div>
+            <!-- //sample02 -->
+   
+                <!-- sample03 -->
+                <div id="sample3" class="sample">
+                    <h3>03. 매개변수 함수</h3>
+                    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const func = function (str) {
+        document.write(str);
+    }
+    func("함수가 실행되었습니다.");
+}</code></pre>
+                    </div>
+                    <div class="result">
+                        <h4>결과보기</h4>
+                        <div class="result03">함수가 실행되었습니다.</div>
+                    </div>
+                </div>
+                <!-- //sample03 -->
+
+                    <!-- sample04 -->
+                    <div id="sample4" class="sample">
+                        <h3>04. 리턴값 함수</h3>
+                        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func() {
+        const str = "함수가 실행되었습니다.";
+        return str;
+    }
+    document.write(func());
+}</code></pre>
+                        </div>
+                        <div class="result">
+                            <h4>결과보기</h4>
+                            <div class="result04">함수가 실행되었습니다.</div>
+                        </div>
+                    </div>
+                    <!-- //sample04 -->
+
+                </div>
+                    <!-- //script -->
+
+                    <script>
+                        //데이터 저장 : 변수, 상수, 배열, 객체(저장소)
+                        //변수 : 데이터 저장, 병경, 추가
+                        //상수 : 데이터 저장, 변경X
+                        //배열 : 데이터 저장, 여러개
+                        //객체 : 데이ㅏ터 저장, 여러개, 키와 값
+                        //데이터 실행 : 함수(실행문)
+                        //웹표준 : 표준안
+                        //웹접근성 : 누구나
+                        //웹호환성 : 브라우저 
+
+                        //01. 선언적 함수
+                        {
+                            // function func() {
+                            //     document.write("함수가 실행되었습니다.");
+                            // }
+                            // func();
+                        }
+                        //02  익명 함수
+                        {
+                            // const func = function () {
+                            //     document.write("함수가 실행되었습니다.");
+                            // }
+                            // func();
+                        }
+                        //03. 매개변수 함수
+                        {
+                            // const func = function (str) {
+                            //     document.write(str);
+                            // }
+                            // func("함수가 실행되었습니다.");
+                        }
+                        //04. 리턴값 함수
+                        {
+                            // function func() {
+                            //     const str = "함수가 실행되었습니다.";
+                            //     return str;
+                            // }
+                            // document.write(func());
+                        }
+                    </script>
+
 
     </main>
 
