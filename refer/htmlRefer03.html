@@ -29,7 +29,7 @@
                 <li><a href="html.html">속성</a></li>
                 <li><a href="htmlRefer01.html">기초 문법</a></li>
                 <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
-                <li  class="active"><a href="htmlRefer03.html">시멘틱 태그</a></li>
+                <li class="active"><a href="htmlRefer03.html">시멘틱 태그</a></li>
             </ul>
         </div>
         <!-- //menu -->
@@ -39,9 +39,9 @@
                 <h3>시멘틱 태그</h3>
                 <p>시멘틱(Semantic)은 "의미의, 의미론적인" 이라는 뜻이다.<br>
                     시맨틱 태그에 의해 컴퓨터가 HTML 요소의 의미를 보다 명확히 해석하고 그 데이터를 활용할 수 있는 시맨틱 웹이 실현될 수 있다.<br>
-                   즉, HTML5에 도입된 시맨틱 태그는 개발자와 브라우저에게 의미있는 태그를 제공하게 된다.</p>
+                    즉, HTML5에 도입된 시맨틱 태그는 개발자와 브라우저에게 의미있는 태그를 제공하게 된다.</p>
 
-                <h4>시멘틱 태그의 장점</h4>   
+                <h4>시멘틱 태그의 장점</h4>
                 <ul>
                     <li>검색엔진최적화(SEO):검색엔진은 태그를 기반으로 페이지 내 검색 키워드의 우선순위를 판단한다.<br>
                         따라서 제목은 h1, 중요한 단어는 strong 또는 em을 사용하는 등 의미에 맞는 올바른 태그르 사용하는 것이 중요하다. </li>
@@ -52,74 +52,236 @@
 
                 <h3>종류</h3>
                 <div class="table">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>&lt;header&gt;</th>
-                            <td>&lt;header&gt; 태그는 태그는 사이트의 소개 및 메뉴 그룹을 나타내는 섹션을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;nav&gt;</th>
-                            <td>&lt;nav&gt; 태그는 내부 페이지 및 외부 페이지에 대한 탐색 링크를 제공하는 페이지 섹션을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;section&gt;</th>
-                            <td>&lt;section&gt; 태그는 주제별 그룹의 콘텐츠 섹션 나타낼 때 사용합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;main&gt;</th>
-                            <td>&lt;main&gt; 태그는 문서의 주요 콘텐츠를 정의합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;aside&gt;</th>
-                            <td>&lt;aside&gt; 태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;article&gt;</th>
-                            <td>&lt;article&gt; 태그는 사이트의 독립적인 컨텐츠 섹션을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;footer&gt;</th>
-                            <td>&lt;footer&gt; 태그는 사이트 관련 정보 및 관련 링크 콘텐츠 섹션을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;details&gt;</th>
-                            <td>&lt;details&gt; 태그는 선택 목록과 자동 완성 기능을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;summary&gt;</th>
-                            <td>&lt;summary&gt; 태그는 접기/펼치기 목록을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;figure&gt;</th>
-                            <td>&lt;figure&gt; 태그는 인용, 도표, 사진, 코드 등의 독립적인 콘텐츠를 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;figcaption&gt;</th>
-                            <td>&lt;figcaption&gt; 태그는 <figure> 요소의 설명 또는 제목을 설정합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;mark&gt;</th>
-                            <td>&lt;mark&gt; 태그는 참조용 표시를 정의합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;time&gt;</th>
-                            <td>&lt;time&gt; 태그는 시간의 특정 기간을 나타낼 때 사용합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;meter&gt;</th>
-                            <td>&lt;meter&gt; 태그는 범위를 측정하는 게이지 정보를 정의합니다.</th>
-                        </tr>
-                        <tr>
-                            <th>&lt;progress&gt;</th>
-                            <td>&lt;progress&gt; 태그는 작업의 진행 상태를 표시하는 바를 나타냅니다.</th>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>&lt;header&gt;</th>
+                                <td>&lt;header&gt; 태그는 태그는 사이트의 소개 및 메뉴 그룹을 나타내는 섹션을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;nav&gt;</th>
+                                <td>&lt;nav&gt; 태그는 내부 페이지 및 외부 페이지에 대한 탐색 링크를 제공하는 페이지 섹션을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;section&gt;</th>
+                                <td>&lt;section&gt; 태그는 주제별 그룹의 콘텐츠 섹션 나타낼 때 사용합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;main&gt;</th>
+                                <td>&lt;main&gt; 태그는 문서의 주요 콘텐츠를 정의합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;aside&gt;</th>
+                                <td>&lt;aside&gt; 태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;article&gt;</th>
+                                <td>&lt;article&gt; 태그는 사이트의 독립적인 컨텐츠 섹션을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;footer&gt;</th>
+                                <td>&lt;footer&gt; 태그는 사이트 관련 정보 및 관련 링크 콘텐츠 섹션을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;details&gt;</th>
+                                <td>&lt;details&gt; 태그는 선택 목록과 자동 완성 기능을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;summary&gt;</th>
+                                <td>&lt;summary&gt; 태그는 접기/펼치기 목록을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;figure&gt;</th>
+                                <td>&lt;figure&gt; 태그는 인용, 도표, 사진, 코드 등의 독립적인 콘텐츠를 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;figcaption&gt;</th>
+                                <td>&lt;figcaption&gt; 태그는 <figure> 요소의 설명 또는 제목을 설정합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;mark&gt;</th>
+                                <td>&lt;mark&gt; 태그는 참조용 표시를 정의합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;time&gt;</th>
+                                <td>&lt;time&gt; 태그는 시간의 특정 기간을 나타낼 때 사용합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;meter&gt;</th>
+                                <td>&lt;meter&gt; 태그는 범위를 측정하는 게이지 정보를 정의합니다.</th>
+                            </tr>
+                            <tr>
+                                <th>&lt;progress&gt;</th>
+                                <td>&lt;progress&gt; 태그는 작업의 진행 상태를 표시하는 바를 나타냅니다.</th>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <h3>HTML5에서 없어진 태그</h3>
+                    <h3>HTML5에서 없어진 태그</h3>
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <thead>
+                                    <th>태그</th>
+                                    <th>설명</th>
+                                    <th>대체 태그</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>applet</th>
+                                        <td>태그는 문서에 포함되는 애플릿을 정의할 때 사용합니다.</th>
+                                        <td> embed / object 요소 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>acronym</th>
+                                        <td>태그는 머리글자로만 된 단어(acronym)를 정의할 때 사용합니다.</th>
+                                        <td> abbr 요소 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>dir</th>
+                                        <td>HTML 리스트(list)를 정의할 때 사용합니다.</th>
+                                        <td>ul 요소 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>bgsound</th>
+                                        <td>배경음악을 삽입해주는 요소입니다.</th>
+                                        <td>audio 요소를 대신 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>frame</th>
+                                        <td>요소에 포함되는 하나의 프레임(frame)을 정의할 때 사용합니다.</th>
+                                        <td>iframe과 CSS 이용하거나 서버 사이트로 컨텐츠 결합</th>
+                                    </tr>
+                                    <tr>
+                                        <th>frameset</th>
+                                        <td>문서의 레이아웃을 구성하기 위해 사용되는 프레임(frame)들의 집합을 정의할 때 사용합니다.</th>
+                                        <td> iframe과 CSS를 이용하거나 서버 사이드 컨텐츠 결합</th>
+                                    </tr>
+                                    <tr>
+                                        <th>noframes</th>
+                                        <td>태그는 프레임(frame) 기능을 사용하지 않도록 설정했거나, 프레임 기능을 지원하지 않는 브라우저를 위한 별도의 콘텐츠를 정의할 때
+                                            사용합니다.</th>
+                                        <td> iframe과 CSS를 이용하거나 서버 사이드로 컨텐츠 결합</th>
+                                    </tr>
+                                    <tr>
+                                        <th>isindex</th>
+                                        <td>서버로 송신하는 텍스트 입력란 입니다.</th>
+                                        <td>form과 텍스트 필드의 조합</th>
+                                    </tr>
+                                    <tr>
+                                        <th>listing, xmp</th>
+                                        <td>내용,공백 그대로 출력 합니다</th>
+                                        <td>pre 요소나 code 요소를 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>noembed</th>
+                                        <td>embed를 사용할 수 없을 때 대체 요소입니다.</th>
+                                        <td>폴백이 필요하다면 object 요소 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>plaintext</th>
+                                        <td>내용 그대로 출력 합니다.</th>
+                                        <td>MIME 타입 “text/plain”을 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>rb</th>
+                                        <td>루비 대상 문자열을 지정</th>
+                                        <td>루비 대상 문자열은 ruby 요소 안에 직접 기술입니다.</th>
+                                    </tr>
+                                    <tr>
+                                        <th>basefont</th>
+                                        <td>태그는 해당 문서의 모든 텍스트를 위한 기본 색상, 크기, 글꼴 집합(font-family) 등을 정의할 때 사용합니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>big</th>
+                                        <td>글자 크기가 큰 텍스트를 정의할 때 사용합니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>blink</th>
+                                        <td>문자를 점멸해주는 태그입니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>center</th>
+                                        <td>가운데로 정렬되는 텍스트를 정의할 때 사용합니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>font</th>
+                                        <td>텍스트의 폰트(font), 색상 그리고 크기를 정의할 때 사용합니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>marquee</th>
+                                        <td>문자를 스크롤하게 해주는 요소입니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>s</th>
+                                        <td>텍스트 한가운데 라인(line)을 추가하여 더 이상 정확하지 않거나 관련이 없는 텍스트를 표현할 때 사용합니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>spacer</th>
+                                        <td>스페이스 삽입해주는 요소입니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>strike</th>
+                                        <td>태그는 텍스트 한가운데 라인을 추가할 때 사용합니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                        <th>tt</th>
+                                        <td>태그는 텔레타이프 텍스트(teletype text)를 나타낼 때 사용합니다.</th>
+                                        <td>CSS 사용</th>
+                                    </tr>
+                                    <tr>
+                                </tbody>
+                            </tr>
+                        </table>
+                    </div>
 
-                <h3>HTML5에서 의미가 변경된 태그</h3>
+                    <h3>HTML5에서 의미가 변경된 태그</h3>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <th>태그</th>
+                                <th>변경 전</th>
+                                <th>변경 후</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>cite</th>
+                                    <td>인용문의 작성자나 제목을 나타냅니다.</td>
+                                    <td>인용문의 제목만 나타냅니다. 작성자나 인용문에는 사용할 수 없습니다.</td>
+                                </tr>
+                                <tr>
+                                    <th>adddess</th>
+                                    <td>문서에 대한 연락처를 나타냅니다.</td>
+                                    <td>article요소 안에 있는 경우는 article의 문서에 대한 연락처를 나타냅니다.<br>
+                                    body요소 안에 있는 경우는 문서에 대한 연락처를 나타냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <th>hd</th>
+                                    <td>가로 괘선을 나타냅니다.</td>
+                                    <td>단락 단위에서 의미가 바뀌는 부분을 나타냅니다.</td>
+
+                                </tr>
+                                <th>dl</th>
+                                <td>정의 리스트를 나타냅니다.</td>
+                                <td>기술 리스트를 나타냅니다. 정의를 나타내려면 dfn태그를 함께 사용해야 합니다.</td>
+
+                                <tr>
+                                    <th>a</th>
+                                    <td>hdef속성은 필수입니다.</td>
+                                    <td>href속성은 필수가 아닙니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <!-- //refer -->
