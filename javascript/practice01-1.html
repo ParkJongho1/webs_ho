@@ -21,47 +21,101 @@
 </head>
 
 <body>
-
-    <main id="main">
-        <div class="test">
-            <h2>1. 1부터 100까지 출력하기</h2>
-            <!-- 01 -->
-            <h3>1.1 while문을 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
-            <div class="code">
-<pre class="line-numbers"><code class="language-js">{
+    <div class="back"><a href="practice01.html">back</a></div>
+        <main id="main">
+            <div class="test">
+                <h2>1. 1부터 100까지 출력하기</h2>
+                <!-- 01 -->
+                <h3>1.1 while문을 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    let num = 1;
     
+    while(num &lt;= 100){
+        console.log(num);
+        num++;
+    }
 }</code></pre>
-            </div>
-            <!-- //01 -->
-            <!-- 02 -->
-            <h3>1.2 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
-            <p>조건1. 짝수만 출력하세요!</p>
-            <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    
-}</code></pre>
-            </div>
-            <!-- //02 -->
-            <!-- 03 -->
-            <h3>1.2 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
-            <p>조건2. 5의 배수만 출력하세요!</p>
-            <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    
-}</code></pre>
-            </div>
-            <!-- //03 -->
-        </div>
+                </div>
+                <!-- //01 -->
 
-        <script>
-           {
-             for(let i = 1; i<=100; i++){
-                document.write(i,);
-             }
-           }
-        </script>
+                <!-- 02 -->
+                <h3>1.2 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    for(let i=1; i&lt;=100; i++){
+        console.log(i);
+    }
+}</code></pre>
+                </div>
 
-    </main>
+                <!-- 02 -->
+                <h3>1.3 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
+                <p>조건1. 짝수만 출력하세요!</p>
+                <p>조건2. 홀수만 출력하세요!</p>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    //짝수                    
+    for( let i = 1; i &lt;= 100; i++){
+
+        if (i % 2 == 0){
+                console.log(i);
+            } 
+        }  
+
+    //다른방법
+    for( let i = 1; i &lt;= 100; i++){
+        if(i % 2 == 0) console.log(i);
+       } 
+
+    //다른방법
+    for( let i = 2; i &lt;= 100; i+=2){
+        console.log(i);
+       }  
+         
+    //홀수
+    for( let i = 1; i &lt;= 100; i++){
+
+    if (i % 2 == 1){
+            console.log(i);
+        } 
+    }
+
+    //다른방법
+    for( let i = 1; i &lt;= 100; i++){
+        if(i % 2 == 1) console.log(i);
+        } 
+
+    //다른방법
+    for( let i = 1; i &lt;= 100; i+=2){
+        console.log(i);   
+}</code></pre>
+                </div>
+                <!-- //02 -->
+                <!-- 03 -->
+                <h3>1.4 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
+                <p>조건2. 홀수만 출력하세요!</p>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                </div>
+                <!-- //03 -->
+            </div>
+
+            <script>
+                {
+                    for( let i = 1; i <= 100; i++){
+                      if(i % 2 == 0) console.log(i);
+                     } 
+            
+                   for( let i = 2; i <= 100; i+=2){
+                     console.log(i);
+                    } 
+                }
+            </script>
+
+        </main>
 </body>
 
 </html>

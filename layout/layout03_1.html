@@ -23,40 +23,49 @@
         background-color: #B3E5FC;
     }
     #nav {
-        width: 1200px;
+        width: 1200px;  
+        display: flex;
+       
+    }
+    #nav .nav1 {
+        width: 600px;
         height: 100px;
-        background-color: #81D4FA;
+        background-color: #81D4FA;    
+    }
+    #nav .nav2 {
+        width: 600px;
+        height: 100px;
+        background-color: #ecbebe;    
     }
     #contents {
         width: 1200px;
         display: flex;
     }
     #contents .aside {
-        width: 400px;
-        height: 780px;
+        width: 300px;
+        height: 520px;
         background-color: #90CAF9;
     }
     #contents .content {
-        width: 800px;
+        width: 900px;
     }
     #contents .content .article1 {
-        width: 800;
+        width: 900px;
         height: 260px;
         background-color: #64B5F6;
     }
     #contents .content .article2 {
-        width: 800;
+        width: 900px;
         height: 260px;
         background-color: #2196F3;
-
     }
-    #contents .content .article3 {
-        width: 800;
+
+    #content1 {
+        width: 1200px;
         height: 260px;
         background-color: #1E88E5;
-
     }
-
+   
     #footer {
         width: 1200px;
         height: 100px;
@@ -67,15 +76,18 @@
 
     <div id="wrap">
         <header id="header"></header>
-        <nav id="nav"></nav>
+        <nav id="nav">
+            <article class="nav1"></article>
+            <article class="nav2"></article>
+        </nav>
         <section id="contents">
             <aside class="aside"></aside>
             <aside class="content">
                 <article class="article1"></article>
                 <article class="article2"></article>
-                <article class="article3"></article>
             </aside>
         </section>
+        <section id="content1"></section>
         <footer id="footer"></footer>
     </div>
     
