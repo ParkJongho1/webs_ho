@@ -187,8 +187,15 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result04"></div>
-                    <div class="result04_1"></div>
+                    <div class="result04">
+                        "함수안"<br>
+                        200<br>
+                        300<br><br>
+                        함수밖<br>
+                        100<br>
+                        300<br>
+                        X
+                    </div>
                 </div>
             </div>
             <!-- //sample04 -->
@@ -564,11 +571,11 @@
                 y = 300; //전역변수 200->300
             
               
-                document.querySelector(".result04").innerHTML ="함수 안<br>" + x + "<br>" + y + "<br>" + z;
+                // document.querySelector(".result04").innerHTML ="함수 안<br>" + x + "<br>" + y + "<br>" + z;
             }
-            func();
+            // func();
 
-            document.querySelector(".result04_1").innerHTML ="함수 밖<br>" + x + "<br>" + y + "<br>" + "undefined";
+            // document.querySelector(".result04_1").innerHTML ="함수 밖<br>" + x + "<br>" + y + "<br>" + "undefined";
         }
 
         //05. 상수 : 데이터 저장소 + 데이터 변경(X)

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
     <!-- script -->
-    <script src="assets/js/prism.js"></script>
+   
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                 <li><a href="javascript07.html">수학 객체</a></li>
                 <li><a href="javascript08.html">숫자 객체</a></li>
                 <li><a href="javascript09.html">브라우저 객체</a></li>
-                <li  class="active"><a href="javascript10.html">요소 객체</a></li>
+                <li class="active"><a href="javascript10.html">요소 객체</a></li>
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul>
@@ -46,17 +46,201 @@
                 <li>02. 요소 메서드 : 선택자 : querySelectorAll() : 모든 요소 선택자</li>
                 <li>03. 요소 메서드 : 선택자 : document.getElementById() : 아이디 요소 선택자</li>
                 <li>04. 요소 메서드 : 선택자 : document.getElementByClassName() : 클래스 요소 선택자</li>
+                <br>
+                <li><a href="#sample1">01. 요소 메서드 : 클래스 : .classList.add() : 클래스 추가하기</a></li>
+                <li><a href="#sample1">02. 요소 메서드 : 클래스 : .classList.remove() : 클래스 삭제하기</a></li>
+                <li><a href="#sample2">03. 요소 메서드 : 클래스 : .classList.contains() : 클래스 존재 여부 확인하기</a></li>
+                <li><a href="#sample3">04. 요소 메서드 : 클래스 : .classList.toggle() : 클래스 추가/삭제하기</a></li>
             </ul>
         </div>
         <!-- //list -->
         <div class="script">
 
+            <div class="script">
+
+                <!-- sample01 -->
+                <div id="sample1" class="sample">
+                    <h3>01. 요소 메서드 : .classList.add(), .classList.remove()</h3>
+                    <div class="view">
+                        <div class="view1"><img src="assets/img/image01.jpg" alt="이미지01"></div>
+                        <div class="view2"><img src="assets/img/image02.jpg" alt="이미지02"></div>
+                        <div class="view3"><img src="assets/img/image03.jpg" alt="이미지03"></div>
+                        <div class="view4"><img src="assets/img/image04.jpg" alt="이미지04"></div>
+                        <div class="view5"><img src="assets/img/image05.jpg" alt="이미지05"></div>
+                        <div class="view6"><img src="assets/img/image06.jpg" alt="이미지06"></div>
+                    </div>
+                    <div class="btn">
+                        <a href="#c" class="btn1">버튼을 클릭하면 두번째 이미지가 선택(selected)됩니다.</a>
+                        <a href="#c" class="btn2">버튼을 클릭하면 두번째 이미지가 해제(selected)됩니다..</a>
+                        <a href="#c" class="btn3">버튼을 클릭(selected)하면 모든 이미지가 선택됩니다..</a>
+                        <a href="#c" class="btn4">버튼을 클릭(selected)하면 모든 이미지가 해제됩니다..</a>
+                    </div>
+                    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //두번째 이미지 선택
+    document.querySelector("#sample1 .btn1").addEventListener("click", function(){
+        document.querySelector("#sample1 .view2").classList.add("selected");
+    });
+    document.querySelector("#sample1 .btn2").addEventListener("click", function(){
+        document.querySelector("#sample1 .view2").classList.remove("selected");
+    });
+
+    //모든 이미지 선택
+    document.querySelector("#sample1 .btn3").addEventListener("click", function(){
+        document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+            el.classList.add("selected");
+        });
+    });
+    document.querySelector("#sample1 .btn4").addEventListener("click", function(){
+        document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+            el.classList.remove("selected");
+        });
+    });
+}</code></pre>
+                    </div>
+                </div>
+            
+            <!-- //sample01 -->
+
+            <!-- sample02 -->
+                <div id="sample2" class="sample">
+                    <h3>02. 요소 메서드 : .classList.toggle()</h3>
+                    <div class="view">
+                        <div class="view1"><img src="assets/img/image07.jpg" alt="이미지07"></div>
+                        <div class="view2"><img src="assets/img/image08.jpg" alt="이미지08"></div>
+                        <div class="view3"><img src="assets/img/image09.jpg" alt="이미지09"></div>
+                        <div class="view4"><img src="assets/img/image10.jpg" alt="이미지10"></div>
+                        <div class="view5"><img src="assets/img/image11.jpg" alt="이미지11"></div>
+                        <div class="view6"><img src="assets/img/image12.jpg" alt="이미지12"></div>
+                    </div>
+                    <div class="btn">
+                        <a href="#c" class="btn1">버튼을 클릭하면 두번째 이미지가 선택 또는 해제됩니다.</a>
+                        <a href="#c" class="btn2">버튼을 클릭하면 모든 이미지가 선택 또는 해제됩니다..</a>
+                      
+                    </div>
+                    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //이 버튼을 클릭(selected)하면 두번째 이미지가 선택 또는 해제됩니다.
+    document.querySelector("#sample2 .btn1").addEventListener("click", function(){
+        document.querySelector("#sample2 .view2").classList.toggle("selected");
+    });
+    document.querySelector("#sample2 .btn2").addEventListener("click", function(){
+        document.querySelectorAll("#sample2 .view > div").forEach(function(el){
+            el.classList.toggle("selected");
+        });
+    });
+}</code></pre>
+                    </div>
+                </div>
+            <!-- //sample02 -->
+
+                    <!-- sample03 -->
+                    <div id="sample3" class="sample">
+                        <h3>03. 요소 메서드 : .classList.toggle()</h3>
+                        <div class="view">
+                            <div class="view1"><img src="assets/img/image13.jpg" alt="이미지13"></div>
+                            <div class="view2 selected"><img src="assets/img/image14.jpg" alt="이미지14"></div>
+                            <div class="view3"><img src="assets/img/image15.jpg" alt="이미지15"></div>
+                            <div class="view4 selected"><img src="assets/img/image16.jpg" alt="이미지16"></div>
+                            <div class="view5"><img src="assets/img/image17.jpg" alt="이미지17"></div>
+                            <div class="view6 selected"><img src="assets/img/image18.jpg" alt="이미지18"></div>
+                        </div>
+                        <div class="btn">
+                            <a href="#c" class="btn0">리셋</a>
+                            <a href="#c" class="btn1">버튼을 클릭하면 클래스를 찾은 후 클래스를 삭제합니다.</a>
+                            <a href="#c" class="btn2">버튼을 클릭하면 클래스를 찾은 후 클래스를 복구합니다.</a>
+                        </div>
+                        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제합니다.
+    document.querySelector("#sample3 .btn1").addEventListener("click", function(){
+        document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+            if(el.classList.contains("selected")){
+                el.classList.remove("selected");
+            }
+        });
+    });
+}</code></pre>
+                        </div>
+                    </div>
+                <!-- //sample03 -->
         </div>
         <!-- //script -->
     </main>
     <!-- script -->
+    <script src="assets/js/prism.js"></script>
     <script>
 
+        //sample01
+        //두번째 이미지 선택
+        document.querySelector("#sample1 .btn1").addEventListener("click", function(){
+            document.querySelector("#sample1 .view2").classList.add("selected");
+        });
+        document.querySelector("#sample1 .btn2").addEventListener("click", function(){
+            document.querySelector("#sample1 .view2").classList.remove("selected");
+        });
+
+        //모든 이미지 선택
+        document.querySelector("#sample1 .btn3").addEventListener("click", function(){
+            document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+                el.classList.add("selected");
+            });
+        });
+        document.querySelector("#sample1 .btn4").addEventListener("click", function(){
+            document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+                el.classList.remove("selected");
+            });
+        });
+
+        //sample02
+        //이 버튼을 클릭(selected)하면 두번째 이미지가 선택 또는 해제됩니다.
+        document.querySelector("#sample2 .btn1").addEventListener("click", function(){
+            document.querySelector("#sample2 .view2").classList.toggle("selected");
+        });
+        document.querySelector("#sample2 .btn2").addEventListener("click", function(){
+            document.querySelectorAll("#sample2 .view > div").forEach(function(el){
+                el.classList.toggle("selected");
+            });
+        });
+
+        //숙제
+        //첫번째 이미지를 클릭하면 첫번재 이미지를 선택
+        document.querySelector("#sample2 .view1").addEventListener("click", function(){
+            document.querySelector("#sample2 .view1").classList.toggle("selected");
+        });
+        //두번째 이미지를 클릭하면 모든 이미지를 선택
+        document.querySelector("#sample2 .view2").addEventListener("click", function(){
+            document.querySelectorAll("#sample2 .view > div").forEach(function(el){
+                el.classList.toggle("selected");
+            });
+        });
+        
+
+        //sample03
+        //리셋
+        document.querySelector("#sample3 .btn0").addEventListener("click", function(){
+            document.querySelector("#sample3 .view2").classList.add("selected");
+            document.querySelector("#sample3 .view4").classList.add("selected");
+            document.querySelector("#sample3 .view6").classList.add("selected");
+        });
+
+        //이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제합니다.
+        document.querySelector("#sample3 .btn1").addEventListener("click", function(){
+            document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+                if(el.classList.contains("selected", "selected1")){
+                    el.classList.remove("selected", "selected1");
+                }
+            });
+        });
+
+        //이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 색을 파란색으로 나오게 하시오!
+        document.querySelector("#sample3 .btn2").addEventListener("click", function(){
+            document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+                if(el.classList.contains("selected")){
+                    el.classList.toggle("selected1");
+                }
+            });
+        });
     </script>
 </body>
 
