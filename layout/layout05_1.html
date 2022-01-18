@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout5</title>
-
+    <title>layout5_1</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
@@ -34,7 +33,6 @@
             height: 100px;
             background-color: #4F342E;
         }
-
         .container {
             width: 1200px;
             margin: 0 auto;
@@ -42,28 +40,30 @@
             background-color: rgba(0,0,0,0.3);
         }
         #contents .container {
+            width: 1200px;
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
         }
         #contents .container .aside1 {
-            width: 400px;
-            height: 780px;
-            background-color: #7A5448;
-        }
-        #contents .container .aside2 {
             width: 800px;
             height: 390px;
             background-color: #6E4C41;
         }
-        #contents .container .article2 {
+        #contents .container .aside2 {
             width: 800px;
             height: 390px;
             background-color: #5E4037;
         }
+        #contents .container .article {
+            width: 400px;
+            height: 780px;
+            background-color: #000000;
+        }
     </style>
 </head>
 <body>
+    
     <div id="wrap">
         <header id="header">
             <div class="container"></div>
@@ -74,8 +74,8 @@
         <section id="contents">
             <div class="container">
                 <aside class="aside1"></aside>
-                <article class="article1"></article>
-                <article class="article2"></article>
+                <aside class="aside2"></aside>
+                <article class="article"></article>
             </div>
         </section>
         <footer id="footer">
