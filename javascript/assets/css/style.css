@@ -392,8 +392,9 @@ img {
     padding: 10px 20px;
     font-weight: normal;
     margin-top: 10px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
 }
 .result > div {
     background: #272822;
@@ -402,7 +403,14 @@ img {
     border-radius: 0 0 5px 5px;
     font-size: 16px;
     line-height: 1.4;
-    /* display: none; */
+    display: none;
+}
+.result.active h4 {
+    border-radius: 5px 5px 0 0;
+}
+.result.active > div{
+    display: block;
+    border-radius: 0 0 5px 5px;
 }
 
 @media (max-width: 800px) {
