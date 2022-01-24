@@ -14,3 +14,7 @@ https://parkjongho1.github.io/webs_ho/refer/css.html
 
 ## 레이아웃
 https://parkjongho1.github.io/webs_ho/layout/index.html
+
+## 웹 표준 사이트 제작
+
+https://parkjongho1.github.io/webs_ho/site/webClass/index.html
