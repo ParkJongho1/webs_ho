@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="css.html">라인 중학교 1학년 코딩반</a></h1>
@@ -35,17 +37,82 @@
         <!-- //menu -->
 
         <div class="refer">
-         
+
             <div class="doc">
                 <h3>벤더 프리픽스</h3>
                 <p>CSS3 표준으로 확정되기 이전 또는 브라우저 개발사가 실험적으로 제공하는 기능을 사용하기 위해서는 벤더 프리픽스(Vendor Prefix)를 사용하여야 한다.</p>
+                <p>Can I use?에서 제공하는 브라우저별 CSS 지원 정보를 보면 텍스트와 요소의 선택을 방지하는 user-select 프로퍼티는 모든 브라우저에 벤더 프리픽스를 사용하여야 한다.
+                    브라우저의 버전이 올라감에 따라 벤더 프리픽스를 사용하지 않아도 될 수 있다. 그러나 구형 브라우저를 지원하기 위하여 벤더 프리픽스를 사용하여야 할 필요가 있다.</p>
 
-                
+                <div class="code">
+<pre><code>* {
+-webkit-user-select: none;  /* Chrome all / Safari all */
+-moz-user-select: none;     /* Firefox all */
+-ms-user-select: none;      /* IE 10+ */
+user-select: none;          /* Likely future */
+}
+</pre></code>
+                </div>
+                <h4>브라우저 별 벤더 프리픽스는 다음과 같다.</h4>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 50%" />
+                            <col style="width: 50%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Browser</th>
+                                <th>Vendor Prefix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IE or Edge</td>
+                                <td>-ms-</td>
+                            </tr>
+                            <tr>
+                                <td>Chrome</td>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <td>Firefox</td>
+                                <td>-moz-</td>
+                            </tr>
+                            <tr>
+                                <td>Safari</td>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <td>Opera</td>
+                                <td>-o-</td>
+                            </tr>
+                            <tr>
+                                <td>iOS Safari</td>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <td>Android Browser</td>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <td>Chrome for Android</td>
+                                <td>-webkit-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <p>많은 브라우저를 위한 벤더 프리픽스를 사용하는 것은 코드의 양을 늘게 하고 또한 브라우저는 거의 매달 업데이트가 이루어지고 있어 불필요한 벤더 프리픽스를 사용할 가능성이 크다. 
+                        사용하지 않아도 되는 벤더 프리픽스를 사용하는 것은 성능에도 영향을 주기 때문에 Prefix Free 라이브러리 를 사용하는 것은 매우 유용한 방법이다.</p>
+                    <br>
+                    <p>사용법은 매우 간단하다. Prefix Free 사이트에서 라이브러리를 다운로드하고 include 하기만 하면 이 후에는 벤더 프리픽스없이 모든 CSS를 사용할 수 있다.</p>
+
+                </div>
             </div>
-        </div>
-        <!-- //refer -->
+            <!-- //refer -->
     </main>
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </body>
+
 </html>
