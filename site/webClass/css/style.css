@@ -198,20 +198,20 @@
     height: 530px;
     width: 386.66px;
     margin-right: 20px;
-    background-image: url(../img/img_text_bg1.jpg);
+    background-image: url(../img/test@1x.jpgg);
 }
-.itType01 .img2 {
+/* .itType01 .img2 {
     float: left;
     height: 530px;
     width: 386.66px;
     background-image: url(../img/img_text_bg2.jpg);
-}
+} */
 @media (-webkit-min-device-pixel-ratio: 1.5) {
     .itType01 .img1 {
             background-image: url(../img/test@2x.jpg)l
         }
 }
-@media (-webkit-min-device-pixel-ratio: 3) {
+@media (-webkit-min-device-pixel-ratio: 2.5) {
     .itType01 .img1 {
             background-image: url(../img/test@3x.jpg)l
         }
