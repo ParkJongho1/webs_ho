@@ -1,5 +1,14 @@
 /* 전체 레이아웃 */
-#wrap {}
+#wrap {
+    height: 2000px;
+}
+
+/* 컨테이너 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* background-color: rgba(0,0,0,3); */
+}
 
 
 /*  헤더01 float을 사용해 레이아웃을 만든 경우
@@ -153,14 +162,14 @@
 
 /* 배너 */
 #banner {}
-.imgType {
+
+.img_type {
     width: 100%;
     height: 700px;
     /* background-image: url(../img/bg01.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; */
-    
     background: url(../img/bg01.jpg) no-repeat center / cover;
 }
 
@@ -170,3 +179,40 @@
     2. CSS 속성을 통해서 : background 속성 : 의미가 없는 이미지(배경, 색표현) -->ir효과(대체 문자를 CSS 속성으로 표현)
     3. 이미지 스프라이트 : background ir 효과를 통해서 이미지를 표현
 */
+
+/* 이미지/텍스트 유형  */
+/* 유형1(img_text_type) */
+.itType01 {
+    padding: 150px 0;
+    overflow: hidden;
+}
+.itType01 .text {
+    float: left;
+    height: 530px;
+    width: 386.66px;
+    margin-right: 20px;
+    background-color: #ccc;
+}
+.itType01 .img1 {
+    float: left;
+    height: 530px;
+    width: 386.66px;
+    margin-right: 20px;
+    background-image: url(../img/img_text_bg1.jpg);
+}
+.itType01 .img2 {
+    float: left;
+    height: 530px;
+    width: 386.66px;
+    background-image: url(../img/img_text_bg2.jpg);
+}
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    .itType01 .img1 {
+            background-image: url(../img/test@2x.jpg)l
+        }
+}
+@media (-webkit-min-device-pixel-ratio: 3) {
+    .itType01 .img1 {
+            background-image: url(../img/test@3x.jpg)l
+        }
+}
