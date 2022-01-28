@@ -70,14 +70,33 @@
             line-height: 0;
             text-indent: -9999px;
         }
-        /* ir기법 */
+        /* //ir기법 */
 
+
+        #skip {
+            position: relative;
+            z-index: 10000;
+        }
+        #skip a {
+            background: #000;
+            color: #fff;
+            position: absolute;
+            left: -400px; top: 5px;
+            padding: 20px 40px;
+            display: inline-block;
+            transition: left 0.3s ease-in;
+        }
+        #skip a:active,
+        #skip a:focus {
+            left: 5px; 
+        }
+        /* //스킵 */
         #wrap {
             width: 100%;
         }
         #header {
             width: 100%;
-            height: 100px;
+            height: 109px;
             background-color: #6ECC6C;
         }
         #banner {
@@ -91,7 +110,7 @@
         }
         #footer {
             width: 100%;
-            height: 100px;
+            height: 400px;
             background-color: #4F342E;
         }
 
@@ -127,7 +146,7 @@
         #contents .container .article3 .text {
             font-family: 'NexonLv1Gothic';
             margin-bottom: 50px;
-            font-size: 30px;
+            font-size: 35px;
             font-weight: 700;
         }
         #contents .container .article3 .img {
@@ -156,8 +175,8 @@
         #contents .container .article3 .text1 .desc1 {
             font-family: 'NexonLv1Gothic';
             float: left;
-            font-size: 24px;
-            margin-top: 30px;
+            font-size: 28px;
+            margin: 30px 0 5px 0;
             width: 31%;
             margin-right: 3.5%;
             font-weight: 500;
@@ -165,16 +184,16 @@
         #contents .container .article3 .text1 .desc2 {
             font-family: 'NexonLv1Gothic';
             float: left;
-            font-size: 24px;
-            margin-top: 30px;
+            font-size: 28px;
+            margin: 30px 0 5px 0;
             width: 31%;
             font-weight: 500;
         }
         #contents .container .article3 .text1 .desc3 {
             font-family: 'NexonLv1Gothic';
             float: left;
-            font-size: 24px;
-            margin-top: 30px;
+            font-size: 28px;
+            margin: 30px 0 5px 0;
             width: 31%;
             margin-left: 3.5%;
             font-weight: 500;
@@ -183,6 +202,7 @@
             font-family: 'NexonLv1Gothic';
             float: left;
             font-size: 16px;
+            font-weight: 300;
             width: 31%;
             margin-right: 3.5%;
         }
@@ -190,18 +210,25 @@
             font-family: 'NexonLv1Gothic';
             float: left;
             font-size: 16px;
+            font-weight: 300;
             width: 31%;
         }
         #contents .container .article3 .text1 .intro3 {
             font-family: 'NexonLv1Gothic';
             float: left;
             font-size: 16px;
+            font-weight: 300;
             width: 31%;
             margin-left: 3.5%;
         }
     </style>
 </head>
 <body>
+
+    <div id="skip">
+        <a href="#contents">컨텐츠 바로가기</a>
+    </div>
+
     <div id="wrap">
         <header id="header">
             <h2 class="ir_so">헤더 영역</h2>
@@ -223,7 +250,7 @@
                 <article class="article3">
                     <h2 class="ir_so">컨텐츠03</h2>
                         <div class="text">
-                            <h3 class="title">FIND opportunities</h3>
+                            <h3>FIND opportunities</h3>
                         </div>
                         <div class="img"></div>
                         <div class="img2"></div>
