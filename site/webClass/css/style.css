@@ -341,7 +341,7 @@
 }
 .img_type01 .img-wrap .right-cont {
     padding: 20px;
-    background: rgba(119, 75, 40, 80%);
+    background: rgba(119, 75, 40, 0.5);
     position: absolute;
     left: 20px;
     bottom: 20px;
