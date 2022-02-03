@@ -343,8 +343,8 @@
     padding: 20px;
     background: rgba(119, 75, 40, 0.5);
     position: absolute;
-    left: 20px;
-    bottom: 20px;
+    left: 15px;
+    bottom: 15px;
 }
 .img_type01 .img-wrap h4 {
     font-size: 30px;
@@ -368,7 +368,6 @@
     display: inline-block;
     text-decoration: underline;
     text-underline-position: under;
-    
 }
 
 
