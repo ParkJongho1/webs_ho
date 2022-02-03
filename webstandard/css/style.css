@@ -163,12 +163,10 @@
     overflow: hidden;
     padding: 30px 0;
 }
-
 .nav>div {
     float: left;
     width: 40%;
 }
-
 .nav>div:last-child {
     width: 20%;
 }/* ie9부터 사용 가능 */
