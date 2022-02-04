@@ -62,16 +62,18 @@
 }
 
 .img_text_type01 .left_text_img1 {
-    width: 560px;
+    width: 585px;
     height: 540px;
-    background: url(../informimg/car.jpg);
+    background: url(../informimg/car.jpg) no-repeat;
+    background-size: cover;
     margin: -20px 0 100px 0px;
   
 }
 .img_text_type01 .right_text_img1 {
-    width: 560px;
+    width: 585px;
     height: 540px;
-    background: url(../informimg/building.jpg);
+    background: url(../informimg/building.jpg) no-repeat;
+    background-size: cover;
     margin: -20px 0 100px 0px;
     
 }
@@ -87,16 +89,18 @@
 }
 
 .img_text_type02 .left_text_img2 {
-    width: 560px;
+    width: 585px;
     height: 540px;
-    background: url(../informimg/woman.jpg);
+    background: url(../informimg/woman.jpg) no-repeat;
+    background-size: cover;
     margin: -20px 0px 100px 0;
   
 }
 .img_text_type02 .right_text_img2 {
-    width: 560px;
+    width: 585px;
     height: 540px;
-    background: url(../informimg/table.jpg);
+    background: url(../informimg/table.jpg) no-repeat;
+    background-size: cover;
     margin: -20px 0px 100px 0;
 }
 .img_text_type02 {
