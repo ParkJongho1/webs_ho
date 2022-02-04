@@ -1476,12 +1476,13 @@
             
             //출력값 300, 400
             const result = arrBox.slice(2,4);
-            document.write(result);
+            document.write(result + "<br>");
             const result2 = arrBox.slice(-5, 4);
-            document.write(result2);
+            document.write(result2+ "<br>");
             
             //출력값 100, 300, 500, 700
-
+            const result3 = arrBox.find(el => el === 100);
+            document.write(result3);
             //출력값 700
 
             const arrBox2 = ["j", "b", "c", "d", "e"];
