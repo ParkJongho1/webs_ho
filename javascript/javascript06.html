@@ -1472,27 +1472,87 @@
 
         //숙제
         {
-            const arrBox = [100, 200, 300, 400, 500, 600, 700];
-            
             //출력값 300, 400
-            const result = arrBox.slice(2,4);
-            document.write(result + "<br>");
-            const result2 = arrBox.slice(-5, 4);
-            document.write(result2+ "<br>");
-            
+            {
+                const arrBox = [100, 200, 300, 400, 500, 600, 700];
+                
+                const result = arrBox.slice(2,4);
+                document.write(result + "<br>");
+            }
+            {
+                const arrBox2 = [100, 200, 300, 400, 500, 600, 700];
+
+                const result2 = arrBox2.splice(2, 2);
+                document.write(result2 + "<br>");
+            }
             //출력값 100, 300, 500, 700
-            const result3 = arrBox.find(el => el === 100);
-            document.write(result3);
+            {
+                const arrBox3 = [100, 200, 300, 400, 500, 600, 700];
+
+                const result3 = arrBox3.splice(5,1) + arrBox3.splice(3,1) + arrBox3.splice(1,1);
+                document.write(arrBox3 + "<br>");
+            }
+            {
+                const arrBox4 = [100, 200, 300, 400, 500, 600, 700];
+
+                const result4 = arrBox4.splice(0, 6, 100,300, 500);
+                document.write(arrBox4 + "<br>");
+
+            }
             //출력값 700
+            {
+                const arrBox5 = [100, 200, 300, 400, 500, 600, 700];
 
-            const arrBox2 = ["j", "b", "c", "d", "e"];
+                const result5 = arrBox5.splice(-1, 1);
+                document.write(result5 + "<br>");
+            }
+            {
+                const arrBox6 = [100, 200, 300, 400, 500, 600, 700];
 
+                const result6 = arrBox6.filter(el => el === 700);
+                document.write(result6 + "<br><br>");
+            }
+        
+          
             //출력값 j
+            {
+                const arrBox7 = ["j", "b", "c", "d", "e"];   
 
-            //출력값 jc
+                const result7 = arrBox7.splice(0, 1);
+                document.write(result7 + "<br>");
+            }
+            {
+                const arrBox8 = ["j", "b", "c", "d", "e"];   
 
+                const result8 = arrBox8.filter(el => el === 'j');
+                document.write(result8 + "<br>");
+            }
+             //출력값 jc
+            {
+                const arrBox9 = ["j", "b", "c", "d", "e"];
+
+                const result9 = arrBox9.splice(3, 2) + arrBox9.splice(1, 1);
+                document.write(arrBox9 + "<br>");
+            }
+            {
+                const arrBox10 = ["j", "b", "c", "d", "e"];
+
+                const result10 = arrBox10.splice(1, 4, 'c');
+                document.write(arrBox10 + "<br>")
+            }
             //출력값 jbcd
+            {
+                const arrBox11 = ["j", "b", "c", "d", "e"];
 
+                const result11 = arrBox11.slice(0, 4);
+                document.write(result11 + "<br>");  
+            }
+            {
+                const arrBox12 = ["j", "b", "c", "d", "e"];
+
+                const result12 = arrBox12.slice(-5, 4);
+                document.write(result12 + "<br>");
+            }
             //CSS 선택자 10단계
             //영상숙제 21번까지
         }
