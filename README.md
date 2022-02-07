@@ -16,5 +16,10 @@ https://parkjongho1.github.io/webs_ho/refer/css.html
 https://parkjongho1.github.io/webs_ho/layout/index.html
 
 ## 웹 표준 사이트 제작
-
 https://parkjongho1.github.io/webs_ho/site/webClass/index.html
+
+## 웹 표준 사이트 제작2
+https://parkjongho1.github.io/webs_ho/webstandard/index.html
+
+## 자바스크립트 서치 이펙트
+https://parkjongho1.github.io/webs_ho/javascript/effect/searchEffect.html
