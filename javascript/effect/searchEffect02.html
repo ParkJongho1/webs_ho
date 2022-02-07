@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Effect</title>
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
+            font-size: 16px;
+            line-height: 1.6;
+            word-break: break-all;
+            color: #223547;
+        }
+        a {
+            text-decoration: none;
+            color: #223547;
+        }
+        .number {
+            margin: 10px;
+        }
+        .number li {
+            list-style: none;
+            display: inline;
+        }
+        .number li a {
+            border: 1px solid #223547;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+            transition: all 0.3s;
+        }
+        .number li.active a {
+            background: #223547;
+            color: #fff;
+        }
+        .board {
+            margin: 5vw 10vw 10vw 10vw;
+            width: 80vw;
+            background: #F1F3F6;
+            border: 2px solid #223547;
+            padding: 3vw;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .board .sub {
+            font-size: 20px;
+        }
+        .board .sub a {
+            font-size: 20px;
+            border-bottom: 1px solid #223547;
+        }
+        .board h1 a {
+            font-family: 'TmonMonsori';
+            font-size: 80px;
+            margin-bottom: 1vw;
+        }
+        .board .search {
+            margin-bottom: 3vw;
+        }
+        .board .search label {
+            display: none;
+        }
+        .board .search input {
+            font-size: 24px;
+            border: 2px solid #223547;
+            padding: 10px 40px;
+            border-radius: 40px;
+            width: 50%;
+        }
+        .board .count {
+            text-align: right;
+            color: #777;
+        }
+        .board .count em {
+            font-style: normal;
+            color: #223547;
+        }
+        .board .list {
+            text-align: left;
+        }
+        .board .list li {
+            background-color: #BDD6E6;
+            margin: 5px 0;
+            padding: 7px 10px;
+            border-radius: 4px;
+            list-style: none;
+            transition: all 0.3s;
+        }
+        .board .list li:hover {
+            background-color: #A5C3D5;
+            cursor: grabbing
+        }
+     
+        @media (max-width: 800px){
+            .board {
+                margin: 2vw 2vw 2vw 2vw;
+                width: 96vw;
+                padding: 4vw 2vw;
+            }
+            .board .sub {
+                font-size: 14px;
+            }
+            .board .sub a {
+                font-size: 14px;
+            }
+            .board h1 a {
+                font-size: 40px;
+            }
+            .board .search input {
+                font-size: 16px;
+                padding: 5px 20px;
+                width: 100%;
+            }
+            .board .list li {
+                font-size: 14px;
+            }
+        }
+
+             /*  */
+             .board .list li {
+                display: none;
+            }
+            .board .list li.show {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="number">
+            <ul>
+                <li><a href="searchEffect01.html">1</a></li>
+                <li class="active"><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+            </ul>
+        </div>
+        <div class="board">
+            <span class="sub"><a href="../javascript06.html#sample10">includes( )</a>를 이용하여 CSS 속성 검색하기</span>
+            <h1><a href="searchEffect.html">CSS 속성 검색하기</a></h1>
+            <div class="search">
+                <label for="search-box">검색하기</label>
+                <input type="text" id="search-box" placeholder="CSS 속성을 입력해주세요!!">
+            </div>
+
+            <div class="count">
+                전체 속성 갯수 : <em>0</em>개
+            </div>
+
+            <div class="list">
+                <ul>
+                    <li data-name="all"><strong>all</strong> : all 속성은 CSS속성을 재설정하는데 사용할 수 있는 약식 속성입니다.</li>
+                    <li data-name="animation"><strong>animation</strong> : animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다.</li>
+                    <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다.</li>
+                    <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다.</li>
+                    <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다.</li>
+                    <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                    <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다.</li>
+                    <li data-name="animation-play-state"><strong>animation-play-state</strong> : animation-play-state 속성은 애니메이션의 진행 상태를 설정합니다.</li>
+                    
+                    <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다.</li>
+                    <li data-name="backface-visibility"><strong>backface-visibility</strong> : backface-visibility 속성은 요소 뒷면이 보일지 말지 여부 설정합니다.</li>
+
+                    <li data-name="caption-side"><strong>caption-side</strong> : caption-side 속성은 테이블 캡션 설정합니다.</li>
+                    <li data-name="margin"><strong>margin</strong> : margin 속성은 요소의 바같쪽 여백을 설정합니다.</li>
+                    <li data-name="margin-bottom"><strong>margin-bottom</strong> : margin-bottom 속성은 요소의 아래 바같쪽 여백을 설정합니다.</li>
+                    <li data-name="margin-left"><strong>margin-left</strong> : margin-left 속성은 요소의 왼쪽 바같쪽 여백을 설정합니다.</li>
+                    <li data-name="margin-right"><strong>margin-right</strong> : margin-right 속성은 요소의 오른쪽 바같쪽 여백을 설정합니다.</li>
+                    <li data-name="margin-top"><strong>margin-top</strong> : margin-top 속성은 요소의 위부분 바같쪽 여백을 설정합니다.</li>
+                    <li data-name="mask"><strong>mask</strong> : mask 속성은 마스크 속성을 설정합니다.</li>
+                    <li data-name="mask-border"><strong>mask-border</strong> : mask-border 속성은 테두리 마스크 이미지를 요소에 적용하는 데 사용됩니다.</li>
+                    <li data-name="mask-border-mode"><strong>mask-border-outset</strong> : mask-border-mode</li>
+                    <li data-name="mask-border-repeat"><strong>mask-border-repeat</strong> : mask-border-repeat</li>
+                    <li data-name="mask-border-slice"><strong>mask-border-slice</strong> : mask-border-slice</li>
+                    <li data-name="mask-border-source"><strong>mask-border-source</strong> : mask-border-source</li>
+                    <li data-name="mask-border-width"><strong>mask-border-width</strong> : mask-border-width</li>
+                    <li data-name="mask-clip"><strong>mask-clip</strong> : mask-clip</li>
+                    <li data-name="mask-composite"><strong>mask-composite</strong> : mask-composite</li>
+                    <li data-name="mask-image"><strong>mask-image</strong> : mask-image</li>
+                    <li data-name="mask-mode"><strong>mask-mode</strong> : mask-mode</li>
+                    <li data-name="mask-origin"><strong>mask-origin</strong> : mask-origin</li>
+                    <li data-name="mask-position"><strong>mask-position</strong> : mask-position</li>
+                    <li data-name="mask-repeat"><strong>mask-repeat</strong> : mask-repeat</li>
+                    <li data-name="mask-size"><strong>mask-size</strong> : mask-size</li>
+                    <li data-name="mask-type"><strong>mask-type</strong> : mask-type</li>
+                    <li data-name="max-height"><strong>max-height</strong> : max-height 속성은 요소의 최대 세로값을 설정합니다.</li>
+                    <li data-name="max-width"><strong>max-width</strong> : max-width 속성은 요소의 최대 가로 값을 설정합니다.</li>
+                    <li data-name="min-height"><strong>min-height</strong> : min-height 속성은 요소의 최소 세로 값을 설정합니다.</li>
+                    <li data-name="min-width"><strong>min-width</strong> : min-width 속성은 요소의 최소 가로 값을 설정합니다.</li>
+                    <li data-name="mix-blend-mode"><strong>mix-blend-mode</strong> : mix-blend-mode 속성은 배경의 혼합 상태를 정의합니다.</li>
+                    <li data-name="object-fit"><strong>object-fit</strong> : object-fit 속성은 &lt;img&gt;, &lt;videog&gt; 태그의 크기를 정의합니다.</li>
+                    <li data-name="object-position"><strong>object-position</strong> : object-position 속성은 &lt;img&gt;, &lt;videog&gt; 태그의 위치를 정의합니다.</li>
+                    <li data-name="opacity"><strong>opacity</strong> : opacity 속성은 요소의 투명도를 설정합니다.</li>
+                    <li data-name="orphans "><strong>orphans </strong> : orphans </li>
+                    <li data-name="outline"><strong>outline</strong> : outline 속성은 요소 아웃라인의 색, 스타일, 굵기를 정의합니다.</li>
+                    <li data-name="outline-color"><strong>outline-color</strong> : outline-color 속성은 아웃라인의 색을 정의합니다.</li>
+                    <li data-name="outline-offset"><strong>outline-offset</strong> : outline-offset 속성은 아웃라인의 간격을 정의합니다.</li>
+                    <li data-name="outline-style"><strong>outline-style</strong> : outline-style 속성은 아웃라인 스타일을 정의합니다.</li>
+                    <li data-name="outline-width"><strong>outline-width</strong> : outline-width 속성은 아웃라인의 두께를 정의합니다.</li>
+                    <li data-name="overflow"><strong>overflow</strong> : overflow 속성은 지정한 영역에 요소들이 벗어났을 때 속성을 설정합니다.</li>
+                    <li data-name="overflow-x"><strong>overflow-x</strong> : overflow-x 속성은 X축을 기준으로 지정한 영역에 요소들이 벗어났을 때 속성을 설정합니다.</li>
+                    <li data-name="overflow-y"><strong>overflow-y</strong> : overflow-y 속성은 Y축을 기준으로 지정한 영역에 요소들이 벗어났을 때 속성을 설정합니다.</li>
+                    <li data-name="padding"><strong>padding</strong> : padding 속성은 요소의 안쪽 여백을 설정합니다.</li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+                    <li data-name=""><strong></strong> : </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script>
+        const searchBox = document.querySelector("#search-box");
+        const cssList = document.querySelectorAll(".list ul li");
+        const cssCount = document.querySelector(".count em");
+
+        cssList.forEach((element, index) => {
+            element.classList.add("show");
+            cssCount.innerHTML = index + 1;
+            });
+
+        searchBox.addEventListener("keyup", () => {
+            const searchWorld = searchBox.value;
+
+            //console.log(searchWorld);
+
+            cssList.forEach(el => {
+                const cssName = el.dataset.name; //CSS 속성 모든 값
+                //console.log(cssName);
+
+                if(cssName.includes(searchWorld)){
+                    el.classList.add("show");
+                } else {
+                    el.classList.remove("show");
+                }
+            })
+        })
+
+        
+
+
+
+     
+    </script>
+</body>
+</html>
