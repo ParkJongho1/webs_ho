@@ -223,27 +223,27 @@
             {name: "opacity", desc: "opacity 속성은 요소의 투명도를 설정합니다."},
             {name: "padding", desc: "padding 속성은 요소의 안쪽 여백을 설정합니다."},
         ]
-        const searchBox = document.querySelector("#search-box");
-        const cssCount = document.querySelector(".count");
-        const cssDesc = document.querySelector(".desc");
-        const cssList = document.querySelector(".list");
+        const searchBox = document.querySelector("#search-box");        //#search-box 변수 지정
+        const cssCount = document.querySelector(".count");              //.count 변수 지정
+        const cssDesc = document.querySelector(".desc");                //.desc 변수로 지정
+        const cssList = document.querySelector(".list");                //.list를 변수로 지정
 
         //CSS 속성 값/전체 갯수 출력하기
-        cssProperty.map((element, index) => {
-            cssCount.innerText = "전체 목록 갯수 : "+ (index+1) +"개";
+        cssProperty.map((element, index) => {       //map를 이용해서 element와 index 불러오기
+            cssCount.innerText = "전체 목록 갯수 : "+ (index + 1) +"개";
             cssList.innerHTML += "<span>"+ element.name +"</span>";
         });
 
         //사용자가 검색 한 값
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;
+        searchBox.addEventListener("keyup", () => {     //keyup 이벤트 지정 
+            const searchWord = searchBox.value;         //서치박스에 들어오는 값을 변수로 지정.
             // console.log(searchWord)
 
-            findProp(searchWord);
+            findProp(searchWord);           // 값 변수를 매개변수로 지정
         });
 
-        document.querySelectorAll(".list span").forEach(span => {
-            span.addEventListener("click", () => {
+        document.querySelectorAll(".list span").forEach(span => { 
+            span.addEventListener("click", () => {           //리스트를 클릭하면 값이 설명칸에 실행
                 //클릭한 데이터 값을 가져오기
                 const listProp = span.innerText;
                 findProp(listProp);
@@ -255,17 +255,13 @@
             const targetData = cssProperty.find((data) => data.name === searchProp)
 
             //찾는 데이터가 없을 때
-            if(targetData == null){
+            if(targetData == null){     //입력한 값이 데이터에 존재하지 않을때 if문 실행
                 cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!";
                 return;
             }
 
-            cssDesc.innerHTML = targetData.desc;
+            cssDesc.innerHTML = targetData.desc;       //설명 영역에 서치박스에 입력한 속성의 설명을 출력.
         }
-
-
-   
-
     </script>
 </body>
 </html>
