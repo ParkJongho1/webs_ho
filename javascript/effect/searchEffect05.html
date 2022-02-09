@@ -258,29 +258,12 @@
 
             for(let data of cssProperty) {
                 //list += "<li>"+ data.name + "</li>";
-                list += `<li>${data.name} : ${data.desc} : <span>${data.view}</span>`;
+                list += `<li>${data.name} : ${data.desc} : <span>${data.view}</span></li>`;
             }
 
             cssList.innerHTML = list;
         }
         upDataList();
-
-                //view 값만 출력
-                // for(let i = 0; i < cssProperty.length; i++){
-                //             console.log(cssProperty[i].view);
-                //         }
-                // //name 값만 출력
-                // cssProperty.forEach(ele => {
-                //     console.log(ele.name);
-                // });
-                // //map()
-                // cssProperty.map(ele => {
-                //     console.log(ele.desc);
-                // });
-                //forof
-                // for(let data of cssProperty) {
-                //     console.log(data.view)
-                // }
     </script>
 </body>
 </html>
