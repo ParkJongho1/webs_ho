@@ -225,7 +225,7 @@
 
             <div class="list">
                 <ul>
-                    <li data-name="all"><strong>all</strong> : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
+                    <li data-name="all" data-type="기타"><strong>all</strong> : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
                     <li data-name="animation"><strong>animation</strong> : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
                     <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.</li>
                     <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.</li>
@@ -492,7 +492,7 @@
                     // console.log(cssName)
                     const cssType = el.dataset.type;        //CSS 타입 값 
 
-                    //알파벳 첫글자 == CSS 속성의 첫글자  // || searchWord.charAt(0) === cssType.charAt(0)
+                    //알파벳 첫글자 == CSS 속성의 첫글자  //|| searchWord.charAt(0) === cssType.charAt(0)
                     if(searchWord.charAt(0) === cssName.charAt(0)) {  // searchWord 와 cssName 첫글자가 같을경우 혹은 searchWord 와 cssType 첫글자가 같을경우
                         el.classList.add("show");           //데이터가 있으면 클래스 show를 추가
                     } else {    
