@@ -767,6 +767,16 @@
     <script src="assets/js/script.js"></script>
     <!-- Javascipt -->
     <script>
+               //#id 이동하기
+               document.querySelectorAll("a[href^='#']").forEach(el => {
+            el.addEventListener("click", (event) => {
+                event.preventDefault(); //#의 기본기능 차단
+                document.querySelector(el.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                })
+                
+            })
+        })
         //result h4를 클릭하면
 
 

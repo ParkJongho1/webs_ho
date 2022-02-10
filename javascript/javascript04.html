@@ -297,7 +297,7 @@
             <!-- //simple8 -->
 
             <!-- simple9 -->
-<div id="sample9" class="sample">
+            <div id="sample9" class="sample">
     <h3>09. for문</h3>
     <div class="code">
 <pre class="line-numbers"><code class="language-js">{
@@ -420,6 +420,16 @@
         <!-- //script -->
 
         <script>
+                    //#id 이동하기
+            document.querySelectorAll("a[href^='#']").forEach(el => {
+                el.addEventListener("click", (event) => {
+                    event.preventDefault(); //#의 기본기능 차단
+                    document.querySelector(el.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    })
+                    
+                })
+            })
             //01. if문
             {
             //     if(true){

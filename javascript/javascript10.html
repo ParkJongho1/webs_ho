@@ -65,6 +65,16 @@
                 <li><a href="#sample1">02. 요소 메서드 : 클래스 : .classList.remove() : 클래스 삭제하기</a></li>
                 <li><a href="#sample2">03. 요소 메서드 : 클래스 : .classList.contains() : 클래스 존재 여부 확인하기</a></li>
                 <li><a href="#sample3">04. 요소 메서드 : 클래스 : .classList.toggle() : 클래스 추가/삭제하기</a></li>
+                <br>
+                <li><a href="#sample">01. 요소 메서드 : 속성 : .setAttribute() : 요소 속성 설정하기</a></li>
+                <li><a href="#sample">01. 요소 메서드 : 속성 : .getAttribute() : 요소 속성 가져오기</a></li>
+                <li><a href="#sample">01. 요소 메서드 : 속성 : .hasAttribute() : 요소 속성 존재 여부 확인하기</a></li>
+                <br>
+                <li><a href="#sample">01. 요소 메서드 : 텍스트 : .textContents() : 요소의 텍스트 설정하기</a></li>
+                <li><a href="#sample">01. 요소 메서드 : 텍스트 : .innerText() : 요소의 텍스트 설정하기</a></li>
+                <li><a href="#sample">01. 요소 메서드 : 텍스트 : .innerHTML() : 요소의 HTML 텍스트 설정하기</a></li>
+                <li><a href="#sample">01. 요소 메서드 : 텍스트 : .outerHTML() : 요소의 HTML 텍스트 설정하기</a></li>
+
             </ul>
         </div>
         <!-- //list -->
@@ -221,6 +231,16 @@
     <!-- script -->
     
     <script>
+        //#id 이동하기
+        document.querySelectorAll("a[href^='#']").forEach(el => {
+            el.addEventListener("click", (event) => {
+                event.preventDefault(); //#의 기본기능 차단
+                document.querySelector(el.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                })
+                
+            })
+        })
 
         //sample01
         //두번째 이미지 선택
