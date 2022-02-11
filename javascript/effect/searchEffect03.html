@@ -197,6 +197,7 @@
                 <span>h</span>
                 <span>j</span>
                 <span>l</span>
+                <br>
                 <span>m</span>
                 <span>o</span>
                 <span>p</span>
@@ -208,23 +209,6 @@
                 <span>v</span>
                 <span>w</span>
                 <span>z</span>
-                <br>
-                <span>기타</span>
-                <span>애니메이션</span>
-                <span>아웃라인</span>
-                <span>위치</span>
-                <span>배경</span>
-                <span>속성</span>
-                <span>테이블</span>
-                <span>플렉스</span>
-                <span>폰트</span>
-                <span>그리드</span>
-                <span>마진</span>
-                <span>마스크</span>
-                <span>아웃라인</span>
-                <span>패딩</span>
-                <span>텍스트</span>
-                
             </div>
 
             <div class="count">
@@ -507,8 +491,8 @@
                     // console.log(cssName)
                     const cssType = el.dataset.type;        //CSS 타입 값 
 
-                    //알파벳 첫글자 == CSS 속성의 첫글자 
-                    if(searchWord.charAt(0) === cssName.charAt(0) || searchWord.charAt(0) === cssType.charAt(0)) {  // searchWord 와 cssName 첫글자가 같을경우 혹은 searchWord 와 cssType 첫글자가 같을경우
+                    //알파벳 첫글자 == CSS 속성의 첫글자 || searchWord.charAt(0) === cssType.charAt(0)
+                    if(searchWord.charAt(0) === cssName.charAt(0)) {  // searchWord 와 cssName 첫글자가 같을경우 혹은 searchWord 와 cssType 첫글자가 같을경우
                         el.classList.add("show");           //데이터가 있으면 클래스 show를 추가
                     } else {    
                         el.classList.remove("show");        //데이터가 있으면 클래스 show 삭제
