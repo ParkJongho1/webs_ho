@@ -757,7 +757,8 @@
     font-weight: 500;
     font-size: 16px;
     text-decoration: underline;
-    margin: 30px 0;
+    text-underline-position: under;
+    margin: 30px 0 10px 0;
 }
 .member-form .list li {
     font-size: 14px;
@@ -765,6 +766,7 @@
     position: relative;
     padding-left: 10px;
 }
+
 .member-form .list li::before {
     content: '';
     width: 3px;
@@ -775,4 +777,26 @@
     left: 0;
     top: 7px;
 }
-
+.member-form .list02 {
+    width: 550px;
+    background: #f5f5f5;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.member-form .list02 li {
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 10px;
+}
+.member-form .list02 li::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
