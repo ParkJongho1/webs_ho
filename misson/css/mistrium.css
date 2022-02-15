@@ -1,9 +1,9 @@
 #wrap {
     width: 100%;
-    height: 4000px;
+    height: 2000px;
 }
 .container {
-    width: 2000px;
+    width: 1600px;
     margin: 0 auto;
 }
 #header {
@@ -72,89 +72,97 @@
     background-position: -150px 0;
 }
 /* //헤더 영역 */
-.text_imgtype01 {
-    margin-left: 101px;
-    width: 100%;
-    height: 900px;
-}
 
-.text_imgtype01 .title p { 
-    padding-top: 140px;
-    font-size: 80px;
-    letter-spacing: -1.6;
-    font-weight: bold;
+
+#banner {
+    background: url(../img/mistriumbg.png) right  no-repeat;
+    height: 853px;
+    margin-top: 126px;
 }
-.text_imgtype01 .text_img2 {
-    display: flex;
-}
-.text_imgtype01 .left {
-    flex: 40% 0;
-    padding-top: 55px;
-    width: 500px;
-}
-.text_imgtype01 .left span {
-    font-size: 18px;
-}
-.text_imgtype01 .right {
-    flex: 0 60%;
-    width: 1000px;
-    height: 500px;
-    background: url(../img/mistriumbg.png) right no-repeat;
+.banner_bg {
+    width: 1249px;
     margin: 0 auto;
 }
-.text_imgtype01 .btn a {
-    margin-top: 50px;
-    font-size: 16px;
-    display: inline-block;
+.banner_bg h2 {
+    font-size: 80px;
+    line-height: 0.95;
+    letter-spacing: -1.6px;
+    color: #292019;
 }
-.text_imgtype01 .btn .quote {
-    padding: 9px 30px;
-    background: #c4a586;
-    color: #fff;
-    margin-right: 26px;
+.banner_bg p {
+    font-size: 18px;
+    text-align: left;
+    width: 432px;
+    margin-top: 55px;
+    color: #72696a
 }
-.text_imgtype01 .btn .video {
-    padding: 9px 46px;
-    border: 1px solid #c4a586;;
-    background: #fff;
-    color: #c4a586;
-}
-
-.someof .someof01 {
-    height: 300px;
-    background: #444;
-}
-.text_img3 {
+.banner_box {
     display: flex;
+    margin-top: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.75;
 }
-.text_img3 .t3_right {
-    width: 50%;
-    height: 400px;
-    background: #555;
+.banner_box .box1 {
+    padding: 21px 45px 21px 36px;
+    background-color: #c4a586;
+    color: #fff;
 }
-.text_img3 .t3_left {
-    width: 50%;
-    height: 400px;
-    background: #666;
+.banner_box .box2 {
+    padding: 21px 53px 21px 55px;
+    color: #c4a586;
+    border: 1px solid #c4a586;
+    margin-left: 26px;
 }
-.products {
-    padding: 150px 200px;
-    
+.banner_txt {
+    text-align: center;
+    margin-top: 134px;
+    font-weight: bold;
 }
-.products .pro_type01 {
-    height: 1500px;
-    background: #777;
+.banner_icon {
+    display: flex;
+    justify-content:center;
+    margin-top: 72px;
 }
-.text_img4 {
-    padding: 150px 200px;
+.banner_icon .icon01 {
+    width: 96px;
+    height: 47px;
+    background: url(../img/logo1.png) no-repeat;
+    margin-right: 98px;
 }
-.text_img4 .t4 { 
-    height: 1000px;
-    background: #888;
+.banner_icon .icon02 {
+    width: 109px;
+    height: 43px;
+    background: url(../img/logo2.png) 0 5px no-repeat;
+    margin-right: 72px;
+}
+.banner_icon .icon03 {
+    width: 147px;
+    height: 61px;
+    background: url(../img/logo3.png) 0 -6px no-repeat;
+    margin-right: 72px;
+}
+.banner_icon .icon04 {
+    width: 110px;
+    height: 37px;
+    background: url(../img/logo4.png) 0 5px no-repeat;
+    margin-right: 109px;
+}
+.banner_icon .icon05 {
+    width: 67px;
+    height: 38px;
+    background: url(../img/logo5.png) 0 10px no-repeat;
+    margin-right: 107px;
+}
+.banner_icon .icon06 {
+    width: 122px;
+    height: 36px;
+    background: url(../img/logo6.png) 0 12px no-repeat;
 }
 
+/* 푸터 */
 #footer {
-    width: 100%;
-    height: 400px;
-    background: #000;
+    margin-top: 1000px;
+    height: 746px;
+    background-color: #000;
 }
