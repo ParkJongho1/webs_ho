@@ -96,19 +96,19 @@
     margin-top: 55px;
     color: #72696a
 }
-.banner_box {
+.banner_btn {
     display: flex;
     margin-top: 35px;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.75;
 }
-.banner_box .box1 {
+.banner_btn .btn1 {
     padding: 21px 45px 21px 36px;
     background-color: #c4a586;
     color: #fff;
 }
-.banner_box .box2 {
+.banner_btn .btn2 {
     padding: 21px 53px 21px 55px;
     color: #c4a586;
     border: 1px solid #c4a586;
