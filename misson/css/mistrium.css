@@ -160,6 +160,54 @@
     background: url(../img/logo6.png) 0 12px no-repeat;
 }
 
+/* img_text01 */
+.img_text01 {
+    display: flex;
+    margin-top: 198px;
+}
+.img_text01 .cont1 {
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    height: 388px;
+    background-color: #FCEFE9;
+}
+.img_text01 .cont1 .img {
+    width: 409px;
+    height: 351px;
+    background: url(../img/furniture01.png) no-repeat;
+    margin: 19px 44px 0 0;
+}
+.img_text01 .cont2 {
+    display: flex;
+    justify-content: start;
+    width: 50%;
+    height: 388px;
+    background-color: #fae2c8;
+}
+.img_text01 .cont2 .desc {
+    margin-left: 67px;
+}
+.img_text01 .cont2 .img {
+    width: 351px;
+    height: 216px;
+    background: url(../img/furniture02.png) no-repeat;
+    margin-top: 106px;
+    margin-left: 59px;
+}
+.img_text01 h3 {
+    font-size: 34px;
+    font-weight: bold;
+    color: #3d3d3f;
+    margin-top: 110px;
+    line-height: 1.29;
+}
+.img_text01 p {
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    margin-top: 91px;
+}
+
 /* 푸터 */
 #footer {
     margin-top: 1000px;
