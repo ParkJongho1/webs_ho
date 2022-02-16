@@ -208,6 +208,203 @@
     margin-top: 91px;
 }
 
+/* 이미지 텍스트02 */
+.img_text02 {
+    margin-top: 173px;
+}
+.img_text02 .header {
+    width: 1041px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.img_text02 .header .logo {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 0.5;
+    color: #3d3d3f;
+}
+.img_text02 .header .tab {
+    margin-top: 30px;
+}
+.img_text02 .header .tab ul {
+    display: flex;
+}
+.img_text02 .header .tab li {
+    margin: 0 100px 0 10px;
+}
+.img_text02 .header .tab li a {
+    font-size: 23px;
+    color: #b9b7b6;
+}
+.img_text02 .header .tab li a:hover {
+    color: #3d3d3f;
+}
+.img_text02 .header .btn {
+    display: flex;
+    margin-top: 35px;
+    position: relative;
+}
+.img_text02 .header .btn .btn_txt {
+    font-size: 17px;
+    color: #3d3d3f;
+    margin-right: 28px;
+}
+.img_text02 .header .btn .btn_box {
+    width: 34px;
+    height: 19px;
+    background-color: #e9e9e9;
+    margin-top: 4px;
+}
+.img_text02 .header .btn .btn_arrow {
+    width: 25px;
+    height: 17px;
+    background: url(../img/imgsp.svg);
+    background-position: -200px 0;
+    position: absolute;
+    top: 6px; right: 17px;
+}
+.img_text02 .nav {
+    width: 421px;
+    height: 18px;
+    margin: 0 auto;
+    margin-top: 111px;
+}
+.img_text02 .nav ul {
+    display: flex;
+    justify-content: center;
+}
+.img_text02 .nav li {
+    margin: 0 30px;
+}
+.img_text02 .nav li a {
+    font-size: 18px;
+    color: #b9b7b6;
+}
+.img_text02 .nav li a:hover {
+    color: #3d3d3f;
+}
+.img_text02 .iT {
+    width: 312px;
+    height: 305px;
+    background-color: #fff4e8;
+}
+.img_text02 .atc {
+    width: 137px;
+    height: 40px;
+    background-color: #d9ab82;
+    border-radius: 40px;
+    position: absolute;
+    left: 28%; top: -7%;
+    display: flex;
+}
+.img_text02 .atc_txt {
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 0 0 14px;
+}
+.img_text02 .atc_bk {
+    margin: 7px 0 0 5px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.250);
+    border-radius: 20px;
+}
+.img_text02 .atc_bk .bk_img {
+    width: 20px;
+    height: 20px;
+    background: url(../img/imgsp.svg);
+    background-position: -250px 0;
+    margin: 5px 0 0 5px;
+}
+.img_text02 .name {
+    font-size: 26px;
+    font-weight: bold;
+    color: #3d3d3f;
+    margin: 35px 0 20px 51px;
+}
+.img_text02 .price {
+    display: flex;
+    margin-left: 51px;
+}
+.img_text02 .r_price {
+    margin-right: 38px;
+    font-size: 19px;
+    font-weight: 500;
+}
+.img_text02 .o_price {
+    font-size: 15px;
+    font-weight: 500;
+    color: #a9a7a6;
+    margin-top: 5px;
+    text-decoration: line-through;
+}
+.img_text02 .img_container01 {
+    display: flex;
+    justify-content: space-between;
+    width: 1056px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.img_text02 .img_container01 .img_txt01 {
+    position: relative;
+}
+.img_text02 .img_container01 .img_txt01 .img {
+    width: 250px;
+    height: 280px; 
+    background: url(../img/Product01.png) -98px -44px no-repeat;
+    margin-left: 40px;
+}
+
+.img_text02 .img_container01 .img_txt02 {
+    position: relative;
+}
+.img_text02 .img_container01 .img_txt02 .img {
+    width: 280px;
+    height: 255px;
+    background: url(../img/Product02.png) -30px -25px no-repeat;
+}
+.img_text02 .img_container01 .img_txt03 {
+    position: relative;
+}
+.img_text02 .img_container01 .img_txt03 .img {
+    width: 290px;
+    height: 255px;
+    background: url(../img/Product03.png) -50px -35px no-repeat;
+}
+.img_text02 .img_container02 {
+    display: flex;
+    justify-content: space-between;
+    width: 1056px;
+    margin: 0 auto;
+    margin-top: 191px;
+}
+.img_text02 .img_container02 .img_txt01 {
+    position: relative;
+}
+.img_text02 .img_container02 .img_txt01 .img {
+    width: 250px;
+    height: 270px;
+    background: url(../img/Product04.png) 0 -10px no-repeat;
+}
+.img_text02 .img_container02 .img_txt02 {
+    position: relative;
+}
+.img_text02 .img_container02 .img_txt02 .img {
+    width: 270px;
+    height: 280px;
+    background: url(../img/Product05.png) -60px -30px no-repeat;
+}
+.img_text02 .img_container02 .img_txt03 {
+    position: relative;
+}
+.img_text02 .img_container02 .img_txt03 .img {
+    width: 265px;
+    height: 270px;
+    background: url(../img/Product06.png) 35px 0px no-repeat;
+}
+
 /* 푸터 */
 #footer {
     margin-top: 1000px;
