@@ -17,6 +17,7 @@
         width: 100%;
         vertical-align: top; /*  이미지 여백 제거 */
     }
+    
     body {
         width: 100%;
         height: 100vh;
@@ -26,7 +27,31 @@
         overflow: hidden;
         color: #fff;
     }
-  
+    body.img01 {
+        background: url(../img/imgbg01.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img02 {
+        background: url(../img/imgbg02.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img03 {
+        background: url(../img/imgbg03.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img04 {
+        background: url(../img/imgbg04.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img05 {
+        background: url(../img/imgbg05.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
     body::before {
         content: '';
         position: absolute;
@@ -34,9 +59,10 @@
         top: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.5);
         z-index: -1;
     }
+    
 
     /* info */
     .title {
