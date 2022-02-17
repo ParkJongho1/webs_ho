@@ -182,19 +182,30 @@
                             </div>
                             <div class="view-cont">
                                 <div>
-                                    <pre><code class="language-html">&lt;main&gt;
-    &lt;section id="sliderType01"&gt;
+<pre><code class="language-html">&lt;main&gt;
+    &lt;section id="sliderType02"&gt;
         &lt;div class="slider__wrap"&gt;
             &lt;div class="slider__img"&gt;
                 &lt;div class="slider__inner"&gt;
                     &lt;!-- slider*5&gt;img[src="img/img$$.jpg" alt="이미지$"] --&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/img01.jpg" alt="이미지1"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/img02.jpg" alt="이미지2"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/img03.jpg" alt="이미지3"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/img04.jpg" alt="이미지4"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/img05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/img06.jpg" alt="이미지6"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/img07.jpg" alt="이미지7"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/img08.jpg" alt="이미지8"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/img09.jpg" alt="이미지9"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/img10.jpg" alt="이미지10"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+                &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="slider__dot"&gt;
+            &lt;!-- &lt;a href="#" class="dot active"&gt;&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;&lt;/a&gt; --&gt;
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/main&gt;
@@ -203,51 +214,92 @@
                                 <!-- //cont1 -->
                                 <div>
                                     <pre><code class="language-javascript">.slider__wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
 }
 .slider__img {      /* 화면이 보이는 구간 */
-    width: 800px;
-    height: 480px;
-    /* overflow: hidden; */
+width: 800px;
+height: 480px;
+overflow: hidden;
 }
 .slider__inner {        /* 이미지 움직이는 영역 */
-    display: flex;
-    width: 4800px;       /* 이미지 총 길이 */
-    transform: translateX(0);
+display: flex;
+width: 4800px;       /* 이미지 총 길이 */
+transform: translateX(0);
 }
 .slider {
-    width: 800px;
-    position: relative;
+width: 800px;
+position: relative;
 }
 .slider::before {
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    padding: 5px 10px 3px;
+position: absolute;
+left: 5px;
+top: 5px;
+background: rgba(0, 0, 0, 0.4);
+color: #fff;
+padding: 5px 10px 3px;
 }
 
 .slider:nth-child(1)::before {
-    content: '이미지1';
+content: '이미지1';
 }
 .slider:nth-child(2)::before {
-    content: '이미지2';
+content: '이미지2';
 }
 .slider:nth-child(3)::before {
-    content: '이미지3';
+content: '이미지3';
 }
 .slider:nth-child(4)::before {
-    content: '이미지4';
+content: '이미지4';
 }
 .slider:nth-child(5)::before {
-    content: '이미지5';
+content: '이미지5';
 }
-.slider:nth-child(6)::before {
-    content: '이미지1';
+
+.slider__btn {}
+.slider__btn a {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 100;
+width: 50px;
+height: 50px;
+background: rgba(0, 0, 0, 0.4);
+text-align: center;
+line-height: 50px;
+transition: all 0.2s;
+display: block;
+color: #fff;
+text-decoration: none;
+}
+.slider__btn a.prev {
+left: 0;
+}
+.slider__btn a.next {
+right: 0;
+}
+.slider__btn a:hover {
+background: rgba(241, 96, 86);
+}
+.slider__dot {
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+bottom: 20px;
+}
+.slider__dot .dot {
+width: 20px;
+height: 20px;
+background: rgba(0, 0, 0, 0.4);
+display: inline-block;
+border-radius: 50%;
+transition: all 0.3s;
+margin: 3px;
+}
+.slider__dot .dot.active {
+background: rgba(255,255,255,0.9);
 }
 </code></pre>
                                 </div>
@@ -257,33 +309,57 @@
 const sliderImg = document.querySelector(".slider__img");       //이미지 한칸만 보이는 영역
 const sliderInner = document.querySelector(".slider__inner");   //이미지 움직이는 영역
 const slider = document.querySelectorAll(".slider");            //5개의 이미지 저장
+const sliderBtn = document.querySelector(".slider__btn")        //슬라이드버튼 영역
+const sliderDot = document.querySelector(".slider__dot")        //dot 영역
+
+
 
 let currentIndex = 0;
-let sliderCount = slider.length;                                     //이미지 갯수
-let sliderWidth = sliderImg.offsetWidth;                             //이미지 가로값
-let sliderClone = sliderInner.firstElementChild.cloneNode(true);     //첫번째 이미지 복사
-sliderInner.appendChild(sliderClone);                                //첫 번째 이미지를 마지막에 넣어줌
+let sliderCount = slider.length;             //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;     //sliderImg의 가로값을 변수 sliderWidth 지정
+let dotIndex = "";                           //닷 버튼 생성하기 위해 변수 dotIndex선언
+let dotActive;                               //active가 포함된 dot를 생성하기위해 변수 dotActive선언
 
-
-
-function sliderEffect() {           //함수 sliderEffect 설정
-    currentIndex++;
-    sliderInner.style.transition = "all 0.3s";      //이미지 transition효과 0.3초 설정
-    sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";        //이미지1~6번 움직임(-800*(0~5))
-
-    //마지막 사진에 갔을 때
-    if(currentIndex == sliderCount) {
-        setTimeout(() => {         //setTimeout 이용해 일정 시간이 지난 후에 함수를 실행하는 방법 
-            //이미지 초기화
-            sliderInner.style.transition = "0s";    //이미지 transition효과 초기화
-            sliderInner.style.transform = "translateX(0px)";        //이미지1로 초기화
-        }, 300) //0.3초후 함수실행
-        
-        
-        currentIndex = 0;
-    }
+function init() {       // dot이 바로 보일수 있게할수있는 함수init 생성
+    //이미지 갯수만큼 <a></a> 생성
+    
+    slider.forEach(() => dotIndex += "<a href='#' class='dot'></a>");   // dotIndex에 이미지 갯수만큼 닷 버튼 생성
+    
+    sliderDot.innerHTML = dotIndex;
+    sliderDot.firstElementChild.classList.add("active");                //첫 번째 자식 닷 버튼한테 활성화표시 (active)
 }
-setInterval(sliderEffect, 2000);        //setInterval에 함수 sliderEffect 설정, 2초에 한번씩 함수 실행
+init();
+
+function gotoSlider(num) {  //슬라이드 동작 매개변수 함수 생성
+    sliderInner.style.transition = "all 400ms"          //이미지 transition효과 0.4초 설정
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";      //이미지 움직임(요소의) -가로값 * num 
+    currentIndex = num;     //현재 보이는 이미지 숫자
+
+    dotActive = document.querySelectorAll(".slider__dot .dot"); //active가 포함된 dot를 보여주기 위해 선언
+    dotActive.forEach(el => {       //el(dot)
+        el.classList.remove("active");  //active를 삭제
+    })
+    dotActive[num].classList.add("active"); //현재 보여지고 있는 이미지 숫자가 들어가있는 닷 active 클래스 추가
+}
+
+document.querySelectorAll(".slider__btn a").forEach((btn, index) => {   //next,prev 버튼
+    btn.addEventListener("click", () => {                               //next,prev 버튼 클릭시
+        let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;   
+        let nextIndex = (currentIndex + 1) % sliderCount;       // 0, 1, 2, 3, 4 만 나올수 있도록 나누기 사용
+
+        if(btn.classList.contains("prev")){     //prev 클래스가 있으면 
+            gotoSlider(prevIndex)               //gotoSlider함수에 prevIndex설정
+        } else {                                //prev 클래스가 있지 않으면
+            gotoSlider(nextIndex)               //gotoSlider함수에 nextIndex설정
+        }           
+    })
+})
+
+document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {    //dot
+    dot.addEventListener("click", () => {                                   //dot 을 클릭시            
+        gotoSlider(index);                                                  //gotoSlider함수에 index설정
+    })
+})
 </code></pre>
                                 </div>
                                 <!-- //cont3 -->

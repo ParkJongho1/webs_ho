@@ -259,33 +259,33 @@
 const sliderImg = document.querySelector(".slider__img");       //이미지 한칸만 보이는 영역
 const sliderInner = document.querySelector(".slider__inner");   //이미지 움직이는 영역
 const slider = document.querySelectorAll(".slider");            //5개의 이미지 저장
-const sliderBtn = document.querySelector(".slider__btn")        
-const sliderBtnPrev = document.querySelector(".prev");
-const sliderBtnNext = document.querySelector(".next");
+const sliderBtn = document.querySelector(".slider__btn")        //슬라이드버튼 영역
+const sliderBtnPrev = document.querySelector(".prev");          //왼쪽 버튼
+const sliderBtnNext = document.querySelector(".next");          //오른쪽 버튼
 
 let currentIndex = 0;
-let sliderCount = slider.length;   
-let sliderWidth = sliderImg.offsetWidth; 
+let sliderCount = slider.length;                //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;        //sliderImg의 가로값을 변수 sliderWidth 지정
 
-function gotoSlider(num) {
-    sliderInner.style.transition = "all 400ms"
-    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
-    currentIndex = num;
+function gotoSlider(num) {  //슬라이드 동작 매개변수 함수 생성
+    sliderInner.style.transition = "all 400ms"           //이미지 transition효과 0.4초 설정
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";     //이미지 움직임(요소의) -가로값 * num 
+    currentIndex = num; //현재 보이는 이미지 숫자
 }
 
-sliderBtnPrev.addEventListener("click", () => {
+sliderBtnPrev.addEventListener("click", () => {     //prev버튼 클릭시(왼쪽으로 움직이는 이미지버튼)
     
     let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
     //첫번째 이미지가 있을때 0 --> 4
     // if( currentIndex == 0 ) prevIndex = sliderCount -1
     
-    gotoSlider(prevIndex)
+    gotoSlider(prevIndex)       //gotoSlider함수에 prevIndex설정
 })
-sliderBtnNext.addEventListener("click", () => {
-    let nextIndex = (currentIndex + 1) % sliderCount;
+sliderBtnNext.addEventListener("click", () => {     //next버튼을 클릭시(오른쪽으로 움직이는 이미지 버튼)
+    let nextIndex = (currentIndex + 1) % sliderCount;   // 0, 1, 2, 3, 4 만 나올수 있도록 나누기 사용
     //이미지 총 갯수 이상 넘어X
     
-    gotoSlider(nextIndex)
+    gotoSlider(nextIndex)       //gotoSlider함수에 nextIndex설정
     
 })
 </code></pre>
@@ -335,7 +335,7 @@ sliderBtnNext.addEventListener("click", () => {
         function gotoSlider(num) {  //슬라이드 동작 매개변수 함수 생성
             sliderInner.style.transition = "all 400ms"           //이미지 transition효과 0.4초 설정
             sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";     //이미지 움직임(요소의) -가로값 * num 
-            currentIndex = num; //현재 보이는 이미지  
+            currentIndex = num; //현재 보이는 이미지 숫자
         }
         
         sliderBtnPrev.addEventListener("click", () => {     //prev버튼 클릭시(왼쪽으로 움직이는 이미지버튼)
