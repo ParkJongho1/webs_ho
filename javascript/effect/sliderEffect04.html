@@ -160,7 +160,6 @@
     /* overflow: hidden; */
 }
 .slider__inner {        /* 이미지 움직이는 영역 */
-    display: flex;
     width: 4800px;       /* 이미지 총 길이 */
     transform: translateX(0);
 }
@@ -206,7 +205,7 @@ const slider = document.querySelectorAll(".slider");            //5개의 이미
 
 let currentIndex = 0;
 let sliderCount = slider.length;                                     //이미지 갯수
-let sliderWidth = sliderImg.offsetWidth;                             //이미지 가로값
+let sliderHeight = sliderImg.offsetHeight;                             //이미지 세로값
 let sliderClone = sliderInner.firstElementChild.cloneNode(true);     //첫번째 이미지 복사
 sliderInner.appendChild(sliderClone);                                //첫 번째 이미지를 마지막에 넣어줌
 
@@ -215,7 +214,7 @@ sliderInner.appendChild(sliderClone);                                //첫 번�
 function sliderEffect() {           //함수 sliderEffect 설정
     currentIndex++;
     sliderInner.style.transition = "all 0.3s";      //이미지 transition효과 0.3초 설정
-    sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";        //이미지1~6번 움직임(-800*(0~5))
+    sliderInner.style.transform = "translateY(-"+ sliderHeight * currentIndex +"px)";        //이미지1~6번 움직임(-480*(0~5))
 
     //마지막 사진에 갔을 때
     if(currentIndex == sliderCount) {
