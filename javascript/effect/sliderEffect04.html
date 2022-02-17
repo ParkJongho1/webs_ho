@@ -278,14 +278,14 @@ setInterval(sliderEffect, 2000);        //setInterval에 함수 sliderEffect 설
         function sliderEffect() {           //함수sliderEffect 생성
             currentIndex++;
             sliderInner.style.transition = "all 0.3s";      //이미지 transition효과 0.3초 설정
-            sliderInner.style.transform = "translateY(-"+ sliderHeight * currentIndex +"px)";        //이미지1~6번 움직임(-800*(1~6))px
+            sliderInner.style.transform = "translateY(-"+ sliderHeight * currentIndex +"px)";        //이미지1~6번 움직임(-480*(1~6))px
 
-            // sliderInner.style.transfrom = "translateX(-800px)";
-            // sliderInner.style.transfrom = "translateX(-1600px)";
+            // sliderInner.style.transfrom = "translateX(-480px)";
+            // sliderInner.style.transfrom = "translateX(-960px)";
+            // sliderInner.style.transfrom = "translateX(-1440px)";
+            // sliderInner.style.transfrom = "translateX(-1920px)";
             // sliderInner.style.transfrom = "translateX(-2400px)";
-            // sliderInner.style.transfrom = "translateX(-3200px)";
-            // sliderInner.style.transfrom = "translateX(-4000px)";
-            // sliderInner.style.transfrom = "translateX(-4800px)";
+            // sliderInner.style.transfrom = "translateX(-2880px)";
 
             //마지막 사진에 갔을 때
             if(currentIndex == sliderCount) {
