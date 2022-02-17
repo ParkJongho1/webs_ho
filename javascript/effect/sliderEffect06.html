@@ -320,55 +320,55 @@ setInterval(sliderEffect, 2000);        //setInterval에 함수 sliderEffect 설
         const sliderImg = document.querySelector(".slider__img");       //이미지 한칸만 보이는 영역
         const sliderInner = document.querySelector(".slider__inner");   //이미지 움직이는 영역
         const slider = document.querySelectorAll(".slider");            //5개의 이미지 저장
-        const sliderBtn = document.querySelector(".slider__btn")
-        const sliderDot = document.querySelector(".slider__dot")
+        const sliderBtn = document.querySelector(".slider__btn")        //슬라이드버튼 영역
+        const sliderDot = document.querySelector(".slider__dot")        //dot 영역
         
    
 
         let currentIndex = 0;
-        let sliderCount = slider.length;   
-        let sliderWidth = sliderImg.offsetWidth; 
-        let dotIndex = "";
-        let dotActive;
+        let sliderCount = slider.length;             //이미지 갯수
+        let sliderWidth = sliderImg.offsetWidth;     //sliderImg의 가로값을 변수 sliderWidth 지정
+        let dotIndex = "";                           //닷 버튼 생성하기 위해 변수 dotIndex선언
+        let dotActive;                               //active가 포함된 dot를 생성하기위해 변수 dotActive선언
 
-        function init() {
+        function init() {       // dot이 바로 보일수 있게할수있는 함수init 생성
             //이미지 갯수만큼 <a></a> 생성
             
-            slider.forEach(() => dotIndex += "<a href='#' class='dot'></a>");
+            slider.forEach(() => dotIndex += "<a href='#' class='dot'></a>");   // dotIndex에 이미지 갯수만큼 닷 버튼 생성
+            
             sliderDot.innerHTML = dotIndex;
-            //첫 번째 닷 버튼한테 활성화표시 (active)
-            sliderDot.firstElementChild.classList.add("active");
+            sliderDot.firstElementChild.classList.add("active");                //첫 번째 자식 닷 버튼한테 활성화표시 (active)
         }
         init();
 
-        function gotoSlider(num) {
-            sliderInner.style.transition = "all 400ms"
-            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
-            currentIndex = num;
+        function gotoSlider(num) {  //슬라이드 동작 매개변수 함수 생성
+            sliderInner.style.transition = "all 400ms"          //이미지 transition효과 0.4초 설정
+            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";      //이미지 움직임(요소의) -가로값 * num 
+            currentIndex = num;     //현재 보이는 이미지 숫자
 
-            dotActive = document.querySelectorAll(".slider__dot .dot");
-            dotActive.forEach(el => {
-                el.classList.remove("active");
+            dotActive = document.querySelectorAll(".slider__dot .dot"); //active가 포함된 dot를 보여주기 위해 선언
+            dotActive.forEach(el => {       //el(dot)
+                el.classList.remove("active");  //active를 삭제
             })
-            dotActive[num].classList.add("active");  
+            dotActive[num].classList.add("active"); //현재 보여지고 있는 이미지 숫자가 들어가있는 닷 active 클래스 추가
         }
         
-        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
-            btn.addEventListener("click", () => {
-                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
-                let nextIndex = (currentIndex + 1) % sliderCount;
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {   //next,prev 버튼
+            btn.addEventListener("click", () => {                               //next,prev 버튼 클릭시
+                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;   
+                let nextIndex = (currentIndex + 1) % sliderCount;       // 0, 1, 2, 3, 4 만 나올수 있도록 나누기 사용
 
-                if(btn.classList.contains("prev")){
-                    gotoSlider(prevIndex)
-                } else {
-                    gotoSlider(nextIndex)
-                }
+                if(btn.classList.contains("prev")){     //prev 클래스가 있으면 
+                    gotoSlider(prevIndex)               //gotoSlider함수에 prevIndex설정
+                } else {                                //prev 클래스가 있지 않으면
+                    gotoSlider(nextIndex)               //gotoSlider함수에 nextIndex설정
+                }           
             })
         })
 
-        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-                gotoSlider(index);
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {    //dot
+            dot.addEventListener("click", () => {                                   //dot 을 클릭시            
+                gotoSlider(index);                                                  //gotoSlider함수에 index설정
             })
         })
 
