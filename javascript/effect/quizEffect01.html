@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
-</head>
 <style>
     @font-face {
         font-family: 'DungGeunMo';
@@ -14,15 +12,16 @@
         font-weight: normal;
         font-style: normal;
     }
-
     @font-face {
         font-family: 'Cafe24Dangdanghae';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
-
     *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -34,27 +33,27 @@
     body {
         background-color: #f6f6f6;
         background-image:
-            linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
-            linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
-            linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
-            linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+            linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+            linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+            linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+            linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
             linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
             linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
             linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
             linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
             linear-gradient(#cdcccc, #cdcccc);
-        background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+        background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
     }
+
     #header {
         position: absolute;
-        left: 0;
-        top: 0;
+        left: 0; top: 0;
         width: 100%;
         background: #262626;
         color: #fff;
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
         padding: 10px;
         z-index: 10;
     }
@@ -66,19 +65,19 @@
         top: 5px;
         width: calc(100% - 10px);
         height: calc(100% - 10px);
-        z-index: -1;
+        z-index: -1
     }
     #header h1 {
         padding: 3px 0 6px 10px;
     }
-    #header nav{
-        padding-left: 10px;
+    #header nav {
+        padding-right: 10px;
     }
     #header nav li {
         list-style: none;
         display: inline;
-
     }
+    
     #header nav li a {
         color: #fff;
         display: inline-block;
@@ -86,17 +85,18 @@
         transition: all 0.2s;
         border: 1px dashed #fff;
     }
+
     #header nav li.active a {
         background: #fff;
-        color: #000;
+        color: #262626;
     }
+
     #header nav li a:hover {
         opacity: 0.5;
     }
     #footer {
         margin-top: 200px;
         width: 100%;
-        height: 60px;
         background: #262626;
         text-align: center;
         padding: 20px;
@@ -106,8 +106,7 @@
         font-size: 16px;
     }
 
-
-    /* quiz_wrap */
+    /* quiz */
     .quiz__wrap {
         display: flex;
         align-items: center;
@@ -121,7 +120,6 @@
         background: #fff;
         border: 8px ridge #cacaca;
         margin: 10px;
-        display: i;
     }
     .quiz__type {
         background: #cacaca;
@@ -135,8 +133,7 @@
     .quiz__type::before {
         content: '';
         position: absolute;
-        left: 2px;
-        top: 2px;
+        left: 2px; top: 2px;
         width: 5px;
         height: 5px;
         border: 6px ridge #CACACA;
@@ -144,8 +141,7 @@
     .quiz__type::after {
         content: '';
         position: absolute;
-        right: 2px;
-        top: 2px;
+        right: 2px; top: 2px;
         width: 5px;
         height: 5px;
         border: 6px ridge #CACACA;
@@ -159,28 +155,26 @@
     }
     .quiz__number {
         font-family: 'Cafe24Dangdanghae';
-        color: #ce3232;
-        /* #64a30b */
+        color: red;
     }
     .quiz__ask {
         font-family: 'Cafe24Dangdanghae';
     }
     .quiz__view {
-        background-color: #f5f5f5;
+        background: #f5f5f5;
     }
     .quiz__answer {
-        background-color: #f5f5f5;
         border-top: 6px ridge #cacaca;
+        background: #f5f5f5;
         padding: 10px;
     }
     .quiz__confirm {
-        font-family: 'Cafe24Dangdanghae';
-        border: 6px ridge #cacaca;
+        border: 6px ridge #ffffff;
         width: 100%;
         font-size: 22px;
         padding: 13px 20px;
-        margin-bottom: 2px;
         background: #d6d6d6;
+        font-family: 'Cafe24Dangdanghae';
         text-shadow: 1px 1px 1px #fff;
         transition: all 0.3s;
         cursor: pointer;
@@ -189,30 +183,29 @@
         background: #b3b3b3;
     }
     .quiz__result {
-        text-align: center;
-        font-family: 'Cafe24Dangdanghae';
-        border: 6px ridge #cacaca;
+        border: 6px ridge #ffffff;
         width: 100%;
         font-size: 22px;
         padding: 13px 20px;
         background: #fff;
+        text-align: center;
+        font-family: 'Cafe24Dangdanghae';
         text-shadow: 1px 1px 1px #fff;
         display: none;
     }
 
     /* dog */
-    .btn,
-    .dog .tail,
-    .dog .chin,
-    .dog .tongue::before,
-    .dog .tongue::after,
-    .dog .mouth,
-    .dog .nose,
-    .dog .teardrop,
-    .dog .eyes,
-    .dog .face::before,
-    .dog .face::after,
-    .dog .ears::before,
+    .dog .tail, 
+    .dog .chin, 
+    .dog .tongue::before, 
+    .dog .tongue::after, 
+    .dog .mouth, 
+    .dog .nose, 
+    .dog .teardrop, 
+    .dog .eyes, 
+    .dog .face::before, 
+    .dog .face::after, 
+    .dog .ears::before, 
     .dog .ears::after {
         transition: 0.2s ease-in;
     }
@@ -234,8 +227,7 @@
         top: -14%;
         width: 100%;
     }
-    .dog .ears::before,
-    .dog .ears::after {
+    .dog .ears::before, .dog .ears::after {
         content: "";
         position: absolute;
         top: 0;
@@ -261,8 +253,7 @@
         height: 100%;
         border-radius: 50% 50% 0 0;
     }
-    .dog .face::before,
-    .dog .face::after {
+    .dog .face::before, .dog .face::after {
         content: "";
         display: block;
         margin: auto;
@@ -288,8 +279,7 @@
         top: 29%;
         text-align: center;
     }
-    .dog .eyes::before,
-    .dog .eyes::after {
+    .dog .eyes::before, .dog .eyes::after {
         content: "";
         display: inline-block;
         width: 12px;
@@ -327,8 +317,7 @@
         text-align: center;
         background: #451d1c;
     }
-    .dog .mouth::before,
-    .dog .mouth::after {
+    .dog .mouth::before, .dog .mouth::after {
         content: "";
         position: absolute;
         top: -4px;
@@ -350,8 +339,7 @@
         position: relative;
         z-index: 1;
     }
-    .dog .tongue::before,
-    .dog .tongue::after {
+    .dog .tongue::before, .dog .tongue::after {
         content: "";
         position: absolute;
     }
@@ -391,8 +379,7 @@
         margin: auto;
         z-index: 0;
     }
-    .dog .body::before,
-    .dog .body::after {
+    .dog .body::before, .dog .body::after {
         content: "";
         position: absolute;
         top: -1px;
@@ -432,8 +419,7 @@
         background: #F7AA2B;
         border-radius: 10px 10px 0 0;
     }
-    .dog .legs::before,
-    .dog .legs::after {
+    .dog .legs::before, .dog .legs::after {
         content: "";
         position: absolute;
         bottom: 1px;
@@ -452,11 +438,10 @@
         height: 250%;
         border-radius: 20px 20px 35px 35px;
     }
-    /* like */
-    .dog.like .face::before{
+    .dog.like .face::before {
         margin-top: 10px;
     }
-    .dog.like .face::after{
+    .dog.like .face::after {
         height: 85px;
     }
     .dog.like .eyes {
@@ -476,8 +461,8 @@
     .dog.like .nose {
         top: 18%;
     }
-    .dog.like .mouth{
-        top: 16.5%
+    .dog.like .mouth {
+        top: 16.5%;
     }
     .dog.like .tongue::before {
         height: 12px;
@@ -492,8 +477,6 @@
     .dog.like .tail {
         animation: movetail 0.1s linear infinite alternate forwards;
     }
-
-    /* dislike */
     .dog.dislike .ears::before {
         transform: rotate(-50deg) translate(-7px, 2px);
     }
@@ -517,12 +500,11 @@
         transform: rotate(-37.5deg);
         border-radius: 20px;
     }
-    .dog.dislike .eyes::after,
     .dog.dislike .eyes::after {
         transform: rotate(37.5deg);
     }
     .dog.dislike .teardrop {
-          animation: cry 0.1s ease-in 0.25s forwards;
+        animation: cry 0.1s ease-in 0.25s forwards;
     }
     .dog.dislike .nose {
         top: 44%;
@@ -537,7 +519,6 @@
         transform: rotate(0);
         animation: none;
     }
-
     @keyframes movetongue {
         100% {
             height: 27px;
@@ -547,7 +528,6 @@
         0% {
             transform: rotate(37deg);
         }
-
         100% {
             transform: rotate(52deg);
         }
@@ -557,10 +537,8 @@
             visibility: visible;
         }
     }
-
-
 </style>
-
+</head>
 <body>
     <header id="header">
         <h1>Quiz</h1>
@@ -578,32 +556,33 @@
         </nav>
     </header>
 
-
     <main id="main">
         <div class="quiz__wrap">
             <div class="quiz">
-                <h2 class="quiz__type">HTML 퀴즈</h2>
+                <h2 class="quiz__type"></h2>
                 <h3 class="quiz__question">
                     <span class="quiz__number"></span>
                     <span class="quiz__ask"></span>
                 </h3>
                 <div class="quiz__view">
                     <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
+                        <div class="dog">
+                            <div class="head">
+                                <div class="ears"></div>
+                                <div class="face"></div>
+                                <div class="eyes">
+                                    <div class="teardrop"></div>
+                                </div>
+                                <div class="nose"></div>
+                                <div class="mouth">
+                                    <div class="tongue"></div>
+                                </div>
+                                <div class="chin"></div>
                             </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
+                            <div class="body">
+                                <div class="tail"></div>
+                                <div class="legs"></div>
                             </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
                         </div>
                     </div>
                 </div>
@@ -611,52 +590,42 @@
                     <button class="quiz__confirm">정답 확인하기</button>
                     <div class="quiz__result"></div>
                 </div>
-
-                
-                
             </div>
         </div>
-
         <div class="quiz__source"></div>
     </main>
-
     <footer id="footer">
-        <a href="mailto:godhojong1@gmail.com">godhojong1@gmail.com</a>
+        <a href="mailto:ik6623@naver.com">ik6623@naver.com</a>
     </footer>
-
+    
     <script>
-        const quizType = document.querySelector(".quiz__type")  //퀴그 종류
-        const quizNumber = document.querySelector(".quiz__number")      //퀴즈 번호  
-        const quizAsk = document.querySelector(".quiz__ask")            //퀴즈 질문
-        const quizConfirm = document.querySelector(".quiz__confirm")    //정답 확인 버튼
-        const quizResult = document.querySelector(".quiz__result")      //정답 결과
-        const quizDog = document.querySelector(".quiz__view .dog")
+        const quizType = document.querySelector(".quiz__type");         // 퀴즈 종류
+        const quizNumber = document.querySelector(".quiz__number");     // 퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__ask");           // 퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__confirm");   // 정답 확인 버튼
+        const quizResult = document.querySelector(".quiz__result");     // 정답
+        const quizDog = document.querySelector(".quiz__view .dog")      // 강아지
 
-        //문제 정보
+        // 문제 정보
         const answerType = "HTML";
-        const answerNum = 1;                                                    //정답 번호
-        const answerAsk = "컨텐츠의 구조를 정의하는 마크업 언어는 무엇일까요?";     //퀴즈 질문
-        const answerResult = "HTML";
+        const answerNum = 1;
+        const answerAsk = "컨텐츠의 구조를 정의하는 마크업 언어는 무엇일까요?";
+        const answerResult = "html"
 
-        //문제 출력
-
-        quizType.textContent = answerType
-        quizNumber.textContent = answerNum + ".";
+        // 문제 출력
+        quizType.textContent = answerType;
+        quizNumber.textContent = answerNum + ". ";
         quizAsk.textContent = answerAsk;
         quizResult.textContent = answerResult;
 
-        //정답확인
-        //정답 버튼을 클릭하면 정답 확인은 안보이게 ... 숨여긴 정답을 보이게 설정
-        quizConfirm.addEventListener("click", () => {
-            quizConfirm.style.display = "none";
-            quizResult.style.display = "block";
-            quizDog.classList.add("like")
+        // 정답 확인
+       //정답 버튼을 클릭하면 정답 확인은 안보이게 ... 숨은 정답을 보이게 설정
+        quizConfirm.addEventListener("click", ()=>{
+            quizConfirm.style.display = "none"
+            quizResult.style.display= "block"
+            quizDog.classList.add("like");
         })
-      
-        
 
     </script>
-
 </body>
-
 </html>

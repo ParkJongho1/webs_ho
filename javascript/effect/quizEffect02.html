@@ -72,7 +72,7 @@
         padding: 3px 0 6px 10px;
     }
     #header nav{
-        padding-left: 10px;
+        padding-right: 10px;
     }
     #header nav li {
         list-style: none;
@@ -181,7 +181,7 @@
         text-align: center;
         color: #f6f6f6;
         background-color: #f5534f;
-        opacity: 0;
+        display: none;
     }
     .quiz__view .false {
         position: absolute;
@@ -195,7 +195,7 @@
         line-height: 100px;
         text-align: center;
         color: #f5534f;
-        opacity: 0;
+        display: none;
     }
     .quiz__answer {
         background-color: #f5f5f5;
@@ -586,7 +586,6 @@
         0% {
             transform: rotate(37deg);
         }
-
         100% {
             transform: rotate(52deg);
         }
@@ -669,7 +668,10 @@
         const quizAsk = document.querySelector(".quiz__ask")            //퀴즈 질문
         const quizConfirm = document.querySelector(".quiz__confirm")    //정답 확인 버튼
         const quizResult = document.querySelector(".quiz__result")      //정답 결과
-        const quizDog = document.querySelector(".quiz__view .dog")
+        const quizDog = document.querySelector(".quiz__view .dog")      //강아지
+        const quizInput = document.querySelector(".quiz__input");
+        const quizTrue = document.querySelector(".true");
+        const quizFalse = document.querySelector(".false");
 
         //문제 정보
         const answerType = "Javascript";
@@ -685,7 +687,21 @@
         quizResult.textContent = answerResult;
 
         //정답확인
-  
+        quizConfirm.addEventListener("click", () => {
+            // quizTrue.style.display = "none"
+            // quizFalse.style.display = "none";
+            quizDog.classList.remove("like");
+            quizDog.classList.remove("dislike");
+            if(quizInput.value == answerResult){
+                quizTrue.style.display = "block";
+                quizFalse.style.display = "none";
+                quizDog.classList.add("like");
+            }else {
+                quizFalse.style.display = "block";
+                quizTrue.style.display = "none";
+                quizDog.classList.add("dislike");
+            }
+        });
         
 
     </script>
