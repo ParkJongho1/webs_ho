@@ -32,7 +32,7 @@
         html {
             width: 100%;
             height: 100vh;
-            background: linear-gradient(to bottom,  #dd7d7a9f 0%,#ff2600 100%);
+            background: linear-gradient(to bottom,  #7fe66b 0%,#d272f8 100%);
             overflow: hidden;
         }
         h1 {
@@ -45,7 +45,7 @@
             font-weight: normal;
             transform: translate(-50%, -50%);
             letter-spacing: 2vw;
-            background: -webkit-linear-gradient(#f71e17, #c0dcff9f);
+            background: -webkit-linear-gradient(#d272f8, #7fe66b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -67,7 +67,7 @@
             height: 50px;
             line-height: 50px;
             color: #fff;
-            border: 3px solid #ff0000ec;
+            border: 3px solid rgb(211, 75, 200);
             text-decoration: none;
             border-radius: 50%;
             font-size: 14px;
@@ -78,8 +78,8 @@
             opacity: 0.8;
         }
         .pages li a:hover {
-            box-shadow: 0 -100px 0 rgb(255, 8, 0) inset;
-            color: #fff;
+            box-shadow: 0 -100px 0 rgb(238, 52, 238) inset;
+            color: #6C4A70;
             opacity: 1;
         }
     </style>
@@ -87,18 +87,12 @@
 <body>
     <div id="canvas"></div>
     
-    <h1><a href="../../index.html">Slide Effect</a></h1>
+    <h1><a href="../../index.html">Quiz Effect</a></h1>
 
     <div class="pages">
         <ul>
-            <li><a href="sliderEffect01.html">1</a></li>
-            <li><a href="sliderEffect02.html">2</a></li>
-            <li><a href="sliderEffect03.html">3</a></li>
-            <li><a href="sliderEffect04.html">4</a></li>
-            <li><a href="sliderEffect05.html">4</a></li>
-            <li><a href="sliderEffect06.html">4</a></li>
-            <li><a href="sliderEffect07.html">4</a></li>
-            <li><a href="sliderEffect08.html">4</a></li>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
             
         </ul>
     </div>
@@ -135,15 +129,15 @@
         const geom = new THREE.IcosahedronGeometry(7, 1);
         const geom2 = new THREE.IcosahedronGeometry(15, 1);
         const material = new THREE.MeshPhongMaterial({
-            color: 0xF15F5F,
+            color: 0xffffff,
             shading: THREE.FlatShading
         });
         const mat = new THREE.MeshPhongMaterial({
-            color: 0xFFB9B9,
+            color: 0xffffff,
             shading: THREE.FlatShading
         });
         const mat2 = new THREE.MeshPhongMaterial({
-            color: 0xFFEFEF,
+            color: 0xffffff,
             wireframe: true,
             side: THREE.DoubleSide
         });
