@@ -1,349 +1,214 @@
-.source {
-    position: absolute;
-    right: 20px;
-    bottom: 40px;
-}
-.source button {
-    font-family: 'NexonLv1Gothic';
-    border: 1px solid #000;
-    background: transparent;
-    color: #000;
-    font-size: 16px;
-    padding: 10px 30px;
-    border-radius: 50px;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-.source button:hover {
-    background: #fff;
-    color: #000;
-}
-
-/*  */
-#modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.4);
-    z-index: 1000;
-    transform: scale(0);
-
-}
-#modal.show {
-    animation: foldOut 1s ease forwards;
-}
-#modal.show.hide {
-    animation: foldIn 1s 0.3s ease backwards;
-}
-.modal-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    transform: scale(0);
-}
-#modal.show .modal-wrap {
-    animation: zoomOut 0.5s 1s ease forwards;
-}
-#modal.show.hide .modal-wrap {
-    animation: zoomIn 0.5s ease forwards;
-}
-@keyframes foldOut {
-    0% {transform: scaleX(0) scaleY(0.005);}
-    50% {transform: scaleX(1) scaleY(0.005);}
-    100% {transform: scaleX(1) scaleY(1);}
-}
-@keyframes foldIn {
-    0% {transform: scaleX(1) scaleY(1);}
-    50% {transform: scaleX(1) scaleY(0.005);}
-    110% {transform: scaleX(0) scaleY(0.005);}
-    
-}
-@keyframes zoomOut {
-    0% {transform: scale(0);}
-    100% {transform: scale(1);}
-}
-@keyframes zoomIn {
-    0% {transform: scale(1);}
-    100% {transform: scale(0);}
-}
-
-.modal-close {
-    margin-top: 10px;
-}
-.modal-cont {
-    opacity: 1;
-    position: relative;
-}
-.code-view {
-    width: 60vw;
-    height: 60vh;
-    background: #fff;
-    border: 1px solid #f2f2f2;
-    border-radius: 5px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-.code-view::-webkit-scrollbar {
-    width: 4px;
-    display: none;
-}
-/* .code-view::-webkit-scrollbar-thumb {
-    background-color: #000; 
-    border-radius: 20px;
-}
-.code-view::-webkit-scrollbar-track {
-    background-color: #363746; 
-}
-.code-view::-webkit-scrollbar-corner {
-    background-color: #282936;
-}
-*/
-
-.view-header {   
-    position: absolute;
-    left: 0; top: 0;
-    width: 100%;
-    height: 32px;
-    background: #fff;
-    padding: 7px 0 7px 10px;
-    border-bottom: 1px solid #eee;
-    border-radius: 5px 5px 0 0;
-}
-.view-header > span {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    border-radius: 10px;
-
-}
-.view-header > span:nth-child(1) {
-    background: #f56565;
-}
-.view-header > span:nth-child(2) {
-    background: #f6e05e;
-}
-.view-header > span:nth-child(3) {
-    background: #3ebb7b;
-}
-.view-title {
-    position: absolute;
-    left: 0; top: 32px;
-    width: 100%;
-    height: 32px;
-    width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 9px 0px 7px;
-    height: 37px;
-}
-.view-title li {
-    display: inline;
-}
-.view-title li a {
-    color: rgb(150, 150, 150);
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 10px 20px 8px 20px;
-    margin: 2px 0 0 0;
-}
-.view-title li.active a {
-    color: #000;
-    background: #dcdce4;
-}
-.view-cont {
-    background-color: #282936;
-    height: 100%;
-    padding-top: 65px;
-}
-.view-cont > div {
-    display: none;
-}
-.view-cont > div:first-child {
-    display: block;
-}
-.view-cont pre code.hljs {
-    line-height: 1.6;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Inconsolata");
-html {
-  box-sizing: border-box;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
-.window {
-  min-width: 360px;
-  min-height: 220px;
-  background-color: #c7c7c7;
-  padding: 4px;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
-  border-right: 2px solid #2A2A2A;
-  border-bottom: 2px solid #2A2A2A;
-}
-
-.title-bar {
-  background-color: #000080;
-  padding: 4px;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.title-bar > .minimize, .title-bar > .maximize, .title-bar > .close {
-  width: 26px;
-  height: 22px;
-  background-color: #c7c7c7;
-  margin-left: 4px;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.title-bar > .minimize:hover, .title-bar > .maximize:hover, .title-bar > .close:hover {
-  background-color: #bababa;
-  border-left: 2px solid #2A2A2A;
-  border-top: 2px solid #2A2A2A;
-  border-right: 2px solid #FCFCFC;
-  border-bottom: 2px solid #FCFCFC;
-}
-.title-bar > .minimize {
-  align-items: flex-end;
-}
-.title-bar > .minimize > .symbol {
-  width: 60%;
-  height: 3px;
-  background-color: #000000;
-  margin-bottom: 2px;
-}
-.title-bar > .maximize > .symbol {
-  width: 70%;
-  height: 80%;
-  border: 2px solid #000000;
-  border-top-width: 4px;
-}
-.title-bar > .close > .symbol {
-  width: 70%;
-  height: 3px;
-  background-color: #000000;
-  transform: rotate(45deg);
-}
-.title-bar > .close > .symbol::after {
-  content: "";
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: #000000;
-  transform: rotate(90deg);
-}
-
-.menu-bar > span {
-  padding: 8px;
-  display: inline-block;
-  cursor: pointer;
-}
-.menu-bar > span::first-letter {
-  text-decoration: underline;
-}
-.menu-bar > span:hover {
-  background-color: #bababa;
-}
-
-.content-container {
-  border-left: 2px solid #2A2A2A;
-  border-top: 2px solid #2A2A2A;
-  border-right: 2px solid #FCFCFC;
-  border-bottom: 2px solid #FCFCFC;
-}
-.content-container > .content {
-  display: flex;
-  height: 260px;
-}
-.content-container > .content > .main, .content-container > .content > .scroll-left {
-  height: 100%;
-}
-.content-container > .content > .main {
-  width: calc(100% - 26px);
-}
-.content-container > .content > .scroll {
-  width: 26px;
-}
-
-.scroll {
-  background-color: #D7D7D7;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.scroll > .progress {
-  width: 24px;
-  height: 70%;
-  cursor: pointer;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
-  border-right: 2px solid #2A2A2A;
-  border-bottom: 2px solid #2A2A2A;
-  background-color: #c7c7c7;
-}
-.scroll > .progress:hover {
-  background-color: #bababa;
-}
-.scroll > .start, .scroll > .end {
-  width: 24px;
-  height: 22px;
-  position: relative;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
-  border-right: 2px solid #2A2A2A;
-  border-bottom: 2px solid #2A2A2A;
-  background-color: #c7c7c7;
-}
-.scroll > .start:hover, .scroll > .end:hover {
-  background-color: #bababa;
-  border-left: 2px solid #2A2A2A;
-  border-top: 2px solid #2A2A2A;
-  border-right: 2px solid #FCFCFC;
-  border-bottom: 2px solid #FCFCFC;
-}
-.scroll > .start::after, .scroll > .end::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 6px;
-  left: 4px;
-  border-top: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #000000;
-}
-.scroll > .end::after {
-  transform: rotate(180deg);
-}
-.scroll.-row {
-  flex-direction: row;
-}
-.scroll.-row > .progress {
-  width: 30%;
-  height: 24px;
-}
-.scroll.-row > .start::after {
-  transform: rotate(-90deg);
-}
-.scroll.-row > .end::after {
-  transform: rotate(90deg);
-}
+    /* 윈도우98 */
+    .quiz_source {
+        position: relative
+    }
+    .source_btn {
+        border: 6px ridge #c5c5c5;
+        font-size: 25px;
+        padding: 7px 20px;
+        background: #cacaca;
+        position: absolute;
+        right: 20px;
+        top: -10px;
+    }
+    .source_btn:hover {
+        background: #aaaaaa;
+        cursor: pointer;
+    }
+    .window {
+        min-width: 360px;
+        min-height: 500px;
+        background-color: #c7c7c7;
+        padding: 4px;
+        border-left: 2px solid #FCFCFC;
+        border-top: 2px solid #FCFCFC;
+        border-right: 2px solid #2A2A2A;
+        border-bottom: 2px solid #2A2A2A;
+    }
+    .title-bar {
+        background-color: #000080;
+        padding: 4px;
+        height: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .title-bar>.minimize,
+    .title-bar>.maximize,
+    .title-bar>.close {
+        width: 26px;
+        height: 22px;
+        background-color: #c7c7c7;
+        margin-left: 4px;
+        border-left: 2px solid #FCFCFC;
+        border-top: 2px solid #FCFCFC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .title-bar>.minimize:hover,
+    .title-bar>.maximize:hover,
+    .title-bar>.close:hover {
+        background-color: #bababa;
+        border-left: 2px solid #2A2A2A;
+        border-top: 2px solid #2A2A2A;
+        border-right: 2px solid #FCFCFC;
+        border-bottom: 2px solid #FCFCFC;
+    }
+    .title-bar>.minimize {
+        align-items: flex-end;
+    }
+    .title-bar>.minimize>.symbol {
+        width: 60%;
+        height: 3px;
+        background-color: #000000;
+        margin-bottom: 2px;
+    }
+    .title-bar>.maximize>.symbol {
+        width: 70%;
+        height: 80%;
+        border: 2px solid #000000;
+        border-top-width: 4px;
+    }
+    .title-bar>.close>.symbol {
+        width: 70%;
+        height: 3px;
+        background-color: #000000;
+        transform: rotate(45deg);
+    }
+    .title-bar>.close>.symbol::after {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #000000;
+        transform: rotate(90deg);
+    }
+    .menu-bar>span {
+        padding: 8px;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .menu-bar>span::first-letter {
+        text-decoration: underline;
+    }
+    .menu-bar>span:hover {
+        background-color: #bababa;
+    }
+    .content-container {
+        border-left: 2px solid #2A2A2A;
+        border-top: 2px solid #2A2A2A;
+        border-right: 2px solid #FCFCFC;
+        border-bottom: 2px solid #FCFCFC;
+    }
+    .content-container>.content {
+        display: flex;
+        height: 400px;
+    }
+    .content-container>.content>.main,
+    .content-container>.content>.scroll-left {
+        height: 100%;
+    }
+    .menu-bar>span.active {
+        background: #a1a1a1;
+    }
+    .main {
+        width: 80vh;
+        height: 60vh;
+        background: #fff;
+        border: 1px solid #f2f2f2;
+        border-radius: 5px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    /* //윈도우98 */
+    /* 애니메이션 효과 */
+    #source {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        /* display: none; 애니메이션을 줄수 없음*/
+        transform: scaleY(0);
+        /*사라짐*/
+        /* transition: all 0.3s ease; */
+    }
+    /* 애니메이션 */
+    #source.show {
+        /* display: block; 애니메이션을 줄수 없음 */
+        animation: foldOut 1s ease forwards;
+        /* animation-fill-mode: forwards; */
+    }
+    #source.show.hide {
+        animation: foldIn 1s ease backwards;
+    }
+    @keyframes foldOut {
+        /*애니메이션 효과*/
+        0% {
+            transform: scaleX(0) scaleY(0.005)
+        }
+        50% {
+            transform: scaleX(1) scaleY(0.005)
+        }
+        100% {
+            transform: scaleX(1) scaleY(1)
+        }
+    }
+    @keyframes foldIn {
+        /*애니메이션 효과*/
+        0% {
+            transform: scaleX(1) scaleY(1)
+        }
+        50% {
+            transform: scaleX(1) scaleY(0.005)
+        }
+        100% {
+            transform: scaleX(0) scaleY(0.005)
+        }
+    }
+    .source_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        transform: scale(0);
+        /* 백그라운드 가운데로 오는법 */
+    }
+    #source.show .source_wrap {
+        animation: zoomOut 0.5s 1s ease forwards;
+    }
+    #source.show.hide .source_wrap-wrap {
+        animation: zoomIn 0.5s ease forwards;
+    }
+    @keyframes zoomOut {
+        /*애니메이션 효과*/
+        0% {
+            transform: scale(0)
+        }
+        100% {
+            transform: scale(1)
+        }
+    }
+    @keyframes zoomIn {
+        /*애니메이션 효과*/
+        0% {
+            transform: scale(1)
+        }
+        100% {
+            transform: scale(0)
+        }
+    }
+    .source_cont {
+        position: relative;
+        opacity: 1;
+        /*0: 디스플레이에서 사라지게함 1: 디스플레이에서 나타남*/
+    }
+    /* //애니메이션 효과 */
