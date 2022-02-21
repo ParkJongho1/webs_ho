@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
 <style>
+    @import url(css/dracula.min.css);
+    @import url(css/quizcustom.css);
+
     @font-face {
         font-family: 'DungGeunMo';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
@@ -95,7 +98,7 @@
         opacity: 0.5;
     }
     #footer {
-        margin-top: 200px;
+        margin-top: 150px;
         width: 100%;
         background: #262626;
         text-align: center;
@@ -592,13 +595,71 @@
                 </div>
             </div>
         </div>
-        <div class="quiz__source"></div>
     </main>
+
+    <!-- info -->
+    <div class="info">
+
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidde="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                    <li><a href="#">jQuery</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-html">
+
+</code></pre>
+                                </div>
+                                <!-- //cont1 -->
+                                <div>
+<pre><code class="language-html">
+</code></pre>
+                                </div>
+                                <!-- //cont2 -->
+                                <div>
+<pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                                <!-- //cont3 -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <footer id="footer">
         <a href="mailto:ik6623@naver.com">ik6623@naver.com</a>
     </footer>
+
+     <!-- script -->
+     <script src="js/highlight.min.js"></script>
+     <script src="js/custom.js"></script>
     
     <script>
+        highlight();
+        modal();
+        tapMenu();
+
         const quizType = document.querySelector(".quiz__type");         // 퀴즈 종류
         const quizNumber = document.querySelector(".quiz__number");     // 퀴즈 번호
         const quizAsk = document.querySelector(".quiz__ask");           // 퀴즈 질문

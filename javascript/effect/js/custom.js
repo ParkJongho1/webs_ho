@@ -15,18 +15,6 @@ const modal = function () {
     })
 }
 
-const quizmodal = function () {
-    //버튼을 클릭하면 modal창을 보이게 해주세요(show 추가)
-    document.querySelector(".source-btn").addEventListener("click", () => {
-        document.querySelector("#modal").classList.add("show");
-        document.querySelector("#modal").classList.remove("hide");
-    });
-    document.querySelector(".close").addEventListener("click", () => {
-        document.querySelector("#modal").classList.add("hide");
-    })
-}
-
-
 //tapmenu
 const tapMenu = function () {
     const tabBtn = document.querySelectorAll(".view-title > ul > li");
@@ -51,7 +39,19 @@ const tapMenu = function () {
     })
 }
 
-//tapmenu
+//quizmoda;
+const quizmodal = function () {
+    //버튼을 클릭하면 modal창을 보이게 해주세요(show 추가)
+    document.querySelector(".source-btn").addEventListener("click", () => {
+        document.querySelector("#modal").classList.add("show");
+        document.querySelector("#modal").classList.remove("hide");
+    });
+    document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector("#modal").classList.add("hide");
+    })
+}
+
+//quizmenu
 const quizMenu = function () {
     const tabBtn = document.querySelectorAll(".menu-bar > ul > li");
     const tabCont = document.querySelectorAll(".view-cont > div");
