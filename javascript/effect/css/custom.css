@@ -52,6 +52,31 @@
         background-size: cover;
         background-position: center center;
     }
+    body.img06 {
+        background: url(../img/imgbg06.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img07 {
+        background: url(../img/imgbg07.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img08 {
+        background: url(../img/imgbg08.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img09 {
+        background: url(../img/imgbg09.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img10 {
+        background: url(../img/imgbg10.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
     body::before {
         content: '';
         position: absolute;
@@ -122,6 +147,13 @@
     .source button:hover {
         background: #fff;
         color: #000;
+    }
+    .attr {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
     /*  */
