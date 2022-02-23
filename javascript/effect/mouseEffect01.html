@@ -12,7 +12,7 @@
 
 <style>
     body::before {
-        background: rgb(153, 163, 160, 0.6);
+        background: rgba(25, 26, 25, 0.6);
     }
     .mouse__wrap {
         display: flex;
@@ -36,11 +36,12 @@
     }
     .mouse__wrap p span {
         border-bottom: 0.15vw dashed #fff;
+        color: aqua;
     }
     .cursor {
         position: absolute;
-        left: 0;
-        right: 0;
+        left: -100px;
+        right: -100px;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -53,11 +54,6 @@
             border-color 0.2s,
             border-radius 0.2s,
             transform 0.6s;
-        transform: 
-            background-color .2s,
-            border-color .2s,
-            border-radiis .2s,
-            transform .2s;
     }
     .cursor.style1 {
         background-color: rgba(255, 165, 0, 0.4);
@@ -100,7 +96,7 @@
 
             <div class="mouse__wrap">
                 <p>If you <span class="style1">run fast</span>, you may <span class="style2">run faster</span> than your <span class="style3">spirit.</span></p>
-                <p>네가 <span class="style4">빨리 달리면</span> 너는 네 <span class="style5">영혼</span>보다 <span class="style6">빨리 달릴</span>지도 모른다</p>
+                <p>네가 <span class="style4">빨리 달리면</span> 너는 네 <span class="style5">영혼</span>보다 <span class="style6">빨리 달릴</span>지도 모른다.</p>
             </div>
         </section>
     </main>
@@ -115,7 +111,7 @@
         </div>
         <div class="number">
             <ul>
-                <li class="active"><a href="mouseEffect01.html".html">1</a></li>
+                <li class="active"><a href="mouseEffect01.html.html">1</a></li>
                 <li><a href="mouseEffect02.html">2</a></li>
                 <li><a href="mouseEffect03.html">3</a></li>
                 <li><a href="mouseEffect04.html">4</a></li>
@@ -209,31 +205,15 @@
 
         //마우스 움직이기
         window.addEventListener("mousemove", (e) => {
-            document.querySelector(".cursor").style.left = e.clientX -25 + "px";
-            document.querySelector(".cursor").style.top = e.clientY -25 + "px";
+            // document.querySelector(".cursor").style.left = e.clientX -25 + "px";
+            // document.querySelector(".cursor").style.top = e.clientY -25 + "px";
+
+            let x = e.clientX -25 + "px";
+            let y = e.clientY -25 + "px";
+            document.querySelector(".cursor").style.cssText = "left:" + x +"; top:" + y;
         });
 
-        const cursors = document.querySelectorAll(".mouse__wrap p span");
-        //for()
-        for (let i = 0; i <= cursors.length; i++) {
-            cursors[i].addEventListener("mouseover", () => {
-                document.querySelector(".cursor").classList.add("style"+(i+1));
-            });
-            cursors[i].addEventListener("mouseout", () => {
-                document.querySelector(".cursor").classList.remove("style"+(i+1));
-            });
-            console.log(i)
-        }
-        // //forEach()
-        // cursors.forEach((span, i) => {
-        //     span.addEventListener("mouseover", () => {
-        //         document.querySelector(".cursor").classList.add("style"+(i+1));
-        //     });
-        //     span.addEventListener("mouseout", () => {
-        //         document.querySelector(".cursor").classList.remove("style"+(i+1));
-        //     });
-        // });
-    
+        
 
         // document.querySelector(".style1").addEventListener("mouseover", () => {
         //     document.querySelector(".cursor").classList.add("style1");
@@ -271,6 +251,40 @@
         // document.querySelector(".style6").addEventListener("mouseout", () => {
         //     document.querySelector(".cursor").classList.remove("style6");
         // });
+
+        //for()
+        // for (let i = 1; i <= 6; i++) {
+        //     document.querySelector(".style"+ i).addEventListener("mouseover", () => {
+        //     document.querySelector(".cursor").classList.add("style"+i);
+        // });
+        //     document.querySelector(".style"+i).addEventListener("mouseout", () => {
+        //     document.querySelector(".cursor").classList.remove("style"+i);
+        // });
+        // }
+
+        // //forEach()
+        // document.querySelectorAll(".mouse__wrap span").forEach((span, index) => {
+        //     span.addEventListener("mouseover", () => {
+        //         document.querySelector(".cursor").classList.add("style" + (index + 1));
+        //     })
+        //     span.addEventListener("mouseout", () => {
+        //         document.querySelector(".cursor").classList.remove("style" + (index + 1));
+        //     })
+        // })
+
+        //getAttribute
+        //span 마우스 오버 했을 때 속성값 alert()
+        document.querySelectorAll(".mouse__wrap span").forEach(span => {
+            let attr = span.getAttribute("class");
+
+            span.addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add(attr);
+            });
+            span.addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove(attr);
+            })
+        })
+  
     </script>
 </body>
 </html>
