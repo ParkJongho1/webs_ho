@@ -448,10 +448,13 @@
         
         const searchBox = document.querySelectorAll(".search span");
         const cssList = document.querySelector(".list ul");
-        const cssCount = document.querySelector(".conut em");
+        const cssCount = document.querySelector(".count");
         let listHtml = "";
 
-
+          //CSS 속성 값/전체 갯수 출력하기
+        cssProperty.map((element, index) => {       //map를 이용해서 element와 index 불러오기
+            cssCount.innerText = "전체 목록 갯수 : "+ (index + 1) +"개";
+        });
 
         //목록 보여주기
         function updateList(list) {
