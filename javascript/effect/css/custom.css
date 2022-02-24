@@ -303,6 +303,8 @@
         display: block;
     }
     .view-cont pre code.hljs {
+        width: 60vw;
+        height: 60vh;
         line-height: 1.6;
     }
 

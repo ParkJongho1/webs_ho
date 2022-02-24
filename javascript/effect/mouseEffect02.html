@@ -12,7 +12,7 @@
 
 <style>
     body::before {
-        background: rgba(79, 85, 83, 0.5);
+        background: rgba(79, 85, 83, 0.3);
     }
     .mouse__wrap {
         display: flex;
@@ -35,8 +35,8 @@
         font-weight: 400;
     }
     .mouse__wrap p span {
-        border-bottom: 0.15vw dashed navy;
-        color: navy;
+        border-bottom: 0.15vw dashed red;
+        color: red;
     }
     .cursor {
         position: absolute;
@@ -140,19 +140,137 @@
                             </div>
                             <div class="view-cont">
                                 <div>
-<pre><code class="language-html">html
+<pre><code class="language-html">&lt;main&gt;
+    &lt;section id ="mouseType01"&gt;
+        &lt;div class="cursor"&gt;&lt;/div&gt;
+        &lt;div class="cursor-follower"&gt;&lt;/div&gt;
 
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;The merit of an action lines in &lt;span&gt;finishing&lt;/span&gt; it to the end.&lt;/p&gt;
+            &lt;p&gt;행동의 가치는 그행동을 &lt;span&gt;끝까지&lt;/span&gt; 이루는데 있다.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
 </code></pre>
                                 </div>
                                 <!-- //cont1 -->
                                 <div>
-<pre><code class="language-javascript">javasscript
+<pre><code class="language-javascript">body::before {
+    background: rgba(79, 85, 83, 0.3);
+}
+.mouse__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__wrap p {
+    font-size: 2.5vw;
+    line-height: 2;
+    font-weight: 300;
+}
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 400;
+}
+.mouse__wrap p span {
+    border-bottom: 0.15vw dashed red;
+    color: red;
+}
+.cursor {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 10px;
+    height: 10px;
+    z-index: 99999;
+    border-radius: 50%;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    background-color: rgba(30, 59, 221, 1);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.cursor-follower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.cursor.active {
+    transform: scale(0);
+}
+.cursor-follower.active {
+    transform: scale(5);
+    background: rgba(30, 59, 221, 0.4);
+}
+
+.cursor.show {
+    transform: scale(2) skewY(10deg);
+    background: rgb(43, 71, 235);
+}
+.cursor-follower.show {
+    transform: scale(3) skewY(10deg);
+    background: rgb(0, 14, 92);
+}
 
 </code></pre>
                                 </div>
                                 <!-- //cont2 -->
                                 <div>
-<pre><code class="language-javascript">script
+<pre><code class="language-javascript">const cursor = document.querySelector(".cursor");
+const follower = document.querySelector(".cursor-follower");
+
+window.addEventListener("mousemove", e => {
+    //커서 좌표값 할당
+    // cursor.style.left = e.pageX -5 + "px";
+    // cursor.style.top = e.pageY -5 + "px";
+    // follow.style.left = e.pageX -15 + "px";
+    // follow.style.top = e.pageY -15 + "px";
+    
+    gsap.to(cursor, {duration: .3, left: e.pageX -5, top: e.pageY -5});
+    gsap.to(follower, {duration: .8, left: e.pageX -15, top: e.pageY -15});
+
+    //오버 효과
+    //span 오버 했을 때 클래스 active 추가 / 나갔을 때 acitve삭제
+    //mouseover,mouseenter / mouseout, mouseleave 차이점,이벤트 버블링
+    document.querySelectorAll(".mouse__wrap span").forEach(e => {
+        e.addEventListener("mouseenter", ()=>{
+            cursor.classList.add("active")
+            follower.classList.add("active")
+        })
+        e.addEventListener("mouseleave", ()=>{
+            cursor.classList.remove("active")
+            follower.classList.remove("active")
+        })
+    });
+
+    document.querySelectorAll(".info > div").forEach(e => {
+        e.addEventListener("mouseenter", ()=>{
+            cursor.classList.add("show")
+            follower.classList.add("show")
+        })
+        e.addEventListener("mouseleave", ()=>{
+            cursor.classList.remove("show")
+            follower.classList.remove("show")
+        })
+    });
+
+    //출력
+    document.querySelector(".pageX").innerText = e.pageX;
+    document.querySelector(".pageY").innerText = e.pageY;
+});
 
 </code></pre>
                                 </div>
