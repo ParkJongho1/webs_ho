@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7조</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'SCoreDream';
+        }
+        li {
+            list-style: none;
+            display: inline;
+            font-size: 15px;
+            font-family: AndongKaturi;
+        }
+        h2 {
+            font-size: 100px;
+            font-weight: bold;
+            color: #5ebc88;
+        }
+        p {
+            font-size: 30px;
+            color: #5ebc88;
+        }
+        span {
+            font-size: 34px;
+            font-weight: 300;
+            line-height: 1.53;
+            color: #594d3e;
+        }
+        #wrap {
+            margin: 0 auto;
+            width: 1920px;
+            background: #EDD9C0;
+        }
+        #header {
+            width: 100%;
+            height: 70px;
+            border-top: 5px solid #000;
+            background: rgba(237, 217, 192, 0.3);
+        }
+        #nav {
+            width: 100%;
+            height: 1080px;
+            background: url(img/nav.jpg);
+        }
+
+        #section {
+            width: 1240px;
+            height: 1000px;
+            margin: 0 auto;
+        }
+        .section_text {
+            float: left;
+            margin-top: 100px;
+        }
+        .section_text>span {
+            margin-top: 80px;
+            display: block;
+        }
+        .section_text>ul:first-of-type {
+            border-top: 1px solid #000;
+            margin-top: 30px;
+            padding-top: 17px;
+        }
+        .section_text>ul:last-of-type {
+            border-bottom: 1px solid #000;
+            padding-top: 1px;
+            padding-bottom: 17px;
+        }
+        .section_text>div {
+            font-size: 40px;
+            font-weight: 500;
+            margin-top: 46px;
+        }
+        .section_img {
+            background: url(img/section.jpg);
+            width: 600px;
+            height: 600px;
+            float: right;
+            margin-top: 187px;
+            position: relative;
+        }
+        .section_img::before {
+            position: absolute;
+            left: 0;
+            top: -100px;
+            content: '7조';
+            font-size: 100px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 2;
+            color: #fff;
+            background: #5ebc88;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        #main {
+            width: 1240px;
+            height: 10000px;
+        }
+        #article01 {
+            width: 1240px;
+            height: 1100px;
+            padding: 0 340px;
+            background: #FDF8F2;
+        }
+        #article01 p,
+        #article02 p {
+            color: #000;
+            font-family: AndongKaturi;
+            font-size: 25px;
+            padding-top: 100px;
+        }
+        #article01 h3,
+        #article02 h3 {
+            font-size: 44px;
+            line-height: 1.42;
+            font-family: AndongKaturi;
+            margin-bottom: 45px;
+        }
+        #article01_img_wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 110px;
+        }
+        .article01_img01 {
+            background: url(img/article01_1.png);
+            width: 294px;
+            height: 294px;
+        }
+        .article01_img02 {
+            background: url(img/article01_3.png);
+            width: 294px;
+            height: 294px;
+        }
+        .article01_img03 {
+            background: url(img/article01_2.png);
+            width: 294px;
+            height: 294px;
+        }
+        .article01_img04 {
+            background: url(img/article01_4.png);
+            width: 294px;
+            height: 294px;
+        }
+        #article01_tex_wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        #article01_tex_wrap>div>p {
+            font-family: AndongKaturi;
+            line-height: 2;
+            font-size: 15px;
+            padding-left: 38px;
+        }
+        .article01_tex01 {
+            background: url(img/brown.png);
+            width: 250px;
+            height: 350px;
+            margin-left: 20px;
+        }
+        .article01_tex02 {
+            background: url(img/green.png);
+            width: 250px;
+            height: 350px;
+        }
+        .article01_tex03 {
+            background: url(img/brown.png);
+            width: 250px;
+            height: 350px;
+        }
+        .article01_tex04 {
+            background: url(img/green.png);
+            width: 250px;
+            height: 350px;
+            margin-right: 20px;
+        }
+        #article02 {
+            width: 1240px;
+            height: 1180px;
+            padding: 0 340px;
+        }
+        #article02 h4 {
+            font-size: 38px;
+            font-weight: bold;
+        }
+        #article02 span {
+            font-size: 25px;
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: -2px;
+            color: #5ebc88;
+        }
+        .img_tex01 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .img_tex01img {
+            width: 400px;
+            height: 400px;
+            background: url(img/img_tex01img.png);
+        }
+        .img_txt01txt>h4 {
+            margin: 0 0 50px;
+        }
+        .img_tex02 {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .img_tex02img {
+            width: 624px;
+            height: 624px;
+            background: url(img/img_txt02.png);
+            top: -77px;
+            right: -120px;
+            position: absolute;
+        }
+        .img_tex02img::before {
+            content: '';
+            width: 100%;
+            height: 100px;
+            background: #EDD9C0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+        }
+        .img_tex02img::after {
+            content: '';
+            width: 121px;
+            height: 100%;
+            background: #EDD9C0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+        }
+        .img_txt02txt>h4 {
+            margin: 163px 0 50px;
+            text-align: right;
+        }
+        #article03 {
+            width: 1240px;
+            height: 800px;
+            padding: 0 340px;
+            background: #FDF8F2;
+        }
+
+        #article03 p {
+            color: #000;
+            font-size: 14px;
+            padding-top: 100px;
+        }
+        #article03 h3 {
+            font-size: 44px;
+        }
+        .img_txt03img {
+            width: 505px;
+            height: 505px;
+            border-radius: 50%;
+            background: #deb98b;
+            margin-top: 33px;
+            position: relative;
+            border: 1px solid #5ebc88;
+            float: left;
+        }
+        .img_txt03img::before {
+            position: absolute;
+            content: '';
+            left: 77px;
+            top: 101px;
+            background: url(img/img_txt03.png);
+            width: 355px;
+            height: 250px;
+        }
+        .img_txt03img::after {
+            position: absolute;
+            content: '\A김 아무개(32/여)\A회사원\A첫 반려동물 사육';
+            left: 97px;
+            top: 306px;
+            width: 315px;
+            height: 215px;
+            background: #fff;
+            border-radius: 40px;
+            border: 5px solid #5ebc88;
+            white-space: pre;
+            text-align: center;
+            line-height: 1.5;
+            font-size: 30px;
+        }
+        .img_txt03txt {
+            padding-top: 50px;
+            float: right;
+        }
+        .img_txt03txt h4 {
+            margin: 54px 0 30px;
+            font-size: 35px;
+        }
+        .img_txt03txt span {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #5ebc88;
+        }
+        #article04 {
+            padding: 0 340px;
+            padding-top: 100px;
+            width: 1240px;
+        }
+        #article04 p {
+            color: #000;
+            font-size: 14px;
+            font-family: AndongKaturi;
+        }
+        #article04 h3 {
+            font-size: 44px;
+            font-family: AndongKaturi;
+            margin-bottom: 130px;
+        }
+        .headline {
+            margin-left: 222px;
+            margin-bottom: 54px;
+        }
+        .headline>span {
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            padding: 25px 40px;
+            background: #806A40;
+            border-radius: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+        }
+        .subheadline {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .hlc {
+            margin-left: 320px;
+        }
+        .hlr {
+            margin-left: 200px;
+        }
+        .subheadline>span {
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            padding: 25px 40px;
+            background: #D49E5E;
+            border-radius: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+        }
+        /* .list li {
+            display: block;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="section">
+            <section class="section">
+                <div class="section_text">
+                    <p>UI/UX Web Design Project</p>
+                    <h2>반려동물을<br>부탁해</h2>
+                    <span>반려동물이 아프거나 이상증세를 보일 때,<br>당황하지 말고 접속하세요.<br>사용자 주변에 있는 동물병원과 약국의<br>정확한 위치를 제공합니다.</span>
+                    <ul>
+                        <li>Working period</li>
+                        <li>Personal Project</li>
+                        <li>Tools</li>
+                    </ul>
+                    <ul>
+                        <li>2021.02 ~ 05</li>
+                        <li>UX/UI Project</li>
+                    </ul>
+                    <div>박종호 이현우 한원석</div>
+                </div>
+                <div class="section_img"></div>
+            </section>
+        </section>
+        <main id="main">
+            <article id="article01">
+                <p>Problem Define</p>
+                <h3>문제 정의</h3>
+                <div id="article01_img_wrap">
+                    <div class="article01_img01"></div>
+                    <div class="article01_img02"></div>
+                    <div class="article01_img03"></div>
+                    <div class="article01_img04"></div>
+                </div>
+                <div id="article01_tex_wrap">
+                    <div class="article01_tex01">
+                        <p>매일 주인님이랑 산책할 때<br>마다 혼자 노니까 재미가 없<br>어요. 산책하러 나갔을 때<br>같이 놀 동네친구 강아지가<br> 있었으면 좋겠어요.</p>
+                    </div>
+                    <div class="article01_tex02">
+                        <p>배가 너무 고파서 밥 달라고<br>짖었는데 주인님이 알아듣지<br>를못하고 계속 조용히 하라고<br> 화만 내요.제 마음을 조금 더<br> 잘 알아줬으면 좋겠어요.
+                        </p>
+                    </div>
+                    <div class="article01_tex03">
+                        <p>주인이 간식을 줘서 먹었는데<br>알고보니 강아지가 소화시키기<br> 어려운성분이 들어있는 음식이<br>었어요.먹고 배탈이 나서 3일<br>동안 끙끙 앓았어요 ㅠㅠ
+                        </p>
+                    </div>
+                    <div class="article01_tex04">
+                        <p>며칠 전에 다리 관절이 아파<br>서 주인님이랑 병원에 갔는데<br>이상한 진통약만 처방해줘서<br>효과를 하나도 못 봤어요.</p>
+                    </div>
+                </div>
+            </article>
+            <article id="article02">
+                <p>Project Introduce</p>
+                <h3>프로젝트 소개</h3>
+                <div class="img_tex01">
+                    <div class="img_tex01img"></div>
+                    <div class="img_txt01txt">
+                        <h4>근처 동물병원,약국 정보 및 반려 동물 정보 제공&nbsp;</h4>
+                        <span>동물의 종류나 품종의 따라 다른 관리법과 주요 질병의 종류, 질병 예방법 등이<br>다르기 때문에 애완동물 주인들의 큰 어려움이 있다.<br>
+                            반려동물이 갑작스런 사고를 당하거나 영문 모를 이상증세를 보일 때. 내 근처<br>의 동물병원이나 약국에 대한 정보를 신속하게 얻어야 할 필요가 있다.</span>
+                    </div>
+                </div>
+                <div class="img_tex02">
+                    <div class="img_txt02txt">
+                        <h4>반려동물 커뮤니티 제공</h4>
+                        <span>동물보험은 대상이 개에 한정되어 있거나, 보험사에서 지정하는<br>병원만 가야하며 질병은 보장이 안 되고 사고만 보장해준다.<br>
+                            이런 경우에 반려동물이나 가축을 기르는 사람은 신뢰할 수 있는<br>동물병원이나 정보를 알아두는 것이 중요하기 때문에 사용자간<br>의 경험이나 노하우를 공유할 수
+                            있는 커뮤니티 환경을 제공한다.<span>
+                    </div>
+                    <div class="img_tex02img"></div>
+                </div>
+            </article>
+            <article id="article03">
+                <p>Persona</p>
+                <h3>페르소나</h3>
+                <div class="img_txt03">
+                    <div class="img_txt03img"></div>
+                    <div class="img_txt03txt">
+                        <h4>불편 사항</h4>
+                        <span>반려동물을 처음으로 키우기 시작하여 키우는 방법을 잘모름<br>반려동물에게 필요한 예방접종이나 기본지식이 부족함</span>
+                        <h4>요구사항</h4>
+                        <span>처음 키우는 반려동물에게 필요한 정보나 기초지식등의 정보를<br>제공받고 싶음<br>자신과 같은 강아지를 키우는 사람들과의 정보공유또는<br>집가까운 사람과의
+                            커뮤니케이션을 원함</span>
+                    </div>
+                </div>
+            </article>
+            <article id="article04">
+                <p>Affinity Diagram</p>
+                <h3>어피니티 다이어그램</h3>
+                <div class="headline">
+                    <span>서비스</span><span class="hlc">UI/UX</span><span class="hlr">기술</span>
+                </div>
+                <div class="subheadline">
+                    <span>커뮤니티</span><span>동물정보</span><span>병원,약국정보</span><span>화면</span><span>디자인</span><span>사이트</span><span>접근성</span>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>로그인</li>
+                        <li>이용자</li>
+                        <li>카테고리</li>
+                        <li>경험</li>
+                        <li>정보공유</li>
+                    </ul>
+                    <ul>
+                        <li>종류</li>
+                        <li>행동</li>
+                        <li>털갈이</li>
+                        <li>길들이기</li>
+                        <li>미용</li>
+                    </ul>
+                    <UL>
+                        <LI>먹이</LI>
+                        <LI>간식</LI>
+                        <LI>특징</LI>
+                        <LI>훈련</LI>
+                        <LI>친근감</LI>
+                    </UL>
+                    <ul>
+                        <li>진료시간</li>
+                        <li>예방접종</li>
+                        <li>진료비용</li>
+                        <li>주변시설</li>
+                        <li>주차장</li>
+                        <li>후기</li>
+                    </ul>
+                    <ul>
+                        <li>검색창</li>
+                        <li>레이아웃</li>
+                        <li>메뉴바</li>
+                        <li>편의성</li>
+                    </ul>
+                    <ul>
+                        <li>이미지</li>
+                        <li>색상</li>
+                        <li>깔끔함</li>
+                        <li>따듯함</li>
+                    </ul>
+                    <ul>
+                        <li>지도</li>
+                        <li>검색</li>
+                        <li>api</li>
+                        <li>로그인</li>
+                        <li>실시간</li>
+                        <li>고객센터</li>
+                    </ul>
+                    <ul>
+                        <li>위치</li>
+                        <li>SEO</li>
+                        <li>웹 표준</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+            </article>
+            <article id="article05"></article>
+            <article id="article06"></article>
+            <article id="article07"></article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>
