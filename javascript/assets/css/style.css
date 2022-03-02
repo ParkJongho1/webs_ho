@@ -286,7 +286,7 @@ img {
     padding: 10px 5px;
 }
 
-.script .sample .table table td[class*="_R"],
+/* .script .sample .table table td[class*="_R"],
 .script .sample .table table td[class*="_P"] {
     color: #fff;
     transition: all 0.2s;
@@ -295,7 +295,7 @@ img {
 .script .sample .table table td[class*="_R"]:hover,
 .script .sample .table table td[class*="_P"]:hover {
     color: #000;
-}
+} */
 .script .sample .btn {
     border: 1px solid #e6e6e6;
     border-top: 0;
