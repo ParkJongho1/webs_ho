@@ -13,23 +13,26 @@
 
 <body>
     <div id="wrap">
-        <header id="header">
+        <header id="header" class="fatmilly_item">
             <div class="container">
                 <div class="menu">
                     <h2 class="ir_so">메인 메뉴</h2>
                     <ul>
-                        <li><a href="#">문제정의</a></li>
-                        <li><a href="#">프로젝트</a></li>
-                        <li><a href="#">페르소나</a></li>
-                        <li><a href="#">어피니티<br>다이어그램</a></li>
-                        <li><a href="#">와이어<br>프레임</a></li>
-                        <li><a href="#">영상시청</a></li>
+                        <li><a href="#section1">프로젝트</a></li>
+                        <li><a href="#section2">문제정의</a></li>
+                        <li><a href="#section3">프로젝트소개</a></li>
+                        <li><a href="#section4">페르소나</a></li>
+                        <li><a href="#section5">어피니티<br>다이어그램</a></li>
+                        <li><a href="#section6">와이어<br>프레임</a></li>
+                        <li><a href="#section7">영상시청</a></li>
                     </ul>
                 </div>
             </div>
         </header>
         <div id="banner"></div>
+
         <main id="contents" class="brown">
+            <section id="section1" class="fatmilly_item">
             <div class="textimg01 container">
                 <span>UI/UX Web Design Project</span>
                 <h2>반려동물을<br>부탁해</h2>
@@ -51,7 +54,10 @@
                
                 <div class="name">박종호 이현우 한원석</div>
             <div class="img01"></div>
-    </div>
+            </div>
+            </section>
+
+    <section id="section2" class="fatmilly_item">
     <div class="whitebrown">
         <div class="textimg02 container">
             <p>Prblem Define</p>
@@ -70,6 +76,9 @@
             </div>
         </div>
     </div>
+    </section>
+
+    <section id="section3" class="fatmilly_item">
     <div class="textimg03 container">
         <p>Project Introduce</p>
         <h3>프로젝트 소개</h3>
@@ -90,6 +99,9 @@
             <div class="img07"></div>
         </div>
     </div>
+    </section>
+
+    <section id="section4" class="fatmilly_item">
     <div class="whitebrown">
         <div class="persona container">
             <p>Persona</p>
@@ -107,6 +119,9 @@
             </div>
         </div>
     </div>
+    </section>
+
+    <section id="section5" class="fatmilly_item">
     <div class="diagram container">
         <p>Affinity Diagram</p>
         <h3>어피니티 다이어그램</h3>
@@ -126,24 +141,69 @@
             </div>
         </div>
     </div>
+    </section>
+
+    <section id="section6" class="fatmilly_item">
     <div class="wireframe container">
         <p>Wire Frame</p>
         <h3>와이어프레임</h3>
         <div class="wireimg"></div>
     </div>
+    </section>
+
+    <section id="section7" class="fatmilly_item">
     <div class="whitebrown">
         <div class="picture container">
             <h3>제작과정 영상</h3>
             <div class="pictureimg"></div>
         </div>
     </div>
+    </section>
+    <div class="scrollTop">
+        scrollTop : <span>0</span>px
+    </div>
     </main>
-    <footer id="footer">
+
+
+    <footer id="footer" class="fatmilly_item">
         <address class="ex">
             &copy; 2022 Line 7team. All right reservec.
         </address>
     </footer>
     </div>
+
+    <script>
+         window.addEventListener("scroll", () => {
+            // let scrollTop = window.pageYOffset;
+            // let scrollTop = document.documentElement.scrollTop;
+            // let scrollTop = window.scrollY;
+
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+        
+        document.querySelectorAll(".menu li a").forEach(li => {
+            li.addEventListener("click",(e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                })
+            })
+        })
+
+        // document.querySelectorAll(".fatmilly_item").forEach((element, index) => {
+        //     if(scrollTop >= element.offsetTop -2 ){
+        //         document.querySelectorAll("menu li").forEach( li => {
+        //             li.classList.remove("active");
+        //         });
+        //         document.querySelector("#parallax__nav li:nth-child("+ (index +1) + ")").classList.add("active")
+        //     }
+        // })
+
+        document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+        
+         })
+
+    </script>
 
 
 </body>

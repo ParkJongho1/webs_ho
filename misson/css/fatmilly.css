@@ -395,3 +395,14 @@
 }
 #footer .ex {
 }
+
+.scrollTop {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 50px;
+}
