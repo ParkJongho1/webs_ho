@@ -8,7 +8,7 @@
     <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
     <meta name="keywords"
         content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
-    <title>Layout</title>
+    <title>MY SQL</title>
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/docs.min.css" rel="stylesheet">
@@ -101,10 +101,41 @@
                     <h2 id="intro3" class="page-header">MySQL 실행</h2>
                     <div class="bd-callout bd-callout-info">
                         윈도우 : cd MAMP/bin/mysql/bin
+                        윈도우 로그인 : mysql -uroot -proot
                     </div>
+<pre class="language-js"><code>C:\MAMP\bin\mysql\bin>mysql -uroot -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+</code></pre>
                     <div class="bd-callout bd-callout-info">
                         맥 : cd /Applications/MAMP/Library/bin
+                        맥 로그인 : sudo ./mysql -uroot -p
                     </div>
+<pre class="language-js"><code>MacBook-Air ~ % cd /Applications/MAMP/Library/bin
+MacBook-Air bin % sudo ./mysql -uroot -p
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 186
+Server version: 5.7.34 MySQL Community Server (GPL)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+</code></pre>
                 </div>
                 <!-- //box -->
             </div>
