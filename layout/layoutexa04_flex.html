@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 테스트</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            background: rgb(202, 129, 236);
+        }
+        #header {
+            width: 100%;
+            height: 150px;
+            background: rgb(182, 41, 238);
+        }
+        #contents {
+            display: flex;
+        }
+        #contents .aside {
+            flex: 0 0 30%;
+            height: 700px;
+            background: rgb(156, 32, 206);
+        }
+        #contents .article {
+            flex: 0 0 70%;
+            height: 700px;
+            background: rgb(200, 86, 245);
+        }
+        #footer {
+            width: 100%;
+            height: 150px;
+            background: rgb(113, 26, 148);
+        }
+
+        
+        @media (max-width : 1220px) {
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width : 768px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width : 480px) {
+            #contents {
+                flex-wrap: wrap;
+            }
+            #contents .aside {
+                flex: 0 0 100%;
+                height: 250px;
+            }
+            #contents .article {
+                flex: 0 0 100%;
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <main id="contents">
+            <aside class="aside"></aside>
+            <article class="article"></article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>

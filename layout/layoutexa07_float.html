@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 테스트</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            background: rgb(245, 191, 43);
+        }
+        #header {
+            width: 100%;
+            height: 150px;
+            background: rgb(252, 197, 18);
+        }
+        #aside {
+            width: 100%;
+            height: 250px;
+            background: rgb(238, 177, 9);
+        }
+        #article {
+            width: 100%;
+            height: 450px;
+            background: rgb(236, 233, 30);
+            position: relative;
+        }
+        #article .box1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #article .box1 .b1 {
+            width: 80px;
+            height: 80px;
+            background: rgb(230, 112, 16);
+            float: left;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        #footer {
+            width: 100%;
+            height: 150px;
+            background: rgb(202, 190, 16);
+        }
+
+        @media (max-width : 1220px) {
+            #wrap {
+                width: 100%;
+            }
+            #article .box1 .aa1 {
+                display: none;
+            }
+            #article .box1 .bb1 {
+                display: none;
+            }
+        }
+        @media (max-width : 768px) {
+            #aside {
+                width: 100%;
+                height: 100px;
+            }
+            #article {
+                width: 100%;
+                height: 600px;
+            }
+            #article .box1 .b1 {
+                width: 70px;
+                height: 70px;
+            }
+            #article .box1 .aa1 {
+                display: block;
+            }
+        }
+        @media (max-width : 480px) {
+            #aside {
+                width: 100%;
+                height: 100px;
+            }
+            #article {
+                width: 100%;
+                height: 600px;
+            }
+            #article .box1 .bb1 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside id="aside"></aside>
+        <article id="article">
+            <div class="box1">
+                <div class="b1 aa1"></div>
+                <div class="b1 aa2"></div>
+                <div class="b1 aa3"></div>
+                <div class="b1 aa4"></div>
+                <div class="b1 aa5"></div>
+                <br>
+                <div class="b1 bb1"></div>
+                <div class="b1 bb2"></div>
+                <div class="b1 bb3"></div>
+                <div class="b1 bb4"></div>
+                <div class="b1 bb5"></div>
+            </div>
+        </article>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>

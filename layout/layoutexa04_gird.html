@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 테스트</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "aside article"
+                "footer footer";
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 150px 700px 150px;
+        }
+        #header {
+            grid-area: header;
+            background: rgb(182, 41, 238);
+        }
+        #aside {
+            grid-area: aside;
+            background: rgb(156, 32, 206);
+        }
+        #article {
+            grid-area: article;
+            background: rgb(200, 86, 245);
+        }
+        #footer {
+            grid-area: footer;
+            background: rgb(113, 26, 148);
+        }
+
+        
+        @media (max-width : 1220px) {
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width : 768px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width : 480px) {
+            #wrap {
+            display: grid;
+            grid-template-areas: 
+                "header"
+                "aside"
+                "article"
+                "footer";
+            grid-template-columns: 100%;
+            grid-template-rows: 150px 250px 450px 150px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside id="aside"></aside>
+        <article id="article"></article>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>

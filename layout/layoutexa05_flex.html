@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 테스트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            margin: 0 auto;
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 150px;
+            background: rgb(42, 236, 74);
+        }
+        #contents {
+            display: flex;
+        }
+        #contents .aside1 {
+            flex: 0 0 20%;
+            height: 700px;
+            background: rgb(137, 231, 114);
+        }
+        #contents .article {
+            flex: 0 0 60%;
+            width: 60%;
+            height: 700px;
+            background: rgb(103, 173, 85);
+        }
+
+        #contents .aside2 {
+            flex: 0 0 20%;
+            width: 20%;
+            height: 700px;
+            background: rgb(60, 165, 34);
+        }
+        #footer {
+            width: 100%;
+            height: 150px;
+            background: rgb(33, 83, 21);
+        }
+        @media (max-width : 1220px) {
+            #wrap {
+                width: 100%;
+            }
+            #contents {
+                flex-wrap: wrap;
+            }
+            #contents .aside1 {
+                flex: 0 0 30%;
+                height: 450px;
+            }
+            #contents .article {
+                flex: 0 0 70%;
+                height: 450px;
+            }
+            #contents .aside2 {
+                flex: 0 0 100%;
+                height: 250px;
+            }
+        }
+        @media (max-width : 768px) {
+            #contents .aside1 {
+                display: none;
+            }
+            #contents .article {
+                flex: 0 0 100%;
+                height: 450px;
+            }
+            #contents .aside2 {
+                flex: 0 0 100%;
+                height: 250px;
+            }
+        }
+        @media (max-width : 480px) {
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="#wrap">
+        <header id="header"></header>
+        <main id="contents">
+            <aside class="aside1"></aside>
+            <article class="article"></article>
+            <aside class="aside2"></aside>
+        </main>
+        <footer id="footer"></footer>
+        
+    </div>
+    
+</body>
+</html>

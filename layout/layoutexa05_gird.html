@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 테스트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "aside content article"
+                "footer footer footer";
+            grid-template-columns: 20% 60% 20%;
+            grid-template-rows: 150px 700px 150px;
+        }
+        #header {
+            grid-area: header;
+            background: rgb(42, 236, 74);
+        }
+        #aside {
+            grid-area: aside;
+            background: rgb(137, 231, 114);
+        }
+        #content {
+            grid-area: content;
+            background: rgb(103, 173, 85);
+        }
+        #article {
+            grid-area: article;
+            background: rgb(60, 165, 34);
+        }
+        #footer {
+            grid-area: footer;
+            background: rgb(33, 83, 21);
+        }
+        @media (max-width : 1220px) {
+            #wrap {
+                width: 100%;
+                display: grid;
+                grid-template-areas: 
+                    "header header"
+                    "aside content"
+                    "article article"
+                    "footer footer";
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 150px 450px 250px 150px;
+            }
+        }
+        @media (max-width : 768px) {
+            #wrap {
+                display: grid;
+                grid-template-areas: 
+                    "header"
+                    "content"
+                    "article"
+                    "footer";
+                grid-template-columns: 100%;
+                grid-template-rows: 150px 450px 250px 150px;
+            }
+        }
+        @media (max-width : 480px) {
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside id="aside"></aside>
+        <section id="content"></section>
+        <article id="article"></article>
+        <footer id="footer"></footer>
+        
+    </div>
+    
+</body>
+</html>
