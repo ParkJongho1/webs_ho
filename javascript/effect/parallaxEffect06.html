@@ -441,6 +441,7 @@
             document.querySelectorAll(".content__item").forEach(item => {
                 if(scrollTop > item.offsetTop){
                     item.querySelectorAll(".parallax__cont__desc span").forEach((span, index) => {
+                        //setTimeout을 사용하여 span에 클래스 show를 0.05초 간격으로 붙임
                         setTimeout(() => {
                             span.classList.add("show");
                         }, 50 * (index+1))
