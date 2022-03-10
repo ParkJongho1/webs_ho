@@ -266,15 +266,222 @@
         .parallax__cont__desc.show span:nth-child(20){opacity: 1;} */
 
         /* 순차적으로 나타내기 */
-        .parallax__cont__desc span {
+        /* section1 */
+        #section1 .parallax__cont__desc span {
             opacity: 0;
             transition: all 0.33s ease-in-out;
         }
-        .parallax__cont__desc span.show {
+        #section1 .parallax__cont__desc span.show {
             opacity: 1;
         }
 
+        /*  section2 */
+        #section2 .parallax__cont__desc span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1.4vw;
+            transform: translateY(70px) rotate(10deg);
+            transition: all 0.33s cubic-bezier(0, 0.52, 0.58, 1);
+        }
+        #section2 .parallax__cont__desc span.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
+        /*  section3 */
+        #section3 .parallax__cont__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section3 .parallax__cont__desc span.show {
+            opacity: 1;
+            animation: tada 0.3s;
+        }
+        @keyframes tada {
+            0% {transform: scaleX(1)}
+            10%,20% {transform: scale3d(.9, .9, .9) rotate(-3deg)}
+            30%,50%,70%,90% {transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)}
+            40%,60%,80% {transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)}to {transform: scaleX(1)}
+            100% {transform: scaleX(1);}
+        }
+        /*  section4 */
+        #section4 .parallax__cont__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section4 .parallax__cont__desc span.show {
+            opacity: 1;
+            animation: backInDown 1s;
+        }
+        @keyframes backInDown {
+            0% {
+                transform: translateY(-1200px) scale(.7);
+                opacity: .7
+            }
+
+            80% {
+                transform: translateY(0) scale(.7);
+                opacity: .7
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+        /*  section5 */
+        #section5 .parallax__cont__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section5 .parallax__cont__desc span.show {
+            opacity: 1;
+            animation: rotateInDownLeft 1s;
+        }
+        @keyframes rotateInDownLeft {
+            0% {
+                transform: rotate(-45deg);
+                opacity: 0
+            }
+
+            100% {
+                transform: translateZ(0);
+                opacity: 1
+            }
+        }
+        /*  section6 */
+        #section6 .parallax__cont__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section6 .parallax__cont__desc span.show {
+            opacity: 1;
+            animation: jackInTheBox 1s;
+        }
+        @keyframes jackInTheBox {
+            0% {
+                opacity: 0;
+                transform: scale(.1) rotate(30deg);
+                -webkit-transform-origin: center bottom;
+                transform-origin: center bottom
+            }
+
+            50% {
+                transform: rotate(-10deg)
+            }
+
+            70% {
+                transform: rotate(3deg)
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        /*  section7 */
+        #section7 .parallax__cont__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section7 .parallax__cont__desc span.show {
+            opacity: 1;
+            animation: slideInUp 1s;
+        }
+        @keyframes slideInUp {
+            0% {
+                transform: translate3d(0, 100%, 0);
+                visibility: visible
+            }
+
+            to {
+                transform: translateZ(0)
+            }
+        }
+
+        /*  section8 */
+        #section8 .parallax__cont__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section8 .parallax__cont__desc span.show {
+            opacity: 1;
+            animation: flip 1s;
+        }
+        @keyframes flip {
+            0% {
+                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out
+            }
+
+            40% {
+                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out
+            }
+
+            50% {
+                transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+            }
+
+            80% {
+                transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+            }
+
+            100% {
+                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+            }
+        }
+
+
+
+        /*  section9 */
+        #section9 .parallax__cont__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section9 .parallax__cont__desc span.show {
+            opacity: 1;
+            animation: bounce 1s;
+        }
+        @keyframes bounce {
+            0%,20%,53%,100% {
+                animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+                transform: translateZ(0)
+            }
+            40%,43% {
+                animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+                transform: translate3d(0, -30px, 0) scaleY(1.1)
+            }
+            70% {
+                animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+                transform: translate3d(0, -15px, 0) scaleY(1.05)
+            }
+            80% {
+                transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+                transform: translateZ(0) scaleY(.95)
+            }
+            90% {
+                transform: translate3d(0, -4px, 0) scaleY(1.02)
+            }
+        }
+
+  
     </style>
 </head>
 <body>
