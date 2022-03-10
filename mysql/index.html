@@ -139,8 +139,8 @@ mysql>
                 </div>
                 <!-- //box -->
 
-                 <!-- box -->
-                 <div class=""bs-docs-section>
+                <!-- box -->
+                <div class=""bs-docs-section>
                     <h2 id="intro4" class="page-header">데이터 베이스</h2>
                     <h3 id="intro4-1" class="page-header">데이터 베이스 만들기</h3>
                     <div class="bs-callout bs-callout-info">
@@ -191,7 +191,7 @@ Query OK, 0 rows affected (0.00 sec)
                         </div>
 <pre class="language-js"><code>CREATE TABLE myMember (
     myMemberID int(10) unsigned auto_increment comment "회원의 고유 번호",
-    youEamil varchar(40) NOT NULL comment "회원 아이디",
+    youEmail varchar(40) NOT NULL comment "회원 아이디",
     youName varchar(12) NOT NULL comment "회원 이름",
     youPass varchar(20) NOT NULL comment "회원 비밀번호",
     youBirth varchar(12) NOT NULL comment "회원 생일",
@@ -220,7 +220,7 @@ Query OK, 0 rows affected (0.00 sec)
 | Field      | Type             | Null | Key | Default | Extra          |
 +------------+------------------+------+-----+---------+----------------+
 | myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
-| youEamil   | varchar(40)      | NO   |     | NULL    |                |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
 | youName    | varchar(12)      | NO   |     | NULL    |                |
 | youPass    | varchar(20)      | NO   |     | NULL    |                |
 | youBirth   | varchar(12)      | NO   |     | NULL    |                |
@@ -239,10 +239,10 @@ Query OK, 0 rows affected (0.01 sec)
                 </div>
                 <!-- //box -->
 
-                  <!-- box -->
-                  <div class=""bs-docs-section>
-                    <h2 id="intro5" class="page-header">테이블 수정</h2>
-                    <h3 id="intro5-1" class="page-header">필드 추가하기</h3>
+                <!-- box -->
+                <div class=""bs-docs-section>
+                    <h2 id="intro6" class="page-header">테이블 수정</h2>
+                    <h3 id="intro6-1" class="page-header">필드 추가하기</h3>
                         <div class="bs-callout bs-callout-info">
                             ALTER TABLE 테이블 명 ADD 추가할 필드명 AFTER 필드명 위치;
                         </div>
@@ -254,7 +254,7 @@ Query OK, 0 rows affected (0.05 sec)
 | Field      | Type              | Null | Key | Default | Extra          |
 +------------+-------------------+------+-----+---------+----------------+
 | myMemberID | int(10) unsigned  | NO   | PRI | NULL    | auto_increment |
-| youEamil   | varchar(40)       | NO   |     | NULL    |                |
+| youEmail   | varchar(40)       | NO   |     | NULL    |                |
 | youName    | varchar(12)       | NO   |     | NULL    |                |
 | youPass    | varchar(20)       | NO   |     | NULL    |                |
 | youBirth   | varchar(12)       | NO   |     | NULL    |                |
@@ -263,21 +263,107 @@ Query OK, 0 rows affected (0.05 sec)
 +------------+-------------------+------+-----+---------+----------------+
 7 rows in set (0.00 sec)
 </code></pre>
-                    <h3 id="intro5-2" class="page-header">필드 수정하기</h3>
+                    <h3 id="intro6-2" class="page-header">필드 수정하기</h3>
                         <div class="bs-callout bs-callout-info">
-                         
+                            ALTER TABLE 테이블명 MODIFY 수정할 필드명;
                         </div>
+<pre class="language-js"><code>ALTER TABLE myMember MODIFY youName int(20);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+                    <h3 id="intro6-3" class="page-header">필드 삭제하기</h3>
+                        <div class="bs-callout bs-callout-info">
+                            ALTER TABLE 테이블명 DROP 삭제할 필드명;
+                        </div>
+<pre class="language-js"><code>mysql> ALTER TABLE mymember drop youGender;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+
+                </div>
+                <!-- //box -->
+
+                <!-- box -->
+                <div class=""bs-docs-section>
+                    <h2 id="intro7" class="page-header">테이블 데이터</h2>
+                    <h3 id="intro7-1" class="page-header">데이터 입력하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        INSERT INTO 테이블 이름(필드명) VALUES(데이터);
+                    </div>
+<pre class="language-js"><code>INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('ik6623@naver.com','baby','1234','95-09-09','28','6623');
+Query OK, 1 row affected (0.00 sec) 
+</code></pre>
+                    <h3 id="intro7-1" class="page-header">데이터 불러오기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 대상 FROM 테이블명;
+                    </div>
+
+                    <h4>전체 데이터 불러오기</h4>
+<pre class="language-js"><code>mysql> SELECT * FROM myMember;
++------------+----------------------+-------------+---------+----------+--------+---------+
+| myMemberID | youEmail             | youName     | youPass | youBirth | youAge | regTime |
++------------+----------------------+-------------+---------+----------+--------+---------+
+|          1 | baby@naver.com       | baby        | 1234    | 00-04-05 | 33     |     327 |
+|          2 | web@naver.com        | webs        | 1234    | 00-04-05 | 33     |     327 |
+|          3 | ohwehoh@naver.com    | yeonwoo     | 1234    | 950780   | 99     |     355 |
+|          4 | jungsik321@naver.com | gentlemanjs | 1234    | 930209   | 31     |     327 |
+|          5 | illie@naver.com      | webs        | 1234    | 00-04-05 | 100    |     327 |
+|          6 | dnwls7738@naver.com  | dnwls7738   | 1234    | 960324   | 27     |     328 |
+|          7 | sbxjs6999@naver.com  | gwni        | 1234    | 00-04-05 | 26     |     327 |
+|          8 | web@naver.com        | webs        | 1234    | 00-04-05 | 33     |     327 |
+|          9 | placidcy@gmail.com   | placidcy    | 1234    | 00-03-12 | 33     |     327 |
+|         10 | qhd1994@naver.com    | heebong     | 1234    | 94-07-28 | 29     |     327 |
++------------+----------------------+-------------+---------+----------+--------+---------+
+10 rows in set (0.00 sec)
+</code></pre>
+                    <h4>myMemberID가 6번인 경우</h4>
+<pre class="language-js"><code>mysql> SELECT * FROM myMember WHERE myMemberID = 6;
++------------+---------------------+-----------+---------+----------+--------+---------+
+| myMemberID | youEmail            | youName   | youPass | youBirth | youAge | regTime |
++------------+---------------------+-----------+---------+----------+--------+---------+
+|          6 | dnwls7738@naver.com | dnwls7738 | 1234    | 960324   | 27     |     328 |
++------------+---------------------+-----------+---------+----------+--------+---------+
+1 row in set (0.00 sec)
+</code></pre>
+                    <h4>이메일 중에 네이버 텍스트를 포함하는 경우</h4>
+<pre class="language-js"><code>mysql> SELECT * FROM myMember WHERE youEmail LIKE '%naver%';
++------------+----------------------+-------------+---------+----------+--------+---------+
+| myMemberID | youEmail             | youName     | youPass | youBirth | youAge | regTime |
++------------+----------------------+-------------+---------+----------+--------+---------+
+|          1 | baby@naver.com       | baby        | 1234    | 00-04-05 | 33     |     327 |
+|          2 | web@naver.com        | webs        | 1234    | 00-04-05 | 33     |     327 |
+|          3 | ohwehoh@naver.com    | yeonwoo     | 1234    | 950780   | 99     |     355 |
+|          4 | jungsik321@naver.com | gentlemanjs | 1234    | 930209   | 31     |     327 |
+|          5 | illie@naver.com      | webs        | 1234    | 00-04-05 | 100    |     327 |
+|          6 | dnwls7738@naver.com  | dnwls7738   | 1234    | 960324   | 27     |     328 |
+|          7 | sbxjs6999@naver.com  | gwni        | 1234    | 00-04-05 | 26     |     327 |
+|          8 | web@naver.com        | webs        | 1234    | 00-04-05 | 33     |     327 |
+|         10 | qhd1994@naver.com    | heebong     | 1234    | 94-07-28 | 29     |     327 |
++------------+----------------------+-------------+---------+----------+--------+---------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM myMember WHERE youEmail LIKE '%naver';
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM myMember WHERE youEmail LIKE 'naver%';
+Empty set (0.00 sec)
+</code></pre>
+
+
+                    <h3 id="intro7-1" class="page-header">데이터 수정하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        
+                    </div>
 <pre class="language-js"><code>
 
 </code></pre>
-                    <h3 id="intro5-3" class="page-header">필드 삭제하기</h3>
-                        <div class="bs-callout bs-callout-info">
-                         
-                        </div>
+                    <h3 id="intro7-1" class="page-header">데이터 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        
+                    </div>
 <pre class="language-js"><code>
-  
-</code></pre>
 
+</code></pre>
                 </div>
                 <!-- //box -->
 
@@ -310,6 +396,14 @@ Query OK, 0 rows affected (0.05 sec)
                                 <li><a href="#intro6-1">필드 추가하기</a></li>
                                 <li><a href="#intro6-2">필드 수정하기</a></li>
                                 <li><a href="#intro6-3">필드 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro7">테이블 데이터</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro7-1">데이터 입력하기</a></li>
+                                <li><a href="#intro7-2">데이터 불러오기</a></li>
+                                <li><a href="#intro7-3">데이터 수정하기</a></li>
+                                <li><a href="#intro7-4">데이터 삭제하기</a></li>
                             </ul>
                         </li>
                     </ul>
