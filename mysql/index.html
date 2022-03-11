@@ -195,6 +195,7 @@ Query OK, 0 rows affected (0.00 sec)
     youName varchar(12) NOT NULL comment "회원 이름",
     youPass varchar(20) NOT NULL comment "회원 비밀번호",
     youBirth varchar(12) NOT NULL comment "회원 생일",
+    youAge varchar(12) NOT NULL comment "회원 나이",
     regTime int(11) NOT NULL comment "회원가입시간",
     PRIMARY KEY (myMemberID)
 ) charset=utf8 comment "회원 정보 테이블";
@@ -290,7 +291,7 @@ Records: 0  Duplicates: 0  Warnings: 0
                     <div class="bs-callout bs-callout-info">
                         INSERT INTO 테이블 이름(필드명) VALUES(데이터);
                     </div>
-<pre class="language-js"><code>INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('ik6623@naver.com','baby','1234','95-09-09','28','6623');
+<pre class="language-js"><code>INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('ik6623@naver.com','박종호','1234','1995-09-09','28','123');
 Query OK, 1 row affected (0.00 sec) 
 </code></pre>
                     <h3 id="intro7-1" class="page-header">데이터 불러오기</h3>

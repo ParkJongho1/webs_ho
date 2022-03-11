@@ -450,10 +450,8 @@
     <script src="js/gsap.min.js"></script>
     <script>
 
-        //만약에 reveal클래스가 있는데
-        //글씨를 span으로 감싸주고
-        //글씨를 다시 넣어주기  //글씨 쪼개기
-
+       
+        //HTML에 클래스 reveal이 있으면 span 태그 넣어주기!
         document.querySelectorAll("p.reveal").forEach(desc => {
             let revealtext = desc.innerText;
             revealtext = "<span>" + revealtext + "</span>";
