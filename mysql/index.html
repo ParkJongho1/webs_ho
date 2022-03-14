@@ -257,8 +257,9 @@ Query OK, 0 rows affected (0.03 sec)
                     <div class="bs-callout bs-callout-info">
                         INSERT INTO 새로운 테이블명 SELECT * FROM 복사할 테이블명; 
                     </div>
-<pre class="language-js"><code> 
-
+<pre class="language-js"><code>INSERT INTO myMember03 SELECT * FROM myMember;
+Query OK, 20 rows affected (0.06 sec)
+Records: 20  Duplicates: 0  Warnings: 0
 </code></pre>
 
 
@@ -316,24 +317,32 @@ Records: 0  Duplicates: 0  Warnings: 0
                     <div class="bs-callout bs-callout-info">
                         INSERT INTO 테이블 이름(필드명) VALUES(데이터);
                     </div>
-<pre class="language-js"><code>INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('ik6623@naver.com','박종호','1234qwer','19950909','28','01040976623','10293857');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('jungsik321@naver.com', '김정식', '1234', '19930209', '30', '01025738580', '20220314');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('webstoryboy@naver.com','황상연','12dfsdecv','19920405','33','01039858583','578365839');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('dnwls7738@naver.com', '천우진', '12asdf', '19960324', '27', '01055805274', '45678941');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('sbxjs6999@naver.com','박근희','1234qwer','19970214','26', '01041046999','12345678');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('dhtpfls321@naver.com', '오세린', '1234', '19980214', '25', '01032229944', '12345678');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('go_goa@naver.com' ,'김현우', '159753', '19920126', '31', '01087361836', '40250371');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('ohwehoh@naver.com','이연우','dldus1358','19950720','28','01014141441','12341234');
-INSERT INTO myMember (youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('illie@naver.com', '류성일', 'ryuPass', '19940426', '29', '01055327391', '1440');
-INSERT INTO mymember(youEmail, youName, youPass, youBirth, youAge,youPhone, regTime) VALUES('GarenChoi@naver.com','최근영','1234','19970117','26','01054651345','234');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('placidcy@gmail.com', '김지섭', '1234', '19900212', '32', '01011112222','20220314');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('96tmdqh@naver.com', '한승보', '1234', '19960716', '27', '01020153932', '1234');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('apdlvmf8044@gmail.com', '송준섭', 'qweasdf', '19931120', '30', '01088648044', '21846351');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('jsjh442@naver.com','박지선','1234','19980423','25','01057421662','12341234');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('wwuu123@naver.com','최가영','12345678','19970506','26','01066179991','12345678');
-INSERT INTO myMember (youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES ('sna12345@naver.com', '배석찬','1234','19960727','27','01033125279','03270327');
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('seongwoo@lycos.com','박성우','123456asd','19910506','32', '01044779156','54216451');
-Query OK, 1 row affected (0.00 sec) 
+<pre class="language-js"><code>mysql> SELECT * FROM myMember;
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+| memberID | youEmail              | youName | youPass   | youBirth | youAge | youPhone   | regTime   |
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+|        1 | webstoryboy@naver.com | 황상연  | 12dfsdecv | 19920405 |     33 | 1039858583 | 578365839 |
+|        2 | ik6623@naver.com      | 박종호  | 1234qwer  | 19950909 |     28 | 1040976623 |  10293857 |
+|        3 | rmsgur2275@gmail.com  | 박근혁  | alcls2860 | 19980611 |     25 | 1058122860 |  12345678 |
+|        4 | dnwls7738@naver.com   | 천우진  | 12asdf    | 19960324 |     27 | 1055805274 |  45678941 |
+|        5 | dnstjq6305@naver.com  | 조운섭  | qweasdf   | 19911110 |     32 | 1024068904 |  12345678 |
+|        6 | dhtpfls321@naver.com  | 오세린  | 1234      | 19980214 |     25 | 1032229944 |  12345678 |
+|        7 | GarenChoi@naver.com   | 최근영  | 1234      | 19970117 |     26 | 1054651345 |       234 |
+|        8 | sna12345@naver.com    | 배석찬  | 1234      | 19960727 |     27 | 1033125279 |   3270327 |
+|        9 | sbxjs6999@naver.com   | 박근희  | 1234qwer  | 19970214 |     26 | 1041046999 |  12345678 |
+|       10 | wwuu123@naver.com     | 최가영  | 12345678  | 19970506 |     26 | 1066179991 |  12345678 |
+|       11 | illie@naver.com       | 류성일  | ryuPass   | 19940426 |     29 | 1055327391 |      1440 |
+|       12 | jsjh442@naver.com     | 박지선  | 1234      | 19980423 |     25 | 1057421662 |  12341234 |
+|       13 | ohwehoh@naver.com     | 이연우  | dldus1358 | 19950720 |     28 | 1014141441 |  12341234 |
+|       14 | go_goa@naver.com      | 김현우  | 159753    | 19920126 |     31 | 1087361836 |  40250371 |
+|       15 | placidcy@gmail.com    | 김지섭  | 1234      | 19900212 |     32 | 1011112222 |  20220314 |
+|       16 | 96tmdqh@naver.com     | 한승보  | 1234      | 19960716 |     27 | 1020153932 |      1234 |
+|       17 | jungsik321@naver.com  | 김정식  | 1234      | 19930209 |     30 | 1025738580 |  20220314 |
+|       18 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   |   931120 |     30 | 1088648044 |  21846351 |
+|       19 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   | 19931120 |     30 | 1088648044 |  21846351 |
+|       20 | seongwoo@lycos.com    | 박성우  | 123456asd | 19910506 |     32 | 1044779156 |  54216451 |
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+20 rows in set (0.00 sec)
 </code></pre>
                     <h3 id="intro7-1" class="page-header">데이터 불러오기</h3>
 
