@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-md-9">
                 <!-- box -->
-                <div class=""bs-docs-section>
+                <div class="bs-docs-section">
                 <h2 id="intro1" class="page-header">MySQL</h2>
                 <p class="lead">
                     MySQL은 데이터베이스 소프트웨어입니다. 
@@ -89,7 +89,7 @@
                 <!-- //box -->
 
                  <!-- box -->
-                 <div class=""bs-docs-section>
+                 <div class="bs-docs-section">
                     <h2 id="intro2" class="page-header">MySQL 설치</h2>
                     <h3>MAMP 설치</h3>
                     <img src="img/MAMP.PNG">
@@ -97,7 +97,7 @@
                 <!-- //box -->
 
                 <!-- box -->
-                <div class=""bs-docs-section>
+                <div class="bs-docs-section">
                     <h2 id="intro3" class="page-header">MySQL 실행</h2>
                     <div class="bs-callout bs-callout-info">
                         윈도우 : cd MAMP/bin/mysql/bin<br>
@@ -140,7 +140,7 @@ mysql>
                 <!-- //box -->
 
                 <!-- box -->
-                <div class=""bs-docs-section>
+                <div class="bs-docs-section">
                     <h2 id="intro4" class="page-header">데이터 베이스</h2>
                     <h3 id="intro4-1" class="page-header">데이터 베이스 만들기</h3>
                     <div class="bs-callout bs-callout-info">
@@ -183,7 +183,7 @@ Query OK, 0 rows affected (0.00 sec)
                 <!-- //box -->
 
                 <!-- box -->
-                <div class=""bs-docs-section>
+                <div class="bs-docs-section">
                     <h2 id="intro5" class="page-header">테이블</h2>
                     <h3 id="intro5-1" class="page-header">테이블 만들기</h3>
                         <div class="bs-callout bs-callout-info">
@@ -267,7 +267,7 @@ Records: 20  Duplicates: 0  Warnings: 0
                 <!-- //box -->
 
                 <!-- box -->
-                <div class=""bs-docs-section>
+                <div class="bs-docs-section">
                     <h2 id="intro6" class="page-header">테이블 수정</h2>
                     <h3 id="intro6-1" class="page-header">필드 추가하기</h3>
                         <div class="bs-callout bs-callout-info">
@@ -276,19 +276,20 @@ Records: 20  Duplicates: 0  Warnings: 0
 <pre class="language-js"><code>ALTER TABLE myMember ADD youGender enum('m','w','x') default 'x' comment "남성은 m, 여성은 w" AFTER youBirth;
 Query OK, 0 rows affected (0.05 sec)
 </code></pre>
-<pre class="language-js"><code> desc myMember;
-+------------+-------------------+------+-----+---------+----------------+
-| Field      | Type              | Null | Key | Default | Extra          |
-+------------+-------------------+------+-----+---------+----------------+
-| myMemberID | int(10) unsigned  | NO   | PRI | NULL    | auto_increment |
-| youEmail   | varchar(40)       | NO   |     | NULL    |                |
-| youName    | varchar(12)       | NO   |     | NULL    |                |
-| youPass    | varchar(20)       | NO   |     | NULL    |                |
-| youBirth   | varchar(12)       | NO   |     | NULL    |                |
-| youGender  | enum('m','w','x') | YES  |     | x       |                |
-| regTime    | int(11)           | NO   |     | NULL    |                |
-+------------+-------------------+------+-----+---------+----------------+
-7 rows in set (0.00 sec)
+<pre class="language-js"><code>mysql> desc myMember;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| memberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail | varchar(40)      | NO   |     | NULL    |                |
+| youName  | varchar(20)      | NO   |     | NULL    |                |
+| youPass  | varchar(20)      | NO   |     | NULL    |                |
+| youBirth | int(20)          | NO   |     | NULL    |                |
+| youAge   | int(20)          | NO   |     | NULL    |                |
+| youPhone | int(20)          | NO   |     | NULL    |                |
+| regTime  | int(11)          | NO   |     | NULL    |                |
++----------+------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
 </code></pre>
                     <h3 id="intro6-2" class="page-header">필드 수정하기</h3>
                         <div class="bs-callout bs-callout-info">
@@ -311,7 +312,7 @@ Records: 0  Duplicates: 0  Warnings: 0
                 <!-- //box -->
 
                 <!-- box -->
-                <div class=""bs-docs-section>
+                <div class="bs-docs-section">
                     <h2 id="intro7" class="page-header">테이블 데이터</h2>
                     <h3 id="intro7-1" class="page-header">데이터 입력하기</h3>
                     <div class="bs-callout bs-callout-info">
@@ -338,9 +339,8 @@ Records: 0  Duplicates: 0  Warnings: 0
 |       15 | placidcy@gmail.com    | 김지섭  | 1234      | 19900212 |     32 | 1011112222 |  20220314 |
 |       16 | 96tmdqh@naver.com     | 한승보  | 1234      | 19960716 |     27 | 1020153932 |      1234 |
 |       17 | jungsik321@naver.com  | 김정식  | 1234      | 19930209 |     30 | 1025738580 |  20220314 |
-|       18 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   |   931120 |     30 | 1088648044 |  21846351 |
-|       19 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   | 19931120 |     30 | 1088648044 |  21846351 |
-|       20 | seongwoo@lycos.com    | 박성우  | 123456asd | 19910506 |     32 | 1044779156 |  54216451 |
+|       18 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   | 19931120 |     30 | 1088648044 |  21846351 |
+|       19 | seongwoo@lycos.com    | 박성우  | 123456asd | 19910506 |     32 | 1044779156 |  54216451 |
 +----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
 20 rows in set (0.00 sec)
 </code></pre>
@@ -461,28 +461,126 @@ Records: 0  Duplicates: 0  Warnings: 0
                     <div class="bs-callout bs-callout-info">
                         DELETE FROM 테이블명 or DELETE * FROM 테이블명;
                     </div>
-<pre class="language-js">DELETE FROM myMember;<code></code></pre>
+<pre class="language-js"><code>DELETE FROM myMember;</code></pre>
 
                     <h4 class="pt20">조건 데이터 삭제</h4>
                     <div class="bs-callout bs-callout-info">
                         DELETE FROM 테이블명 조건;
                     </div>
                     <h4 class="pt20">조건 삭제: 회원 아이디가 5번인 멤버를 삭제</h4>
-<pre class="language-js">DELETE FROM myMember WHERE memberID = 5;<code></code></pre>
+<pre class="language-js"><code>DELETE FROM myMember WHERE memberID = 5;</code></pre>
 
                     <h4 class="pt20">조건 삭제: 회원 패스워드가  '****'를 삭제</h4>
-<pre class="language-js">DELETE FROM myMember WHERE youPass = '****';<code></code></pre>
+<pre class="language-js"><code>DELETE FROM myMember WHERE youPass = '****';</code></pre>
 
                     <h4 class="pt20">정렬 삭제: 이름을 기준으로 5번째까지 삭제</h4>
-<pre class="language-js">DELETE FROM myMember ORDER youPass LIMIT 5;<code></code></pre>
+<pre class="language-js"><code>DELETE FROM myMember ORDER youPass LIMIT 5;</code></pre>
 
                     <h4 class="pt20">지정 삭제: 이름을 기준으로 5번째까지 삭제</h4>
-<pre class="language-js">DELETE FROM myMember WHERE memberID IN(8,9,10);<code></code></pre>
+<pre class="language-js"><code>DELETE FROM myMember WHERE memberID IN(8,9,10);</code></pre>
 
 
 
                 </div>
                 <!-- //box -->
+
+                <!-- box -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">테이블 합치기</h2>
+
+                    <h3 id="intro8-1" class="page-header">JOIN 사용하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                       SELECT 필드명 FROM 테이블명 엘리어스 JOIN 연결할 테이블명 엘리어스 (ON)조건문;
+                    </div>
+<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime FROM myMember m JOIN myReview r ON(m.memberID = r.memberID);</code></pre>
+
+<pre class="language-js"><code>CREATE TABLE myMember (
+    memberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    youAge int(20) NOT NULL,
+    youPhone int(20) NOT NULL,
+    regTime int(11) NOT NULL,
+    PRIMARY KEY (memberID)
+) charset=utf8;
+
+CREATE TABLE myReview (
+    reviewID int(10) unsigned auto_increment,
+    memberID int(10) unsigned,
+    youCont tinytext NOT NULL,
+    regTime int(11) NOT NULL,
+    PRIMARY KEY (reviewID)
+) charset=utf8;
+
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('4', '정말 감사합니다!! 너무 좋네요', '12345');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('12', '베스트 아이템 추천해요!!', '21312');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('1', '다음에도 또 방문할거에요!!', '45213');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('20', '좋아용 정말로 좋아요!', '56443');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('3', '가성비가 정말 좋은거 같습니다!', '45373');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('7', '다른분들한테도 추천 해야겠어요!', '23476');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('15', '아주 좋은거 같아요!!! 좋아요!', '98755');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('8', '굳굳 Very Good!!', '78443');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('17', '정말 감사합니다!! 너무 좋네요', '43597');
+INSERT INTO myReview(memberID, youCont, regTime) VALUE('9', '아주 좋은거 같아요!!! 좋아요!', '54675');
+</code></pre>
+
+
+                    <h4 class="pt-20">필드명 바꾸기</h4>   
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 필드명 AS 기존 필드명 대신 출력할 필드명 FROM 테이블명
+                    </div>
+<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime AS reviewTime FROM myMember m JOIN myReview r ON(m.memberID = r.memberID);</code></pre>
+                 
+                    <h4 class="pt-20">필드 내용이 없는 경우 표시</h4>  
+                    <div class="bs-callout bs-callout-info">
+                        LEFT JOIN
+                    </div>
+<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime FROM myMember m LEFT JOIN myReview r ON(m.memberID = r.memberID);</code></pre>
+
+                </div>
+                <!-- //box -->
+
+                 <!-- box -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">집계 함수</h2>
+<pre class="language-js"><code>CREATE TABLE myRecode (
+    recodeID int(10) unsigned auto_increment,
+    memberID int(10) unsigned,
+    javascript tinyint NOT NULL, 
+    html tinyint NOT NULL, 
+    css tinyint NOT NULL, 
+    mysql tinyint NOT NULL, 
+    react tinyint NOT NULL, 
+    PRIMARY KEY (recodeID)
+) charset=utf8;
+
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(1, 50, 30, 40, 10, 70);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(2, 80, 30, 50, 20, 10);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(3, 60, 40, 90, 10, 30);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(4, 50, 20, 40, 10, 60);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(5, 50, 20, 30, 10, 80);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(6, 20, 30, 10, 60, 40);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(7, 60, 90, 30, 10, 70);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(8, 90, 60, 40, 10, 70);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(9, 10, 30, 40, 70, 50);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES(10, 50, 30, 40, 10, 80);
+</code></pre>
+
+
+                    <h3 id="intro9-1" class="page-header">집계 함수의 종류</h3>
+<pre class="language-js"><code>SELECT count(javascript) FROM myRecode;</code></pre>
+<pre class="language-js"><code>SELECT sum(javascript) FROM myRecode;</code></pre>
+<pre class="language-js"><code>SELECT avg(javascript) FROM myRecode;</code></pre>
+<pre class="language-js"><code>SELECT max(javascript) FROM myRecode;</code></pre>
+<pre class="language-js"><code>SELECT min(javascript) FROM myRecode;</code></pre>
+
+                    <h3 id="intro9-2" class="page-header">그룹별 집계</h3>
+<pre class="language-js"><code></code></pre>
+                </div>
+                <!-- //box -->
+
 
 
             </div>
@@ -522,6 +620,18 @@ Records: 0  Duplicates: 0  Warnings: 0
                                 <li><a href="#intro7-2">데이터 불러오기</a></li>
                                 <li><a href="#intro7-3">데이터 수정하기</a></li>
                                 <li><a href="#intro7-4">데이터 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro8">테이블 합치기</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro8-1">데이터 JOIN</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro9">집계함수</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro9-1">집계 함수 종류</a></li>
+                                <li><a href="#intro9-2">그룹별 집계</a></li>
+
                             </ul>
                         </li>
                     </ul>
