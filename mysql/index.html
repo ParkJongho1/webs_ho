@@ -446,6 +446,9 @@ INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, reg
                     <h4 class="pt20">모든 회원의 비밀번호를 '1234' 변경</h4>
 <pre class="language-js"><code>UPDATE myMember SET youPass = "1234";</code></pre>
 
+                    <h4 class="pt20">아이디 번호가3 인사람 비밀번호를 '1234' 변경</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = "1234" WHERE boardID = 3;</code></pre>
+
                     <h4 class="pt20">5번 회원부터 10번회원까지의 비밀번호를 '5678' 변경</h4>
 <pre class="language-js"><code>UPDATE myMember SET youPass = "5678" WHERE memberID BETWEEN 5 and 10;</code></pre>
 
