@@ -51,14 +51,14 @@
                 </div>
                 <div class="blog__cont">
 <?php
-    $sql = "SELECT * FROM myBlog";
+    $sql = "SELECT * FROM myBlog ORDER BY blogID DESC LIMIT 5";
     $result = $connect -> query($sql);
 ?>
 
            <?php foreach($result as $blog){ ?>
                 <article class="blog">
                 <figuer class="blog__header">
-                <a href="blogView.php?blogID=<?=$blog['blogID']?>"><img src="../assets/img/blog/<?=$blog['blogImgFile']?>" alt="블로그 이미지"></a>
+                <a href="blogView.php?blogID=<?=$blog['blogID']?>" style="background-image:url(../assets/img/blog/<?=$blog['blogImgFile']?>)"></a>
                 </figuer>
                 <div class="blog__body">
                 <span class="blog__cate"><?=$blog['blogCategory']?></span>

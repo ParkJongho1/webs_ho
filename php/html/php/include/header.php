@@ -26,8 +26,7 @@
                     </g>
                 </svg>
                 <?=$_SESSION['youName']?>님 환영합니다.
-            </a>
-            <a href="../login/logout.php">로그아웃</a>    
+            </a>    
         <?php } else { ?>
             <a href="../login/join.php">회원가입</a>    
             <a href="../login/login.php">로그인</a>

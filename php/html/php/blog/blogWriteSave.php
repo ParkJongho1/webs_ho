@@ -48,7 +48,7 @@
     $fileExtension = $fileTypeExtension[1]; //jpeg
 
     //이미지 확인 작업 / 이미지 확장자 확인 작업 / 용량확인(숙제)
-    if($fileType == "image" && $blogImgSize <= 5000000 || NULL){
+    if($fileType == "image" && $blogImgSize <= 1048576 || NULL){
         //확장자 확인
         if($fileExtension == "jpg"|| $fileExtension =="jpeg" || $fileExtension == "png" || $fileExtension == "gif"){
             $blogImgDir = "../assets/img/blog/";
