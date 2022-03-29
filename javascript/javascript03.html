@@ -1014,32 +1014,32 @@ document.write(func("함수가 실행되었습니다."))
                     }
                     //클래스 상속
                     {
-                        class study {
-                            constructor(num, name, job){
-                                this.num = num;
-                                this.name = name;
-                                this.job = job;
-                            }
-                            result(){
-                                document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
-                            }
-                        }
-                        class study2 extends study {
-                            constructor(num, name, job, age){
-                                super(num, name, job);
-                                this.age = age;
-                            }
-                            result2(){
-                                document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "이며 나이는 " + this.age + "살 입니다.");
-                            }
-                        }
-                        //인스턴스 생성
-                        const info1 = new study("1", "웹쓰", "웹퍼블리셔");
-                        const info2 = new study2("2", "박종호", "프론트엔드개발자", 100);
+                        // class study {
+                        //     constructor(num, name, job){
+                        //         this.num = num;
+                        //         this.name = name;
+                        //         this.job = job;
+                        //     }
+                        //     result(){
+                        //         document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+                        //     }
+                        // }
+                        // class study2 extends study {
+                        //     constructor(num, name, job, age){
+                        //         super(num, name, job);
+                        //         this.age = age;
+                        //     }
+                        //     result2(){
+                        //         document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "이며 나이는 " + this.age + "살 입니다.");
+                        //     }
+                        // }
+                        // //인스턴스 생성
+                        // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+                        // const info2 = new study2("2", "박종호", "프론트엔드개발자", 100);
 
-                        info1.result();
-                        info2.result();
-                        info2.result2();
+                        // info1.result();
+                        // info2.result();
+                        // info2.result2();
 
                     }
                 </script>
