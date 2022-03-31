@@ -276,20 +276,19 @@ Records: 20  Duplicates: 0  Warnings: 0
 <pre class="language-js"><code>ALTER TABLE myMember ADD youGender enum('m','w','x') default 'x' comment "남성은 m, 여성은 w" AFTER youBirth;
 Query OK, 0 rows affected (0.05 sec)
 </code></pre>
-<pre class="language-js"><code>mysql> desc myMember;
-+----------+------------------+------+-----+---------+----------------+
-| Field    | Type             | Null | Key | Default | Extra          |
-+----------+------------------+------+-----+---------+----------------+
-| memberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
-| youEmail | varchar(40)      | NO   |     | NULL    |                |
-| youName  | varchar(20)      | NO   |     | NULL    |                |
-| youPass  | varchar(20)      | NO   |     | NULL    |                |
-| youBirth | int(20)          | NO   |     | NULL    |                |
-| youAge   | int(20)          | NO   |     | NULL    |                |
-| youPhone | int(20)          | NO   |     | NULL    |                |
-| regTime  | int(11)          | NO   |     | NULL    |                |
-+----------+------------------+------+-----+---------+----------------+
-8 rows in set (0.00 sec)
+<pre class="language-js"><code>desc myMember;
++------------+-------------------+------+-----+---------+----------------+
+| Field      | Type              | Null | Key | Default | Extra          |
++------------+-------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned  | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)       | NO   |     | NULL    |                |
+| youName    | varchar(12)       | NO   |     | NULL    |                |
+| youPass    | varchar(20)       | NO   |     | NULL    |                |
+| youBirth   | varchar(12)       | NO   |     | NULL    |                |
+| youGender  | enum('m','w','x') | YES  |     | x       |                |
+| regTime    | int(11)           | NO   |     | NULL    |                |
++------------+-------------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
 </code></pre>
                     <h3 id="intro6-2" class="page-header">필드 수정하기</h3>
                         <div class="bs-callout bs-callout-info">
