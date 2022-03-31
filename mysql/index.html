@@ -339,7 +339,7 @@ INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, reg
 INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('placidcy@gmail.com', '김지섭', '1234', '19900212', '32', '01011112222','20220314');
 20 rows in set (0.00 sec)
 </code></pre>
-                    <h3 id="intro7-1" class="page-header">데이터 불러오기</h3>
+                    <h3 id="intro7-2" class="page-header">데이터 불러오기</h3>
 
                     <h4>전체 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
@@ -438,7 +438,7 @@ INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, reg
 
 
 
-                    <h3 id="intro7-1" class="page-header">데이터 수정하기</h3>
+                    <h3 id="intro7-3" class="page-header">데이터 수정하기</h3>
                     <div class="bs-callout bs-callout-info">
                         UPDATE 테이블명 SET 칼럼명 조건;
                     </div>
@@ -454,7 +454,7 @@ INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, reg
                     <h4 class="pt20">아이디 내림차순 기준(11~20번)으로 비밀번호를 '****'로 변셩</h4>
 <pre class="language-js"><code>UPDATE myMember SET youPass = "****" ORDER BY memberID DESC LIMIT 10;</code></pre>
 
-                    <h3 id="intro7-1" class="page-header">데이터 삭제하기</h3>
+                    <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
                     <h4 class="pt20">전체 데이터 삭제</h4>
                     <div class="bs-callout bs-callout-info">
                         DELETE FROM 테이블명 or DELETE * FROM 테이블명;
