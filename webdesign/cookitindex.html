@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOKIT</title>
+</head>
+<link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .wrap {
+        width: 1000px;
+        font-family: 'SCoreDream';
+        margin: 0 auto;
+    }
+    li {list-style: none;}
+    a {color: #000; text-decoration: none;}
+    #header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #header .logo img {
+        width: 120px;
+    }
+    .nav {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        width: 650px;
+        font-weight: bold;
+        justify-content: space-between;
+    }
+    .nav ul li {
+        position: relative;
+        padding-top: 10px;
+        text-align: center;
+        width: 120px;
+    }
+    .submenu {
+        display: none;
+        position: absolute;
+        left: 0px;
+        top: 100;
+        white-space: nowrap;
+        font-size: 10px;
+        z-index: 9999;
+        background: #000;
+        padding-bottom: 10px;
+        
+        
+    }
+    .submenu li a {
+        color: #fff;
+    }
+    .submenu li a:hover {
+        background: #666;
+        padding: 3px 5px;
+    }
+    #banner {
+        width: 1000px;
+        height: 378px;
+        overflow: hidden;
+    }
+    #banner img {
+        width: 100%;
+    }
+    .slideList {position: relative; width: 3000px; z-index: 50;}
+    .slideList .slideImg {position: relative; width: 1000px; float: left;}
+    .slideList .slideImg h2 {position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%,-50%); background: rgba(0,0,0,0.4); padding: 10px 30px;
+    border-radius: 20px;}
+
+    #contents01 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+    #contents01 .cont1_left {
+        width: 49%;
+        background: #f2f2f2;
+    }
+    #contents01 .cont1_left h2 {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 5px 0 0 12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    #contents01 .cont1_left p {
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 0px 0 0 15px
+    }
+    #contents01 .cont1_left a {
+        display: block;
+        font-size: 18px;
+        padding: 5px 0 10px 15px;
+        background: url(img/cookitimg/icon1.jpg) no-repeat left top;
+        margin-left: 12px;
+        background-size: 20px;
+        padding-left: 25px; padding-top: 0px;
+    }
+    #contents01 .cont1_right {
+        width: 49%;
+        background: #f2f2f2;
+    }
+    #contents01 .cont1_right h2 {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 5px 0 0 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    #contents01 .cont1_right p {
+        font-size: 14px;
+        font-weight: 300;
+        padding: 0px 0 0 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+    }
+    #contents01 .cont1_right a {
+        display: block;
+        font-size: 16px;
+        padding: 5px 0 10px 15px;
+        background: url(img/cookitimg/icon2.jpg) no-repeat left top;
+        background-size: 20px;
+        padding-left: 25px; padding-top: 0px;
+        margin-left: 15px;
+    }
+    #contents02 {
+        margin-top: 50px;
+    }
+    #contents02 .list {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    #contents02 .list h2 {
+        margin-right: 40px;
+        
+    }
+    #contents02 .list h2 a {
+        color: rgb(170, 170, 170);
+    }
+    #contents02 .list h2 a.active {
+        color: #000;
+    }
+    #contents02 .bestimg {
+        display: flex;
+        justify-content: space-between;
+    }
+    #contents02 .bestimg .food01 {
+        width: 31%;
+    }
+    #contents02 .bestimg .food02 {
+        width: 31%;
+    }
+    #contents02 .bestimg .food03 {
+        width: 31%;
+    }
+    #contents02 .bestimg .food01 .num {
+        width: 100%;
+        background: url(img/cookitimg/adimg01.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    #contents02 .bestimg .food02 .num {
+        width: 100%;
+        background: url(img/cookitimg/adimg02.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    #contents02 .bestimg .food03 .num {
+        width: 100%;
+        background: url(img/cookitimg/adimg03.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    .num p {
+        width: 50px;
+        height: 50px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+    }
+    #contents02 .bestimg02 {
+        display: flex;
+        justify-content: space-between;
+    }
+    #contents02 .bestimg02 .food01 {
+        width: 31%;
+    }
+    #contents02 .bestimg02 .food02 {
+        width: 31%;
+    }
+    #contents02 .bestimg02 .food03 {
+        width: 31%;
+    }
+    #contents02 .bestimg02 .food01 .num {
+        width: 100%;
+        background: url(img/cookitimg/adimg01.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    #contents02 .bestimg02 .food02 .num {
+        width: 100%;
+        background: url(img/cookitimg/adimg02.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    #contents02 .bestimg02 .food03 .num {
+        width: 100%;
+        background: url(img/cookitimg/adimg03.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    #footer {
+        background: #202020;
+        width: 100%;
+        height: 200px;
+        margin-top: 50px;
+    }
+    #footer .focont {
+        display: flex;
+        width: 1000px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    #footer img {
+        margin: 20px 0 0 20px;
+        width: 130px;
+    }
+    #footer .focont .footerdesc ul li {
+        display: inline-block;
+        margin: 40px 50px 0 0;
+    }
+    #footer .focont .footerdesc ul li a {
+        color: #fff;
+    }
+    #footer .focont .footerdesc .address {
+        font-size: 14px;
+        color: rgb(153, 153, 153);
+        font-style: normal;
+        line-height: 2;
+        margin-top: 30px;
+    }
+    .layer_bg {display: none; position: fixed; left: 0; top: 0; z-index: 900;
+    width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+    .layer {display: none; position: absolute; left: 30px; top: 30px; z-index: 1000;
+    width: 500px; height: 500px; border: 3px solid #000; background: #fff;}
+    .layer h2 {padding: 20px; color: #000;}
+    .layer .close {position: absolute; bottom: 20px; right: 20px;}
+</style>
+<body>
+    <div class="wrap">
+            <header id="header">
+                <h1 class="logo"><a href="#"><img src="img/cookitimg/logo.jpg" alt="로고"></a></h1>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#">COOKIT소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">SUBMENU1</a></li>
+                                <li><a href="#">SUBMENU2</a></li>
+                                <li><a href="#">SUBMENU3</a></li>
+                                <li><a href="#">SUBMENU4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">COOKIT 메뉴</a>
+                            <ul class="submenu">
+                                <li><a href="#">SUBMENU1</a></li>
+                                <li><a href="#">SUBMENU2</a></li>
+                                <li><a href="#">SUBMENU3</a></li>
+                                <li><a href="#">SUBMENU4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">리뷰</a>
+                            <ul class="submenu">
+                                <li><a href="#">SUBMENU1</a></li>
+                                <li><a href="#">SUBMENU2</a></li>
+                                <li><a href="#">SUBMENU3</a></li>
+                                <li><a href="#">SUBMENU4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">이벤트</a>
+                            <ul class="submenu">
+                                <li><a href="#">SUBMENU1</a></li>
+                                <li><a href="#">SUBMENU2</a></li>
+                                <li><a href="#">SUBMENU3</a></li>
+                                <li><a href="#">SUBMENU4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">MY쿡킷</a>
+                            <ul class="submenu">
+                                <li><a href="#">SUBMENU1</a></li>
+                                <li><a href="#">SUBMENU2</a></li>
+                                <li><a href="#">SUBMENU3</a></li>
+                                <li><a href="#">SUBMENU4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main id="contents">
+                <section id="banner">
+                    <div class="slideList">
+                        <div class="slideImg">
+                            <h2>이미지1</h2>
+                            <img src="img/cookitimg/banner.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트1">
+                        </div>
+                        <div class="slideImg">
+                            <h2>이미지2</h2>
+                            <img src="img/cookitimg/banner.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트2">
+                        </div>
+                        <div class="slideImg">
+                            <h2>이미지3</h2>
+                            <img src="img/cookitimg/banner.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트3">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contents01">
+                    <article class="cont1_left">
+                        <h2 class="title">우리집도 COOKIT 배송이 되나요?</h2>
+                        <p class="desc">배송이 가능한지 알려드려요.</p>
+                        <a href="#" class="btn">배송지 검색</a>
+                    </article>
+                    <article class="cont1_right">
+                        <h2>7월30일(화)에 받을 수 있어요.</h2>
+                        <p>오전 7시까지 주문하시면 다음날 배송됩니다.</p>
+                        <a href="#">63:28:32 <span>남은 시간</span></a>
+                    </article>
+                </section>
+
+                <section id="contents02" class="foodmenu">
+                    <div class="list">
+                        <h2><a href="#c" class="best active">실시간 베스트</a></h2>
+                        <h2><a href="#c" class="review">생생한 리뷰</a></h2>
+                    </div>
+                    <article class="bestimg">
+                        <div class="food01">
+                            <div class="num"><p>Best<br>01</p></div>
+                            <p>평양식 어북 쟁박</p>
+                            <p>33,800원 /<span>3인분</span></p>
+                        </div>
+                        <div class="food02">
+                            <div class="num"><p>Best<br>02</p></div>
+                            <div class="fooddesc">
+                                <p>새우주꾸미삼겹살</p>
+                                <p>29,800원 /<span>3인분</span></p>
+                            </div>
+                        </div>
+                        <div class="food03">
+                            <div class="num"><p>Best<br>03</p></div>
+                            <p>방풀나물 아귀찜</p>
+                            <p>32,800원 /<span>3인분</span></p>
+                        </div>
+                    </article>
+                    <article class="bestimg02 show">
+                        <div class="food03">
+                            <div class="num"><p>Best<br>03</p></div>
+                            <p>방풀나물 아귀찜</p>
+                            <p>32,800원 /<span>3인분</span></p>
+                        </div>
+                        <div class="food02">
+                            <div class="num"><p>Best<br>02</p></div>
+                            <p>새우주꾸미삼겹살</p>
+                            <p>29,800원 /<span>3인분</span></p>
+                        </div>
+                        <div class="food01">
+                            <div class="num"><p>Best<br>01</p></div>
+                            <p>평양식 어북 쟁박</p>
+                            <p>33,800원 /<span>3인분</span></p>
+                        </div>
+                    </article>
+                </section>
+            </main>
+    </div>
+    <footer id="footer">
+        <div class="focont">
+            <h2 class="footerlogo">
+                <img src="img/cookitimg/footerlogo.jpg" alt="푸터로고">
+            </h2>
+            <div class="footerdesc">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">사업자정보 확인</a></li>
+                </ul>
+                <address class="address">
+                    <p>씨제이제일제당(주) | 대표자:신현재</p>
+                    <p>주소:서울 중구 동호로 330 CJ제일제당 센터(우) 04560 | 사업자등록번호:104-86-09535</p>
+                    <p>통신판매업신고 중구 제 07767호 | 개인정보보호책임자: 류화정</p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <!-- layer -->
+    <div class="layer_bg"></div>
+    <div class="layer">
+        <h2>제목</h2>
+        <a href="#" class="close">닫기</a>
+    </div>
+    
+    <script src="script/jquery.min_1.12.4.js"></script>
+    <script>
+        $(".nav > ul > li").mouseover(function(){
+            $(this).find(".submenu").stop().slideDown(500);
+        });
+        $(".nav > ul > li").mouseout(function(){
+            $(this).find(".submenu").stop().slideUp(500);
+        });
+
+        $(".bestimg02").hide();
+        $(".best").click(function(){
+            $(".bestimg").show();
+            $(".bestimg02").hide();
+            $(".best").addClass("active");
+            $(".review").removeClass("active");
+        })
+        $(".review").click(function(){
+            $(".bestimg").hide();
+            $(".bestimg02").show();
+            $(".review").addClass("active");
+            $(".best").removeClass("active");
+        })
+
+
+
+
+
+        var currentIndex = 0;
+        setInterval(function(){
+            if(currentIndex < 2){
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            var slidePosition = currentIndex * (-1000)+"px";
+            $(".slideList").animate({ left:slidePosition },400);
+        },3000);
+
+
+        $(".cont1_left").click(function(){
+            $(".layer").slideDown(300);
+            $(".layer_bg").show();
+        });
+        $(".layer .close").click(function(){
+            $(".layer").slideUp(300);
+            $(".layer_bg").hide();
+        })
+     
+
+    </script>
+
+ 
+    
+</body>
+</html>
