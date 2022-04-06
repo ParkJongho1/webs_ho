@@ -77,6 +77,16 @@
         background-size: cover;
         background-position: center center;
     }
+    body.img11 {
+        background: url(../img/imgbg11.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img12 {
+        background: url(../img/imgbg12.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
     body::before {
         content: '';
         position: absolute;
