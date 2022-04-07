@@ -278,6 +278,9 @@
         const musicArtist = musicWrap.querySelector(".music__song .artist");
         const musicAudio = musicWrap.querySelector("#main-audio");
         const musicPlay = musicWrap.querySelector("#control-play");
+        const musicPrevBtn = musicWrap.querySelector("#control-prev");
+        const musicNextBtn = musicWrap.querySelector("#control-next");
+     
 
         let musicIndex = 5;
 
@@ -293,21 +296,41 @@
             loadMusic(musicIndex);
         });
 
+        //실행 버튼
         function playMusic(){
             musicWrap.classList.add("paused");
             musicPlay.innerText = "pause";
             musicAudio.play();
         };
+
+        //정지 버튼
         function pauseMusic(){
             musicWrap.classList.remove("paused");
             musicPlay.innerText = "play_arrow";
             musicAudio.pause();
         };
 
+        //이전 곡 듣기 버튼
+        function prevMusic(){
+            musicIndex--;
+            loadMusic(musicIndex);
+            playMusic();
+        };
+
+        //다음 곡 듣기 버튼
+        function nextMusic(){
+            musicIndex++;
+            loadMusic(musicIndex);
+            playMusic();
+        }
+
         musicPlay.addEventListener("click", () => {
             const isMusicPaused = musicWrap.classList.contains("paused")
             isMusicPaused ? pauseMusic() : playMusic();
         });
+
+        musicPrevBtn.addEventListener("click", prevMusic);
+        musicNextBtn.addEventListener("click", nextMusic);
     </script>
 </body>
 </html>
