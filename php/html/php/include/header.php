@@ -5,11 +5,21 @@
     <nav class="menu">
         <h2 class="ir_so">메인 메뉴</h2>
         <ul>
-            <li><a href="../login/join.php">회원가입</a></li>
+            <?php if(isset($_SESSION['memberID'])){ ?>
+            <li><a href="../pages/main.php">메인페이지</a></li>
+           <?php } else { ?>
+                <li><a href="../login/join.php">회원가입</a></li>
+            <?php } ?>
             <li><a href="../comment/comment.php">댓글</a></li>
             <li><a href="../board/board.php">게시판</a></li>
             <li><a href="../blog/blog.php">블로그</a></li>
-            <li><a href="#">관리자</a></li>
+            <li><a href="../quiz/quiz.php">퀴즈</a>
+                <ul class="sub">
+                    <li><a href="../quiz/quizCreate.php">문제 만들기</a></li>
+                    <li><a href="../quiz/quiz.php">문제 풀기</a></li>
+                    <li><a href="../quiz/quizExam.php">기출 문제</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <div class="member">

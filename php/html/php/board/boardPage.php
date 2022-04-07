@@ -7,7 +7,7 @@
   
 
     // echo "<pre>";
-    // var_dump($boardCount);
+    // var_dump($boardCount); 
     // echo "</pre>";
 
     //총 페이지 갯수

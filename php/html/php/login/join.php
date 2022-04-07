@@ -55,7 +55,7 @@
                         <div class="join-box">
                             <div class="overlap">
                                 <label for="youEmail">이메일</label>
-                                <input type="email" id="youEmail" name="youEmail"placeholder="Sample@naver.com" required>
+                                <input type="email" id="youEmail" name="youEmail" placeholder="Sample@naver.com" required>
                                 <a href="#c" class="test" onclick="emailChecking()">중복검사</a>
                                 <p class="comment" id="youEmailComment"></p>
                             </div>
@@ -104,7 +104,7 @@
     ?>
     <!-- //footer -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <script>
         let emailCheck = false;
         let nickCheck = false;
@@ -139,7 +139,7 @@
             }
         }
 
-        function nickChecking(){
+        function nickChecking(){ 
             let youNickName = $("#youNickName").val();
 
             if(youNickName == null || youNickName == ''){

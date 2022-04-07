@@ -13,7 +13,7 @@
 
     <!-- style -->
     <?php
-        include "../include/style.php";
+        include "../include/style.php"; 
     ?>
     <!-- //style -->
     <style>
@@ -84,7 +84,7 @@
                                     <th>조회수</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
 
 <?php
     //b.boardID, b.boardTitle, m.youName, b.regTime, b.boardView

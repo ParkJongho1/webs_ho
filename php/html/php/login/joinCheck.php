@@ -8,8 +8,8 @@
     $sql = "SELECT youEmail,youNickName FROM myMember ";
     
 
-    if($type == "emailCheck"){
-        $youEmail = $connect -> real_escape_string(trim($_POST['youEmail']));
+    if($type == "emailCheck"){ 
+        $youEmail = $connect -> real_escape_string(trim($_POST['youEmail'])); 
         $sql .= "WHERE youEmail = '{$youEmail}'";
     }
 
