@@ -313,8 +313,8 @@
         //이전 곡 듣기 버튼 (1)
         function prevMusic(){
             musicIndex--;
-            loadMusic(musicIndex);
             musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
+            loadMusic(musicIndex);
             playMusic();
         };
 
