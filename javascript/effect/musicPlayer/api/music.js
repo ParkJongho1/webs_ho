@@ -74,7 +74,7 @@ let allMusic = [
     {
         name : "13. 미친 소리",
         artist : "이예준",
-        img : "music-11",
-        audio : "music-11"
+        img : "music-13",
+        audio : "music-13"
     }
 ]
