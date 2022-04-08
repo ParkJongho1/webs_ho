@@ -64,5 +64,17 @@ let allMusic = [
         artist : "지효 (Twice)",
         img : "music-11",
         audio : "music-11"
+    },
+    {
+        name : "12. 너를 생각해",
+        artist : "주시크",
+        img : "music-12",
+        audio : "music-12"
+    },
+    {
+        name : "13. 미친 소리",
+        artist : "이예준",
+        img : "music-11",
+        audio : "music-11"
     }
 ]

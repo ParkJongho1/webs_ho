@@ -465,6 +465,7 @@
                 let totalSec = Math.floor(audioDuration % 60);
                 if(totalSec < 10) totalSec = `0${totalSec}`;
                 liAudiolDuration.innerText = `${totalMin}:${totalSec}`;
+                liAudiolDuration.setAttribute("data-duration", `${totalMin}:${totalSec}`)
             });
         }
 
@@ -476,6 +477,8 @@
 
                 if(musicListAll[j].classList.contains("playing")){
                     musicListAll[j].classList.remove("playing");
+                    let adDuration = audioTag.getAttribute("data-duration");
+                    audioTag.innerText = adDuration;
                 }
 
                 if(musicListAll[j].getAttribute("data-index") == musicIndex){
@@ -487,6 +490,7 @@
             }
         }
 
+        //리스트 클릭하기
         function clicked(el){
             let getLiIndex = el.getAttribute("data-index");
             musicIndex = getLiIndex;
