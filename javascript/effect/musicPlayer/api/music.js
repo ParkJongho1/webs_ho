@@ -58,5 +58,34 @@ let allMusic = [
         artist : "이예준",
         img : "music-10",
         audio : "music-10"
+    },
+    {
+        name : "11. 사랑은 언제나 목마르다",
+        artist : "유미",
+        img : "music-11",
+        audio : "music-11"
+    },
+    {
+        name : "12. 내 눈물모아",
+        artist : "휘인",
+        img : "music-12",
+        audio : "music-12"
+    },
+    {
+        name : "13. 사계",
+        artist : "엠씨더맥스",
+        img : "music-13",
+        audio : "music-13"
+    },
+    {
+        name : "14. 늦은 밤 너의 집 앞 골목길에서",
+        artist : "노을",
+        img : "music-14",
+        audio : "music-14"
+    },{
+        name : "15. 일주일째",
+        artist : "플로우식",
+        img : "music-15",
+        audio : "music-15"
     }
 ]
