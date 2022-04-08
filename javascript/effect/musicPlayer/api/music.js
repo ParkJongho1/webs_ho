@@ -58,5 +58,11 @@ let allMusic = [
         artist : "Jeremy Black",
         img : "music-10",
         audio : "music-10"
+    },
+    {
+        name : "11. StarDust love song",
+        artist : "지효 (Twice)",
+        img : "music-11",
+        audio : "music-11"
     }
 ]
