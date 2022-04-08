@@ -407,7 +407,7 @@ document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {    //do
             
             sliderDot.innerHTML = dotIndex;
             sliderDot.firstElementChild.classList.add("active");                //첫 번째 자식 닷 버튼한테 활성화표시 (active)
-        }
+        };
         init();
 
         function gotoSlider(num) {  //슬라이드 동작 매개변수 함수 생성
@@ -420,7 +420,7 @@ document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {    //do
                 el.classList.remove("active");  //active를 삭제
             })
             dotActive[num].classList.add("active"); //현재 보여지고 있는 이미지 숫자가 들어가있는 닷 active 클래스 추가
-        }
+        };
         
         document.querySelectorAll(".slider__btn a").forEach((btn, index) => {   //next,prev 버튼
             btn.addEventListener("click", () => {                               //next,prev 버튼 클릭시
@@ -433,13 +433,13 @@ document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {    //do
                     gotoSlider(nextIndex)               //gotoSlider함수에 nextIndex설정
                 }           
             })
-        })
+        });
 
         document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {    //dot
             dot.addEventListener("click", () => {                                   //dot 을 클릭시            
                 gotoSlider(index);                                                  //gotoSlider함수에 index설정
             })
-        })
+        });
 
     </script>
     
