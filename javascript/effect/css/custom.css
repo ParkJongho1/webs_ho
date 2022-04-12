@@ -17,7 +17,6 @@
         width: 100%;
         vertical-align: top; /*  이미지 여백 제거 */
     }
-    
     body {
         width: 100%;
         height: 100vh;
@@ -84,6 +83,21 @@
     }
     body.img12 {
         background: url(../img/imgbg12.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img13 {
+        background: url(../img/imgbg13.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img14 {
+        background: url(../img/imgbg14.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    body.img15 {
+        background: url(../img/imgbg15.jpg);
         background-size: cover;
         background-position: center center;
     }
