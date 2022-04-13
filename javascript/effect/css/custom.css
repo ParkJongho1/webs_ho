@@ -101,6 +101,11 @@
         background-size: cover;
         background-position: center center;
     }
+    body.img16 {
+        background: url(../img/imgbg16.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
     body::before {
         content: '';
         position: absolute;
