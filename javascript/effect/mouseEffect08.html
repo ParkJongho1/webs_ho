@@ -19,9 +19,6 @@
     }
 
     body {
-    display:         flex;
-    justify-content: center;
-    align-items:     center;
     height:  100vh;
         background: linear-gradient(
             135deg, 
@@ -29,46 +26,51 @@
             hsl(var(--grad-end), 100%, 50%)
         )
     }
+    .logo {
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    color: #fff;
+    font-size: 50px;
+    }
+
     span {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        position: absolute;
-        pointer-events: none;
-        background: #55b9f3;
-        transform: translate(-50%, -50%);
-        animation: blow 4s linear infinite;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    position: absolute;
+    pointer-events: none;
+    background: #55b9f3;
+    box-shadow:  20px 20px 60px #489dcf, 
+                -20px -20px 60px #62d5ff;
+    transform: translate(-50%, -50%);
+    animation: blow 4s linear infinite;
     }
 
 
     @keyframes blow {
-    0% {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        filter: hue-rotate(0deg);
+        0% {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            transform: translate(-50%, -1000%);
+            opacity: 0;
+            filter: hue-rotate(720deg);
+        }
     }
-    100% {
-        transform: translate(-50%, -1000%);
-        opacity: 0;
-        filter: hue-rotate(720deg);
-    }
-    }
-    .mouse__wrap b {
-        font-size: 3vw;
-    }
+
 </style>
 
 <body>
+    <div class="logo">
+        MOVE MOUSE
+    </div>  
 
-    <!-- main -->
-    <main>
-        <section id="mouseType01">
-            <div class="mouse__wrap">
-                <b>I whip my mouse back and forth</b>
-            </div>
-        </section>
-    </main>
-    
 
     <!-- //main -->
     <!-- info -->
@@ -176,7 +178,7 @@
         updateGradient(getPercentX(e.touches[0].screenX));
         });
 
-        document.addEventListener('mousemove', function(e) {
+       document.addEventListener('mousemove', function(e) {
             let body = document.querySelector('body');
             let circle = document.createElement('span');
             let x = e.offsetX;
