@@ -263,6 +263,15 @@
         let cardOne, cardTwo;
         let disableDeck = false;
 
+        let sound = [
+            "audio/match2.mp3",
+            "audio/match.mp3",
+            "audio/up.mp3",
+        ]
+        let cardMatch = new Audio(sound[0]);
+        let cardNoMatch = new Audio(sound[1]);
+        let cardSuccess = new Audio(sound[2]);
+
         //뮤직 재생
         cardSound.addEventListener("click", () =>{
             cardSound.classList.toggle("is-playing");
@@ -305,6 +314,7 @@
                 cardTwo.removeEventListener("click", flipCard);
                 cardOne = cardTwo ="";
                 disableDeck = false;
+                cardMatch.play();
             } else {
                 setTimeout(() => {
                     cardOne.classList.add("shake");
@@ -317,6 +327,7 @@
                     cardOne = cardTwo ="";
                     disableDeck = false;
                     }, 1200);
+                    cardNoMatch.play();
             }
         }
 
