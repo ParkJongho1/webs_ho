@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <style>
         *{
             margin: 0;
@@ -86,11 +87,32 @@
             80%  {transform: translateX(8px);}
             100% {transform: translateX(0);}
         }
+        .card__sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .card__sound button {
+            background: #fff;
+            color: #007bff;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            line-height: 40px;
+            width: 40px;
+            height: 40px;
+            border: 0;
+        }
     </style>
 </head>
 <body>
     <div class="wrap__card">
         <div class="card__inner">
+            <div class="card__sound">
+                <button class="material-icons play">volume_off</button>
+                <!-- <button class="material-icons stop">volume_up</button> -->
+                <audio id="song" src="audio/Jeremy_Black.mp3" loop></audio>
+            </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
@@ -235,9 +257,24 @@
         //07. 빨리 클릭하면 버그 발생
 
         const cards = document.querySelectorAll(".cards li");
+        const cardSound = document.querySelector(".card__sound button");
+        const cardSong = document.querySelector("#song");
         
         let cardOne, cardTwo;
         let disableDeck = false;
+
+        //뮤직 재생
+        cardSound.addEventListener("click", () =>{
+            cardSound.classList.toggle("is-playing");
+
+            if(cardSound.classList.contains("is-playing")){
+                cardSound.innerText = "volume_up";
+                cardSong.play();
+            } else {
+                cardSound.innerText = "volume_off";
+                cardSong.pause();
+            }
+        });
 
         function flipCard(e){
             let clickedCard = e.target;
