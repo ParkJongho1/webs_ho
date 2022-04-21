@@ -419,6 +419,7 @@
       const cards = document.querySelectorAll(".cards li");
       const infoBoxStart = infoBox.querySelector(".start");
       const resultBoxRestart = resultBox.querySelector(".restart");
+
       let cardOne, cardTwo;
       let disableDeck = false;
       let matchedCard = 0;
@@ -446,8 +447,12 @@
       // 게임 다시 시작 버튼
       resultBoxRestart.onclick = () => {
           resultBox.classList.remove("active");
+        //   cardWrap.classList.add("active");
+          setTimeout(() => {
+            shuffledCard();
+          },1000)
           cardWrap.classList.add("active");
-          shuffledCard();
+         
       }
       //카드 클릭
       cards.forEach(card => {
@@ -475,8 +480,11 @@
               //완성했을 때
               if(matchedCard == 8){
                   setTimeout(() => {
-                      cardWrap.classList.remove("active");
-                      resultBox.classList.add("active");
+                    cardWrap.classList.remove("active");
+                    resultBox.classList.add("active");
+                    cards.forEach((card) => {
+                        card.classList.remove("flip")
+                    })
                   }, 1000)
               }
               cardOne.removeEventListener("click", flipCard);
@@ -503,7 +511,7 @@
           disableDeck = false;
           matchedCard = 0;
           let arr = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
-          //let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
+        //   let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
           cards.forEach((card, index) => {
               card.addEventListener("click", flipCard);
               card.classList.remove("flip");
