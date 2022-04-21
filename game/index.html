@@ -5,192 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>게임</title>
-  <link rel="stylesheet" href="assets/bg.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      
-    }
-    body {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      cursor: none;
-    }
-  
-    @font-face {
-        font-family: 'LABDigital';
-        font-weight: normal;
-        font-style: normal;
-        src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
-        src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
-        font-display: swap;
-    }
-    #header {
-      background: rgb(110, 3, 96);
-      display: flex;
-      justify-content: space-between;
-    }
-    #header h1 {
-      height: 30px;
-      font-family: "LABDigital";
-      font-size: 25px;
-      padding: 10px;
-      color: white;
-    }
-    #header span {
-      font-family: "LABDigital";
-      padding: 13px 20px;
-      color: white;
-      font-size: 20px;
-    }
-    .icon {
-      z-index: 500;
-    }
-    .icon a {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      line-height: 66px;
-      text-align: center;
-      cursor: none;
-    }
-    .icon img {
-      width: 30px;
-    }
-    .btn1 {
-      position: absolute;
-      background: linear-gradient(to right,  #e077ba 0%,#f833ff 100%);
-      border-radius: 50%;
-      top: 150px;
-      left: 100px;
-    }
-    .btn2 {
-      position: absolute;
-      background: linear-gradient(to right,  #e077ba 0%,#f833ff 100%);
-      border-radius: 50%;
-      top: 150px;
-      left: 250px;
-    }
-    .btn3 {
-      position: absolute;
-      background: linear-gradient(to right,  #e077ba 0%,#f833ff 100%);
-      border-radius: 50%;
-      top: 150px;
-      left: 400px;
-    }
-    .btn1 span {
-      position: absolute;
-      font-family: "LABDigital";
-      top: 60px;
-      left: -5px;
-      padding: 3px 10px;
-      background: linear-gradient(to right,  #85e668 0%,#56d5e6 100%);
-      color: blue;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    .btn2 span {
-      position: absolute;
-      font-family: "LABDigital";
-      top: 60px;
-      left: -30px;
-      padding: 3px 10px;
-      background: linear-gradient(to right,  #85e668 0%,#56d5e6 100%);
-      color: blue;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    .btn3 span {
-      position: absolute;
-      font-family: "LABDigital";
-      top: 60px;
-      left: -20px;
-      padding: 3px 10px;
-      background: linear-gradient(to right,  #85e668 0%,#56d5e6 100%);
-      color: blue;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .cursor {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        z-index: 1000;
-        user-select: none;
-        pointer-events: none;
-    }
-
-    .musicBox {
-      position: absolute;
-      right: -500px;
-      top: 10px;
-      width: 400px;
-      height: 700px;
-      transition: all 0.4s;
-    }
-    .musicBox.show {
-        right: 10px;
-    }
-    .musicBoxIframe {
-      width: 100%;
-      height: 100vh;
-    }
-
-    .typingGame {
-      position: absolute;
-      width: 1000px;
-      height: 200px;
-      top: 1500px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      transition: all 0.4s;
-    }
-    .typingGame.show {
-      top: -700px;
-    }
-    .TypingGameIframe {
-      width: 100%;
-      height: 100vh;
-    }
-    .cardGame {
-      position: absolute;
-      width: 1000px;
-      height: 200px;
-      top: 1500px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      transition: all 0.4s;
-    }
-    .cardGame.show {
-      top: -700px;
-    }
-    .cardGameIframe {
-      width: 100%;
-      height: 100vh;
-    }
-
-    
-
-
-
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/bg.css">
 </head>
 <body>
 
   <div class="cursor">
-    <img src="img/cursor.svg" alt="커서">
+    <img src="assets/img/cursor.svg" alt="커서">
   </div>
 
   <header id="header">
@@ -200,15 +21,15 @@
   
   <main>
     <div class="icon btn1">
-      <a href="#"><img src="img/guitar-light.svg"></a>
+      <a href="#"><img src="assets/img/guitar-light.svg"></a>
       <span>Music</span>
     </div>
-    <div class="icon btn2">
-      <a href="#"><img src="img/station-light.svg"></a>
+    <div class="icon btn2 memory">
+      <a href="#"><img src="assets/img/station-light.svg"></a>
       <span>Typing game</span>
     </div>
     <div class="icon btn3">
-      <a href="#"><img src="img/camera-light.svg"></a>
+      <a href="#"><img src="assets/img/camera-light.svg"></a>
       <span>Card game</span>
     </div>
   </main>
@@ -219,8 +40,8 @@
   <div class="typingGame">
     <iframe class="TypingGameIframe" src="../javascript/effect/typingGame/index.html" frameborder="0"></iframe>
   </div>
-  <div class="cardGame">
-    <iframe class="cardGameIframe" src="../javascript/effect/memoryGame/index.html" frameborder="0"></iframe>
+  <div class="memoryBox">
+    <iframe class="cardGameIframe" src="../javascript/effect/memoryGame/index2.html" frameborder="0"></iframe>
   </div>
   
   
@@ -255,13 +76,10 @@
     }
 
     window.addEventListener("mousemove", (e) => {
-            // document.querySelector(".cursor").style.left = e.clientX -25 + "px";
-            // document.querySelector(".cursor").style.top = e.clientY -25 + "px";
-
-            let x = e.clientX -8 + "px";
-            let y = e.clientY -5 + "px";
-            document.querySelector(".cursor").style.cssText = "left:" + x +"; top:" + y;
-        });
+        let x = e.clientX -8 + "px";
+        let y = e.clientY -5 + "px";
+        document.querySelector(".cursor").style.cssText = "left:" + x +"; top:" + y;
+    });
     
 
      
