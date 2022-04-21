@@ -32,7 +32,8 @@
         .start__btn,
         .info__box,
         .card__wrap,
-        .result__box {
+        .result__box,
+        .fail__box {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -48,7 +49,8 @@
         .start__btn.active,
         .info__box.active,
         .card__wrap.active,
-        .result__box.active {
+        .result__box.active,
+        .fail__box.active {
           opacity: 1;
           z-index: 10;
           pointer-events: auto;
@@ -237,6 +239,45 @@
             border: 1px solid #007BFF;
             color: #007BFF
         }
+
+        .fail__box {
+            width: 500px;
+            background: #fff;
+            border-radius: 5px;
+            font-size: 1.3em;
+            z-index: 100;
+        }
+        .fail__box .title {
+            border-bottom: 1px solid #ccc;
+            padding: .8rem 2rem;
+            text-align: center;
+            font-size: 1.4em;
+        }
+        .fail__box .score {
+          padding: 2rem;
+          text-align: center;
+          height: 300px;
+        }
+        .fail__box .buttons {
+            border-top: 1px solid #ccc;
+            padding: .8rem 2rem;
+            text-align: center;
+        }
+        .fail__box .buttons button {
+            background: #007BFF;
+            color: #fff;
+            padding: .4rem 2rem;
+            border-radius: 5px;
+            font-size: 1em;
+            border: 1px solid #007BFF;
+            margin: 0 0.2rem;
+            display: inline-block;
+        }
+        .fail__box .buttons button:first-child {
+            background: #fff;
+            border: 1px solid #007BFF;
+            color: #007BFF
+        }
     </style>
 </head>
 <body>
@@ -399,30 +440,45 @@
       </div>
     </div>
 
-    <!-- 결과박스 -->
+    <!-- 성공결과박스 -->
     <div class="result__box">
-      <div class="title">게임을 성공하셨습니다!!</div>
-      <div class="score">
+        <div class="title">게임을 성공하셨습니다!!</div>
+        <div class="score">
         당신의 점수는 00점 입니다.
-      </div>
-      <div class="buttons">
-        <button class="stop">그만하기</button>
-        <button class="restart">다시하기</button>
+        </div>
+        <div class="buttons">
+            <button class="stop">그만하기</button>
+            <button class="restart">다시하기</button>
+        </div>
     </div>
+
+    <!-- 실패결과박스 -->
+    <div class="fail__box">
+        <div class="title">게임을 실패하셨습니다!!</div>
+        <div class="score">
+        목숨이 00번 남으셨습니다.
+        </div>
+        <div class="buttons">
+            <button class="stop">그만하기</button>
+            <button class="restart">다시하기</button>
+        </div>
     </div>
 
     <script>
       const startBtn = document.querySelector(".start__btn");
       const infoBox = document.querySelector(".info__box");
       const resultBox = document.querySelector(".result__box");
+      const failBox = document.querySelector(".fail__box");
       const cardWrap = document.querySelector(".card__wrap");
       const cards = document.querySelectorAll(".cards li");
       const infoBoxStart = infoBox.querySelector(".start");
       const resultBoxRestart = resultBox.querySelector(".restart");
+      const failBoxRestart = failBox.querySelector(".restart");
 
       let cardOne, cardTwo;
       let disableDeck = false;
       let matchedCard = 0;
+      let failmatch = 0;
       let sound = [
           "audio/match2.mp3",
           "audio/match.mp3",
@@ -444,16 +500,30 @@
               shuffledCard();
           }, 1000)
       }
-      // 게임 다시 시작 버튼
+      // 성공시 게임 다시 시작 버튼
       resultBoxRestart.onclick = () => {
-          resultBox.classList.remove("active");
-        //   cardWrap.classList.add("active");
-          setTimeout(() => {
+        resultBox.classList.remove("active");
+    //   cardWrap.classList.add("active");
+        setTimeout(() => {
+            cardWrap.classList.add("active");
+        },800)
+        setTimeout(() => {
             shuffledCard();
-          },1000)
-          cardWrap.classList.add("active");
+        },1200)
          
       }
+      // 실패시 게임 다시 시작 버튼 
+      failBoxRestart.onclick = () => {
+          failBox.classList.remove("active");
+        //   cardWrap.classList.add("active");
+        setTimeout(() => {
+            cardWrap.classList.add("active");
+        },800)
+        setTimeout(() => {
+            shuffledCard();
+        },1200)
+      }
+
       //카드 클릭
       cards.forEach(card => {
           //card.classList.add("flip")
@@ -479,13 +549,13 @@
               matchedCard++;
               //완성했을 때
               if(matchedCard == 8){
-                  setTimeout(() => {
-                    cardWrap.classList.remove("active");
-                    resultBox.classList.add("active");
                     cards.forEach((card) => {
                         card.classList.remove("flip")
                     })
-                  }, 1000)
+                    setTimeout(() => {
+                    cardWrap.classList.remove("active");
+                    resultBox.classList.add("active");
+                    }, 1000)
               }
               cardOne.removeEventListener("click", flipCard);
               cardTwo.removeEventListener("click", flipCard);
@@ -493,16 +563,28 @@
               disableDeck = false;
               soundMatch.play();
           } else {
-              setTimeout(() => {
+              failmatch++;
+              if(failmatch == 5){
+                    cards.forEach((card) => {
+                        card.classList.remove("flip")
+                    })
+                    failBox.classList.add("active");
+                    cardWrap.classList.remove("active");
+                    cardOne = cardTwo = "";
+                    failmatch = 0;
+              } else {
+                setTimeout(() => {
                   cardOne.classList.add("shake");
                   cardTwo.classList.add("shake");
               }, 400);
-              setTimeout(() => {
-                  cardOne.classList.remove("shake", "flip");
-                  cardTwo.classList.remove("shake", "flip");
-                  cardOne = cardTwo = "";
-                  disableDeck = false;
-              }, 1200);
+                setTimeout(() => {
+                    cardOne.classList.remove("shake", "flip");
+                    cardTwo.classList.remove("shake", "flip");
+                    cardOne = cardTwo = "";
+                    disableDeck = false;
+                }, 1200);
+              }
+              
               soundNoMatch.play();
           }
       }
