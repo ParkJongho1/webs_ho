@@ -279,11 +279,11 @@
             color: #007BFF
         }
 
-        .card__text {
+        /* .card__text {
             position: fixed;
             z-index: 1000;
             top: 2px;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -312,8 +312,8 @@
     <!-- 카드 박스  -->
     <div class="card__wrap">
       <div class="card__inner">
-          <div class="card__text">남은 횟수: 5</span>
-          </div>
+          <!-- <div class="card__text">남은 횟수: 5</span></div> -->
+       
         <ul class="cards">
           <li>
               <div class="view front">
@@ -480,10 +480,12 @@
       const failBox = document.querySelector(".fail__box");
       const cardWrap = document.querySelector(".card__wrap");
       const cards = document.querySelectorAll(".cards li");
-      const cardText = document.querySelector(".card__text");
+    //   const cardText = document.querySelector(".card__text");
       const infoBoxStart = infoBox.querySelector(".start");
       const resultBoxRestart = resultBox.querySelector(".restart");
+      const resultStop = resultBox.querySelector(".stop");
       const failBoxRestart = failBox.querySelector(".restart");
+      const failStop = failBox.querySelector(".stop");
       const resultscore = resultBox.querySelector(".resultscore");
 
       let cardOne, cardTwo;
@@ -512,21 +514,34 @@
               shuffledCard();
           }, 300)
       }
-      // 성공시 게임 다시 시작 버튼
-      resultBoxRestart.onclick = () => {
+        // 성공시 게임 다시 시작 버튼
+        resultBoxRestart.onclick = () => {
         resultBox.classList.remove("active");
         setTimeout(() => {
             cardWrap.classList.add("active");
             shuffledCard();
         },1000)
       }
-      // 실패시 게임 다시 시작 버튼 
-      failBoxRestart.onclick = () => {
-          failBox.classList.remove("active");
-        //   cardWrap.classList.add("active");
+        // 성공시 그만하기버튼
+        resultStop.onclick = () => {
+        resultBox.classList.remove("active");
         setTimeout(() => {
-            cardWrap.classList.add("active");
-            shuffledCard();
+            startBtn.classList.add("active");
+        },1000)
+      }
+        // 실패시 게임 다시 시작 버튼 
+        failBoxRestart.onclick = () => {
+            failBox.classList.remove("active");
+            setTimeout(() => {
+                cardWrap.classList.add("active");
+                shuffledCard();
+            },1000)
+        }
+         // 실패시 게임 그만하기 버튼
+         failStop.onclick = () => {
+          failBox.classList.remove("active");
+        setTimeout(() => {
+            startBtn.classList.add("active");
         },1000)
       }
 

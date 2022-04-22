@@ -187,7 +187,7 @@ iframe {
 .memoryBox {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 2000px;
   bottom: 0;
   right: 0;
   margin: auto;
@@ -197,8 +197,8 @@ iframe {
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
                 0 6px 10px 0 rgba(0,0,0,0.17);
-  display: none;
 }
 .memoryBox.show {
-  display: block;
+  transition: all 0.4s;
+  top: 0;
 }
