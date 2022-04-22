@@ -47,9 +47,11 @@
     <iframe class="musicBoxIframe" src="../javascript/effect/musicPlayer/index.html" frameborder="0"></iframe>
   </div>
   <div class="typingGame">
+    <button class="typingBtn">닫기</button>
     <iframe class="TypingGameIframe" src="../javascript/effect/typingGame/index.html" frameborder="0"></iframe>
   </div>
   <div class="memoryBox">
+    <button class="memoryBtn">닫기</button>
     <iframe class="cardGameIframe" src="../javascript/effect/memoryGame/index2.html" frameborder="0"></iframe>
   </div>
   
@@ -72,6 +74,15 @@
     $(".btn3").click(function(){
       $(".memoryBox").toggleClass("show")
     });
+
+    // 닫기버튼
+    $(".typingBtn").click(function(){
+      $(".typingGame").removeClass("show")
+    });
+    $(".memoryBox").click(function(){
+      $(".memoryBox").removeClass("show")
+    });
+
 
     function printTime() {
     var clock = document.getElementById("clock");            // 출력할 장소 선택

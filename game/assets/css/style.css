@@ -190,11 +190,15 @@ iframe {
   transition: all 0.4s;
 }
 .typingGame.show {
-  top: -400px;
+  top: -455px;
 }
 .TypingGameIframe {
   width: 100%;
-  height: 80vh;
+  height: 75vh;
+}
+.typingBtn {
+  float: right;
+  padding: 5px 10px;
 }
 
 .cardGame.show {
@@ -211,7 +215,7 @@ iframe {
   margin: auto;
   width: 600px;
   height: 600px;
-  background: #fff;
+  /* background: #fff; */
   transition: all 0.4s;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
@@ -219,4 +223,8 @@ iframe {
 }
 .memoryBox.show {
   top: 0;
+}
+.memoryBtn {
+  float: right;
+  padding: 5px 10px;
 }

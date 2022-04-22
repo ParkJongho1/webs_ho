@@ -476,6 +476,7 @@
     <script>
       const startBtn = document.querySelector(".start__btn");
       const infoBox = document.querySelector(".info__box");
+      const infoStop = document.querySelector(".stop");
       const resultBox = document.querySelector(".result__box");
       const failBox = document.querySelector(".fail__box");
       const cardWrap = document.querySelector(".card__wrap");
@@ -505,6 +506,13 @@
       startBtn.onclick = () => {
           infoBox.classList.add("active");
           startBtn.classList.remove("active");
+      }
+       // 시작후 그만하기버튼
+       infoStop.onclick = () => {
+        infoBox.classList.remove("active");
+        setTimeout(() => {
+            startBtn.classList.add("active");
+        },1000)
       }
       // 게임시작 버튼
       infoBoxStart.onclick = () => {
