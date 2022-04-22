@@ -32,6 +32,11 @@
       <a href="#"><img src="assets/img/camera-light.svg"></a>
       <span>Card game</span>
     </div>
+    <div class="icon btn4">
+      <a href="https://parkjonghoreact2022.netlify.app/"><img src="assets/img/camera-light.svg"></a>
+      <span>React Site</span>
+    </div>
+    
   </main>
 
   <div class="musicBox">
@@ -61,7 +66,7 @@
       $(".typingGame").toggleClass("show")
     });
     $(".btn3").click(function(){
-      $(".cardGame").toggleClass("show")
+      $(".memoryBox").toggleClass("show")
     });
 
     function printTime() {
@@ -80,8 +85,9 @@
         let y = e.clientY -5 + "px";
         document.querySelector(".cursor").style.cssText = "left:" + x +"; top:" + y;
     });
-    
-
+    // window.addEventListener("mousemove", (e) => {
+    //     gsap.to(".cursor", {duration: .3, left: e.pageX -25, top: e.pageY - 40});
+    // });
      
 
 
