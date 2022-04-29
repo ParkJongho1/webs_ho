@@ -23,6 +23,15 @@
             left:0;
             z-index: -1;
         }
+        button {
+            border: 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tetris__wrap {
+            margin: 0 auto;
+            text-align: center;
+        }
         li {
             list-style: none;
             background: rgb(255, 255, 255);
@@ -41,14 +50,25 @@
             pointer-events: none;
             transition: all 0.3s;
         }
-
-        .start__btn.active, 
+        .start__btn,
+        .start__box.active, 
         .info__box.active, 
         .result__box.active {
             opacity: 1;
           z-index: 10;
           pointer-events: auto;
           transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        
+        .start__btn button {
+            background: #fff;
+            padding: .8rem 3rem;
+            border-radius: 5px;
+            font-size: 1.3em;
+        }
+        .start__btn.hide button {
+           display: none;
         }
 
         .info__box {
@@ -138,7 +158,7 @@
 
         .tetris__inner {
             width: 250px;
-            margin: 100px auto;
+            margin: 30px auto;
             top: 50%;
             left: 50%;
             transform: translateX(-50%, -50%);
@@ -187,59 +207,71 @@
             border: 6px outset #ff861a !important;
             background-color: #ff7900;
         }
+
+        .tetris__wrap .s {
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 150px;
+        }
     </style>
 </head>
 <body>
     <canvas></canvas>
-    <!-- 시작버튼 -->
-    <div class="start__btn">
-        <button>Start</button>  
-    </div>
-
-    <!-- 규칙 박스 -->
-    <div class="info__box">
-        <div class="title">메모리 게임을 하기 위한 규칙</div>
-        <div class="list">
-            <ol>
-                <li>당신에게는 기회가 <em>5번</em> 있습니다.</li>
-            </ol>
-        </div>
-        <div class="buttons">
-            <button class="stop">그만하기</button>
-            <button class="start">도전하기</button>
-        </div>
-    </div>
-
-    <!-- 결과 박스 -->
-    <div class="result__box">
-        <div class="title">게임을 성공하였습니다.!!</div>
-        <div class="score">
-            당신의 점수는 몇 00점입니다.
-        </div>
-        <div class="buttons">
-            <button class="stop">그만하기</button>
-            <button class="restart">다시 도전하기</button>
-        </div>
-    </div>
-
-    <!-- 테트리스 박스 -->
     <div class="tetris__wrap">
-        <div class="s">0</div>
-        <div class="tetris__inner">
-            <ul></ul>
-        </div>
-    </div>
 
+        <!-- 시작버튼 -->
+        <div class="start__btn hide">
+            <button>Start</button>
+        </div>
+
+
+        <!-- 규칙 박스 -->
+        <div class="info__box">
+            <div class="title">메모리 게임을 하기 위한 규칙</div>
+            <div class="list">
+                <ol>
+                    <li>당신에게는 기회가 <em>5번</em> 있습니다.</li>
+                </ol>
+            </div>
+            <div class="buttons">
+                <button class="stop">그만하기</button>
+                <button class="start">도전하기</button>
+            </div>
+        </div>
+
+        <!-- 결과 박스 -->
+        <div class="result__box">
+            <div class="title">게임이 끝났습니다!</div>
+            <div class="score">
+                당신의 점수는 몇 00점입니다.
+            </div>
+            <div class="buttons">
+                <button class="stop">그만하기</button>
+                <button class="restart">다시 도전하기</button>
+            </div>
+        </div>
+
+        <!-- 테트리스 박스 -->
+        <div class="tetris__wrap">
+            <div class="s"><span>0</span></div>
+            <div class="tetris__inner">
+                <ul></ul>
+            </div>
+        </div>
+
+    </div>
     <script>
         const tetrisInner = document.querySelector(".tetris__inner > ul");
         const tetrisS = document.querySelector(".tetris__wrap .s");
+        const infoBox = document.querySelector(".info__box");
         const resultBox = document.querySelector(".result__box");
 
         const game_rows = 20;
         const game_cols = 10;
 
         let gameScore = 0;
-        let gameDuration = 300;
+        let gameDuration = 400;
         let gameInterval;
         let gameMovingItem;
 
@@ -395,6 +427,11 @@
 
         //새로운 블록 만들기
         function generateNewBlock(){
+            if (tetrisS === 5){
+                gameDuration = 300;
+            } else if (tetrisS === 7) {
+                gameDuration = 100;
+            }
 
             clearInterval(gameInterval);
             gameInterval = setInterval(() => {
@@ -441,7 +478,7 @@
 
         function gameover(){
             //게임 끝났을 때
-            resultBox.classList.add("active");
+            // resultBox.classList.add("active");
         }
 
         // 키보드 이벤트
@@ -470,6 +507,9 @@
 
 
 
+
+
+        //canvas
         "use strict";
 
         var tetrominos = [
@@ -949,7 +989,6 @@
             new Tetris(20 * Math.round((w * bWidth) / 20), 0, bWidth)
         );
         }
-        
         
     </script>
 </body>

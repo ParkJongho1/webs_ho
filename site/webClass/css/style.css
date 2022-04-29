@@ -761,7 +761,7 @@
 .member-form .list li {
     font-size: 14px;
     line-height: 1.6;
-    position: relative;
+    position: relative; 
     padding-left: 10px;
 }
 
