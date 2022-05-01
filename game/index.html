@@ -41,7 +41,7 @@
       <span>Figma</span>
     </div>
     <div class="icon btn6">
-      <a href="../javascript/effect/tetirsGame/index.html" target="_blank"><img src="assets/img/housebuilding-light.svg"></a>
+      <a href="#"><img src="assets/img/housebuilding-light.svg"></a>
       <span>테트리스 게임</span>
     </div>
     
@@ -57,6 +57,10 @@
   <div class="memoryBox">
     <button class="memoryBtn">닫기</button>
     <iframe class="cardGameIframe" src="../javascript/effect/memoryGame/index2.html" frameborder="0"></iframe>
+  </div>
+  <div class="TetrisBox">
+    <button class="TetrisBtn">닫기</button>
+    <iframe class="TetrisIframe" src="../javascript/effect/tetirsGame/index.html" frameborder="0"></iframe>
   </div>
   
   
@@ -78,13 +82,19 @@
     $(".btn3").click(function(){
       $(".memoryBox").toggleClass("show")
     });
+    $(".btn6").click(function(){
+      $(".TetrisBox").toggleClass("show")
+    });
 
     // 닫기버튼
     $(".typingBtn").click(function(){
       $(".typingGame").removeClass("show")
     });
-    $(".memoryBox").click(function(){
+    $(".memoryBtn").click(function(){
       $(".memoryBox").removeClass("show")
+    });
+    $(".TetrisBtn").click(function(){
+      $(".TetrisBox").removeClass("show")
     });
 
 
