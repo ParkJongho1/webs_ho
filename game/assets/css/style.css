@@ -218,11 +218,9 @@ iframe {
   float: right;
   padding: 5px 10px;
 }
-
 .cardGame.show {
   top: -700px;
 }
-
 
 .memoryBox {
   position: absolute;
@@ -243,6 +241,30 @@ iframe {
   top: 0;
 }
 .memoryBtn {
+  float: right;
+  padding: 5px 10px;
+}
+
+.TetrisBox {
+  position: absolute;
+  left: 0;
+  top: 2000px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 1000px;
+  height: 800px;
+  /* background: #fff; */
+  transition: all 0.4s;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
+                0 6px 10px 0 rgba(0,0,0,0.17);
+                z-index: 1000;
+}
+.TetrisBox.show {
+  top: 0;
+}
+.TetrisBtn {
   float: right;
   padding: 5px 10px;
 }
