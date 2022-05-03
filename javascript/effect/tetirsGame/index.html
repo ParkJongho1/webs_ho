@@ -69,9 +69,6 @@
         border-radius: 5px;
         font-size: 1.3em;
       }
-      .start__btn.hide button {
-        display: none;
-      }
 
       .info__box {
         width: 500px;
@@ -210,9 +207,10 @@
   </head>
   <body>
     <canvas></canvas>
+
     <div class="tetris__wrap">
       <!-- 시작버튼 -->
-      <div class="start__btn hide">
+      <div class="start__btn">
         <button>Start</button>
       </div>
 
@@ -241,7 +239,7 @@
       </div>
 
       <!-- 테트리스 박스 -->
-      <div class="tetris__wrap">
+      <div class="tetris__score">
         <div class="s"><span>0</span></div>
         <div class="tetris__inner">
           <ul></ul>
@@ -250,7 +248,7 @@
     </div>
     <script>
       const tetrisInner = document.querySelector(".tetris__inner > ul");
-      const tetrisS = document.querySelector(".tetris__wrap .s");
+      const tetrisS = document.querySelector(".tetris__score .s");
       const infoBox = document.querySelector(".info__box");
       const resultBox = document.querySelector(".result__box");
 

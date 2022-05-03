@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 효과</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            background-color: rgb(88, 86, 86);
+            font-family: 'NexonLv1Gothic';
+            color: #fff;
+            font-weight: 300;
+        }
+        #parallax__title {
+            padding: 20px;
+            position: relative;
+            z-index: 1000;
+        }
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+            
+        }
+        #parallax__title p {
+            font-size: 16px;
+        }
+        #parallax__title li {
+            display: inline;
+        }
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+        #parallax__title li a {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+       
+
+        #parallax__cont {
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
+            /* background-color: rgba(255,255,255,0.1); */
+        }
+        .content__item {
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            /* background-color: rgba(255,255,255,0.3); */
+            text-align: left;
+            margin-right: 0;
+            position: relative;
+            padding-top: 15vw;
+        }
+        .content__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
+        }
+
+        .parallax__cont__num {
+            font-size: 35vw;
+            position: absolute;
+            left: -5vw;
+            top: -13vw;
+            opacity: 0.07;
+            font-family: "Lato";
+            font-weight: 100;
+        }
+        .content__item:nth-child(even) .parallax__cont__num {
+            left: auto;
+            right: -5vw;
+        }
+        .parallax__cont__title {
+            padding-bottom: 5px;
+            font-weight: 400;
+        }
+        .parallax__cont__imgWrap {
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 만드는 방법  */
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .parallax__cont__img {
+            position: absolute;
+            left: -5%;
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            filter: saturate(0%);
+            transition: all 1s;
+        }
+        .parallax__cont__img:hover {
+            filter: saturate(100%);
+            transform: scale(1.025);
+        }
+
+        .content__item:nth-child(1) .parallax__cont__img {
+            background-image: url(img/img01.jpg);
+        }
+        .content__item:nth-child(2) .parallax__cont__img {
+            background-image: url(img/img02.jpg);
+        }
+        .content__item:nth-child(3) .parallax__cont__img {
+            background-image: url(img/img03.jpg);
+        }
+        .content__item:nth-child(4) .parallax__cont__img {
+            background-image: url(img/img04.jpg);
+        }
+        .content__item:nth-child(5) .parallax__cont__img {
+            background-image: url(img/img05.jpg);
+        }
+        .content__item:nth-child(6) .parallax__cont__img {
+            background-image: url(img/img06.jpg);
+        }
+        .content__item:nth-child(7) .parallax__cont__img {
+            background-image: url(img/img07.jpg);
+        }
+        .content__item:nth-child(8) .parallax__cont__img {
+            background-image: url(img/img08.jpg);
+        }
+        .content__item:nth-child(9) .parallax__cont__img {
+            background-image: url(img/img09.jpg);
+        }
+        .parallax__cont__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            z-index: 100;
+            position: relative;
+            word-break: keep-all;
+        }
+        .content__item:nth-child(even) .parallax__cont__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+
+        #gradient {
+            position: fixed;
+            left: 0; top: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <header id="parallax__title">
+        <h1><a href="parallaxEffect.html">GSAP Parallax Effect01</a></h1>
+        <p>GSAP EFFECT - 나타나기</p>
+        <ul>
+            <li><a href="GSAPffect01.html">1</a></li>
+            <li  class="active"><a href="GSAPEffect02.html">2</a></li>
+            <li><a href="GSAPEffect03.html">3</a></li>
+            <li><a href="GSAPEffect04.html">4</a></li>
+            <li><a href="GSAPEffect05.html">5</a></li>
+            <li><a href="GSAPEffect06.html">6</a></li>
+            <li><a href="GSAPEffect07.html">7</a></li>
+            <li><a href="GSAPEffect08.html">8</a></li>
+            <li><a href="GSAPEffect09.html">9</a></li>
+        </ul>
+    </header>
+    <!-- //parallax__title -->
+
+    <!-- main -->
+    <main id="parallax__cont">
+        <div id="gradient"></div>
+        <div id="contents">
+            <section id="section1" class="content__item">
+                <span class="parallax__cont__num">01</span>
+                <h2 class="parallax__cont__title">Section01</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">높은 목표물을 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <!-- //section01 -->
+
+            <section id="section2" class="content__item">
+                <span class="parallax__cont__num">02</span>
+                <h2 class="parallax__cont__title">Section02</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">자신에게는 엄격하고 남에게는 관대하라.</p>
+            </section>
+            <!-- //section02 -->
+
+            <section id="section3" class="content__item">
+                <span class="parallax__cont__num">03</span>
+                <h2 class="parallax__cont__title">Section03</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">열정없이 사느니 차라리 죽는게 낫다.</p>
+            </section>
+            <!-- //section03 -->
+
+            <section id="section4" class="content__item">
+                <span class="parallax__cont__num">04</span>
+                <h2 class="parallax__cont__title">Section04</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">꺼지지 않을 불길로 타올라라.</p>
+            </section>
+            <!-- //section04 -->
+
+            <section id="section5" class="content__item">
+                <span class="parallax__cont__num">05</span>
+                <h2 class="parallax__cont__title">Section05</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">능력이 부족할 수록 자만심이 더 강하다.</p>
+            </section>
+            <!-- //section05 -->
+
+            <section id="section6" class="content__item">
+                <span class="parallax__cont__num">06</span>
+                <h2 class="parallax__cont__title">Section06</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">내가 있는 곳이 낙원이라.</p>
+            </section>
+            <!-- //section06 -->
+
+            <section id="section7" class="content__item">
+                <span class="parallax__cont__num">07</span>
+                <h2 class="parallax__cont__title">Section07</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">첫 번째 성공못한다면 계속해서 시도하라.</p>
+            </section>
+            <!-- //section07 -->
+
+            <section id="section8" class="content__item">
+                <span class="parallax__cont__num">08</span>
+                <h2 class="parallax__cont__title">Section08</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">도전하고 또 도전하면 기회는 찾아온다.</p>
+            </section>
+            <!-- //section08 -->
+
+            <section id="section9" class="content__item">
+                <span class="parallax__cont__num">09</span>
+                <h2 class="parallax__cont__title">Section09</h2>
+                <figure class="parallax__cont__imgWrap">
+                    <div class="parallax__cont__img"></div>
+                </figure>
+                <p class="parallax__cont__desc">나는 결코 포기하지 않는다.</p>
+            </section>
+            <!-- //section09 -->
+        </div>
+    </main>
+    <!-- //main -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <!-- script -->
+    <script>
+        gsap.utils.toArray(".parallax__cont__imgWrap").forEach(elem => {
+            ScrollTrigger.create({
+                trigger: elem,
+                start: "top 50%",
+                end: "bottom 50%",
+                markers: true,
+                onEnter: function(){
+                    gsap.fromTo(
+                        elem, 
+                            {
+                                y: 200,
+                                autoAlpha: 0    //opacity === autoAlpha
+                            },{
+                                duration: 3,
+                                y:0,
+                                autoAlpha: 1,
+                                ease: "power4.out",
+                                overwrite: "auto"
+                            } 
+                    );
+                },
+                onLeave: function(){
+                    gsap.fromTo(
+                        elem, {
+                            autoAlpha: 1,
+                        },{
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    );
+                },
+                onEnterBack: function(){
+                    gsap.fromTo(
+                        elem, {
+                            y: -100,
+                            autoAlpha: 0
+                        },{
+                            duration: 3,
+                            y:0,
+                            autoAlpha: 1,
+                            ease: "power4.out",
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onLeaveBack: function(){
+                    gsap.fromTo(
+                        elem, {
+                            autoAlpha: 1,
+                        },{
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    );
+                }
+            })
+        })
+
+        
+       
+    </script>
+</body>
+
+</html>

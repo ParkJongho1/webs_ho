@@ -119,18 +119,44 @@
         #section3 {background-color: #777; z-index: 5000;}
         #section4 {
             background-color: #666; z-index: 4000;
-            height: 400vh;
+            height: 680vh;
         }
         #section4 .sec4 {
             position: fixed;
             left: 0; top: 0;
-            width: 400vh;
-            height: 100%;
             background-color: red;
+            display: flex;
         }
+        #section4 .sec4 .item {
+            width: 170vh;
+            height: 100vh;
+            position: relative;
+        }
+        #section4 .sec4 .item:nth-child(1) {background-color: rgb(141, 194, 255);}
+        #section4 .sec4 .item:nth-child(2) {background-color: rgb(73, 236, 147);}
+        #section4 .sec4 .item:nth-child(3) {background-color: rgb(243, 73, 178);}
+        #section4 .sec4 .item:nth-child(4) {background-color: rgb(253, 255, 131);}
         #section5 {background-color: #555; z-index: 5000;}
         #section6 {background-color: #444; z-index: 6000;}
-        #section7 {background-color: #333; z-index: 7000;}
+        #section7 {
+            background-color: #333; z-index: 3000;
+            height: 510vh;
+        }
+        #section7 .sec7 {
+            position: fixed;
+            left: 0; top: 0;
+            background-color: blue;
+            display: flex;
+        }
+        #section7 .sec7 .item {
+            width: 170vh;
+            height: 100vh;
+            position: relative;
+        }
+        #section7 .sec7 .item:nth-child(1) {background-color: rgb(39, 130, 233);}
+        #section7 .sec7 .item:nth-child(2) {background-color: rgb(85, 145, 112);}
+        #section7 .sec7 .item:nth-child(3) {background-color: rgb(236, 108, 108);}
+        #section7 .sec7 {}
         #section8 {background-color: #222; z-index: 8000;}
         #section9 {background-color: #111; z-index: 9000;}
     </style>
@@ -168,7 +194,10 @@
         <!-- //section3 -->
         <section id="section4" class="content__item">
             <div class="sec4">
-                <span class="content__item__num">04</span>
+                <div class="item"><span class="content__item__num">04-1</span></div>
+                <div class="item"><span class="content__item__num">04-2</span></div>
+                <div class="item"><span class="content__item__num">04-3</span></div>
+                <div class="item"><span class="content__item__num">04-4</span></div>
             </div>
         </section>
         <!-- //section4 -->
@@ -181,7 +210,11 @@
         </section>
         <!-- //section6 -->
         <section id="section7" class="content__item">
-            <span class="content__item__num">07</span>
+            <div class="sec7">
+                <div class="item"><span class="content__item__num">07-1</span></div>
+                <div class="item"><span class="content__item__num">07-2</span></div>
+                <div class="item"><span class="content__item__num">07-3</span></div>
+            </div>
         </section>
         <!-- //section7 -->
         <section id="section8" class="content__item">
@@ -209,12 +242,17 @@
             let testscroll = window.innerHeight;
             console.log(testscroll)
             //4번째 섹션에 왔을 때 스크롤탑을 0으로 초기화해서 시작
-            let offset = scrollTop - document.querySelector("#section4").offsetTop;
+            let offset4 = scrollTop - document.querySelector("#section4").offsetTop;
+            let offset7 = scrollTop - document.querySelector("#section7").offsetTop;
 
             if(scrollTop >= document.querySelector("#section4").offsetTop){
             //    document.querySelector(".sec4").style.backgroundColor = "blue";
-               gsap.to(".sec4", {left: -offset, ease: "linear"})
+               gsap.to(".sec4", {left: -offset4, ease: "linear"})
             }
+            if(scrollTop >= document.querySelector("#section7").offsetTop){
+               gsap.to(".sec7", {left: -offset7, ease: "linear"})
+            }
+            
 
             document.querySelector(".scrollTop span").innerText = scrollTop;
             requestAnimationFrame(scroll);
