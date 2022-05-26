@@ -153,7 +153,7 @@
         transform: translateX(-50%, -50%);
       }
       .tetris__inner > ul {
-        border: 3px solid #ccc;
+        outline: 3px solid #ccc;
       }
       .tetris__inner > ul > li {
         width: 100%;
@@ -165,7 +165,8 @@
       .tetris__inner > ul > li > ul > li {
         width: 25px;
         height: 25px;
-        border: 1px solid #ccc;
+        box-shadow: 8px 2px 10px 4px rgba(0, 0, 0, 0.1),
+        8px 8px 10px 4px rgba(0, 0, 0, 0.1);
         box-sizing: border-box;
       }
       .Tmino {
@@ -210,9 +211,9 @@
 
     <div class="tetris__wrap">
       <!-- 시작버튼 -->
-      <!-- <div class="start__btn">
+      <div class="start__btn">
         <button>Start</button>
-      </div> -->
+      </div>
 
       <!-- 규칙 박스 -->
       <div class="info__box">
